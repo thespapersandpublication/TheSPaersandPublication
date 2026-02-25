@@ -51,10 +51,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Roboto', sans-serif; scroll-behavior: smooth; }
-        .topnav{background-color: black;}
+        .topbar {
+            background: #0d1b2a;
+            color: white;
+            padding: 8px 0;
+            font-size: 14px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .topbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url("https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg");
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
         .navbar { background: rgba(226, 160, 113, 0.95); backdrop-filter: blur(10px); }
-        .hero { background-image:"http://www.w3.org/2000/svg",url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>'); background-size: cover; color: white; padding: 200px 0; position: relative; overflow: hidden; }
-        .hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.2); }
+        
         .service-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: none; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden; }
         .service-card:hover { transform: translateY(-15px) scale(1.02) rotate(1deg); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
         .service-card img { transition: transform 0.3s; }
@@ -67,7 +92,7 @@
         .whatsapp-float:hover { background: linear-gradient(135deg, #128C7E, #25d366); transform: scale(1.2) rotate(-180deg); box-shadow: 0 0 30px #25d366; }
         @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-10px); } 60% { transform: translateY(-5px); } }
         @keyframes glow { 0% { box-shadow: 0 0 5px #25d366; } 100% { box-shadow: 0 0 20px #25d366; } }
-        @keyframes rotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes rotate { 0% { transform: translateX(0); } 100% { transform: translateX(-5px); } }
         .email-btn { position: fixed; bottom: 90px; left: 20px; background: linear-gradient(135deg, #007bff, #0056b3); color: white; width: 70px; height: 70px; border-radius: 50%; font-size: 22px; z-index: 1050; transition: all 0.3s; display: flex; align-items: center; justify-content: center; animation: pulse 2s infinite, shake 0.5s infinite; }
         .email-btn:hover { background: linear-gradient(135deg, #0056b3, #007bff); transform: scale(1.2) rotate(-180deg); box-shadow: 0 0 30px #007bff; }
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
@@ -137,14 +162,10 @@
 </head>
 <body>
 <!-- Navigation -->
-<nav class="top-nav">
-    <div class="left">
-        📞 +91 9876543210
-    </div>
-    <div class="right">
-        Contact Us 
-    </div>
-</nav>
+<div class="topbar">
+    <div>📞 +91 9876543210</div>
+    <div>✉ research@example.com</div>
+</div>
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
         <a class="navbar-brand fw-bold" href="#home">
@@ -190,9 +211,6 @@
                             </div>
                             <a href="#contact" class="btn btn-light btn-lg px-5 py-3 me-3">Get Free Quote</a>
                             <a href="https://wa.me/919208482366" class="btn btn-outline-light btn-lg px-5 py-3">Chat on WhatsApp</a>
-                        </div>
-                        <div class="col-lg-6">
-                            <img src="https://media.licdn.com/dms/image/v2/D5612AQF65MO-FAH8tQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1727936288283?e=2147483647&v=beta&t=3ikXaBYG_UlWpZGmcLs2hyTC3WwTAassL588-675yVc" alt="PhD student researching in library Delhi India" class="img-fluid rounded shadow" width="800" height="600" loading="lazy">
                         </div>
                     </div>
                 </div>
