@@ -18,7 +18,7 @@
       "@type": "ProfessionalService",
       "name": "The S Papers and Publication",
       "description": "Academic writing and research support services including free consultation and paper submission",
-      "url": "https://thespapers.com",
+      "url": "https://thespapersandpublication.com",
       "telephone": "+91-9208482366",
       "email": "contact@thespapersandpublication.com",
       "address": {
@@ -29,6 +29,20 @@
       "areaServed": "Worldwide"
     }
     </script>
+    <script>
+    function toggleMenu() {
+        document.getElementById("listbtn").classList.toggle("show");
+    }
+    /* Close dropdown if user clicks outside */
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            let dropdown = document.getElementById("listbtn");
+            if (dropdown.classList.contains('show')) {
+                dropdown.classList.remove('show');
+            }
+        }
+    }
+    </script>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Font Awesome -->
@@ -37,8 +51,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Roboto', sans-serif; scroll-behavior: smooth; }
-        .navbar { background: rgba(13, 110, 253, 0.95); backdrop-filter: blur(10px); }
-        .hero { background: linear-gradient(135deg, rgba(79, 172, 254, 0.8), rgba(0, 242, 254, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>'); background-size: cover; color: white; padding: 200px 0; position: relative; overflow: hidden; }
+        .topnav{background-color: black;}
+        .navbar { background: rgba(226, 160, 113, 0.95); backdrop-filter: blur(10px); }
+        .hero { background-image:"http://www.w3.org/2000/svg",url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>'); background-size: cover; color: white; padding: 200px 0; position: relative; overflow: hidden; }
         .hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.2); }
         .service-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: none; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden; }
         .service-card:hover { transform: translateY(-15px) scale(1.02) rotate(1deg); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
@@ -49,7 +64,7 @@
         .btn::before { content: ''; position: absolute; top: 50%; left: 50%; width: 0; height: 0; background: rgba(255,255,255,0.2); border-radius: 50%; transform: translate(-50%, -50%); transition: width 0.6s, height 0.6s; }
         .btn:active::before { width: 300px; height: 300px; }
         .whatsapp-float { position: fixed; width: 70px; height: 70px; bottom: 90px; right: 20px; background: linear-gradient(135deg, #25d366, #128C7E); color: #FFF; border-radius: 50%; text-align: center; font-size: 32px; box-shadow: 0 4px 12px rgba(37,211,102,0.3); z-index: 1050; animation: bounce 2s infinite, glow 1s infinite alternate, rotate 4s linear infinite; transition: all 0.3s; }
-        .whatsapp-float:hover { background: linear-gradient(135deg, #128C7E, #25d366); transform: scale(1.2) rotate(180deg); box-shadow: 0 0 30px #25d366; }
+        .whatsapp-float:hover { background: linear-gradient(135deg, #128C7E, #25d366); transform: scale(1.2) rotate(-180deg); box-shadow: 0 0 30px #25d366; }
         @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-10px); } 60% { transform: translateY(-5px); } }
         @keyframes glow { 0% { box-shadow: 0 0 5px #25d366; } 100% { box-shadow: 0 0 20px #25d366; } }
         @keyframes rotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
@@ -80,10 +95,56 @@
         .back-to-top { position: fixed; bottom: 20px; right: 20px; background: #007bff; color: white; border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; z-index: 1000; opacity: 0; transition: opacity 0.3s; }
         .back-to-top.visible { opacity: 1; }
         .parallax { background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; }
+        .listdrop {
+                position: relative;
+                display: inline-block;
+            }
+
+            .dropbtn {
+                background-color: none;
+                color: none;
+                padding: 10px 18px;
+                font-size: 16px;
+                border: none;
+                cursor: pointer;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: white;
+                min-width: 300px;
+                box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+
+            .dropdown-content a {
+                display: block;
+                padding: 12px 16px;
+                text-decoration: none;
+                color: black;
+            }
+
+            .dropdown-content a:hover {
+                background-color: none;
+            }
+
+            /* Show class */
+            .show {
+                display: block;
+            }
     </style>
 </head>
 <body>
 <!-- Navigation -->
+<nav class="top-nav">
+    <div class="left">
+        📞 +91 9876543210
+    </div>
+    <div class="right">
+        Contact Us 
+    </div>
+</nav>
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
         <a class="navbar-brand fw-bold" href="#home">
@@ -97,10 +158,15 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
-                <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
-                <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                <div class="listdrop">
+                <button onclick="toggleMenu()" class="dropbtn">Services</button>
+
+                    <div id="listbtn" class="dropdown-content">
+                    <a href="#">PhD Thesis & Dissertation Writing</a>
+                    <a href="#">Research Paper Publication Assistance</a>
+                    <a href="#">Data Analysis (SPSS, R, Python, MATLAB)</a>
+                    </div>
+                </div>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -159,7 +225,7 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-    </div>
+    </div>   
 </section>
 <!-- About Section - Expanded with Process -->
 <section id="about" class="py-5 bg-light">
@@ -191,7 +257,6 @@
             <div class="col-md-3 mb-4"><div class="process-step p-4 border rounded"><i class="fas fa-search fa-3x text-info mb-3"></i><h5>Review & Edit</h5><p>Expert revisions and checks.</p></div></div>
             <div class="col-md-3 mb-4"><div class="process-step p-4 border rounded"><i class="fas fa-check-circle fa-3x text-warning mb-3"></i><h5>Delivery</h5><p>Final, plagiarism-free submission.</p></div></div>
         </div>
-        <img src="https://i0.wp.com/aroundtheworldinhomeschooldays.com/wp-content/uploads/2025/08/Book-stack-Ambleside-Y8.jpeg?fit=1024%2C768&ssl=1" alt="Academic research process from consultation to publication" class="img-fluid rounded shadow mt-4" width="1200" height="400" loading="lazy">
     </div>
 </section>
 <!-- Services Section -->
@@ -443,7 +508,7 @@
                 </h2>
                 <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
-                        All work is written from scratch and checked with premium tools like Turnitin. We guarantee <5% similarity.
+                        All work is written from scratch and checked with premium tools like Turnitin. We guarantee <5% similarity.></5>
                     </div>
                 </div>
             </div>
@@ -484,31 +549,6 @@
                 </div>
             </div>
         </div>
-        <img src="https://thumbs.dreamstime.com/b/acts-as-mentor-fostering-academic-success-personal-growth-university-environment-academic-advisors-essential-359168687.jpg" alt="FAQ academic services illustration" class="img-fluid rounded shadow mt-5 d-block mx-auto" width="800" height="450" loading="lazy">
-    </div>
-</section>
-<!-- Contact Section -->
-<section id="contact" class="py-5 bg-primary text-white">
-    <div class="container">
-        <h2 class="text-center mb-5">Get in Touch – Let's Start Your Project</h2>
-        <div class="row justify-content-center mb-4">
-            <div class="col-md-8">
-                <form>
-                    <div class="row">
-                        <div class="col-md-6 mb-3"><input type="text" class="form-control" placeholder="Full Name" required></div>
-                        <div class="col-md-6 mb-3"><input type="email" class="form-control" placeholder="Email Address" required></div>
-                        <div class="col-12 mb-3"><input type="text" class="form-control" placeholder="Service Needed (e.g., Thesis Writing)" required></div>
-                        <div class="col-12 mb-3"><textarea class="form-control" rows="5" placeholder="Project Details & Deadline" required></textarea></div>
-                        <div class="col-12 text-center"><button type="submit" class="btn btn-light btn-lg px-5">Send Inquiry</button></div>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="text-center">
-            <p><i class="fas fa-map-marker-alt me-2"></i> New Delhi, India | <i class="fas fa-phone me-2 ms-3"></i> +91 9208482366 | <i class="fas fa-envelope me-2 ms-3"></i> contact@thespapersandpublication.com</p>
-            <p>Instant WhatsApp Support for Queries | Response within 30 mins | Free Consultation Available</p>
-        </div>
-        <img src="">
     </div>
 </section>
 <!-- Footer - Improved -->
@@ -517,12 +557,8 @@
         <div class="row">
             <div class="col-md-4 mb-4">
                 <img src="logo.jpeg" alt="The S Papers and Publication Logo" class="img-fluid mb-3" style="height: 100px;">
-                
                 <p>Delhi-based leaders in academic excellence. Empowering research since 2015. Excellence in every page. 100% satisfaction guaranteed. Free consultation and submission support.</p>
                 <!-- Footer Logo -->
-                <form class="mt-3">
-                    <div class="input-group"><input type="email" class="form-control" placeholder="Subscribe for tips"><button class="btn btn-outline-light" type="submit">Subscribe</button></div>
-                </form>
             </div>
             <div class="col-md-4 mb-4">
                 <h5>Quick Links</h5>
@@ -594,6 +630,7 @@
 </script>
 </body>
 </html>
+
 
 
 
