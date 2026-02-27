@@ -17,17 +17,31 @@
       font-family: 'Roboto', Arial, sans-serif;
       overflow-x: hidden;
     }
-    .hero {
-      background-image: url("carousel-1.jpeg");
-      background-size: cover;
-      background-position: center;
-      height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-align: center;
-    }
+    .hero-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 500px; /* Or min-height: 100vh */
+}
+
+.hero-background, .hero-overlay, .hero-content {
+  /* Place all elements in the same grid area (row 1, column 1) */
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* Adds a dark tint */
+}
+
+.hero-content {
+  /* Center the content within the grid area */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
     /* About Section */
     .about {
         padding: 6.25rem 2.5rem;
@@ -1077,6 +1091,7 @@
     </script>
 </body>
 </html>
+
 
 
 
