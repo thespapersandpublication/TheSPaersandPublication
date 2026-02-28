@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-<style>
+<style> 
     * {
             margin: 0;
             padding: 0;
@@ -20,6 +20,693 @@
             font-family: 'Poppins', sans-serif;
         }
 
+    .header {
+            position: sticky;
+            top: 0;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 1.25rem 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+    }
+
+    .header .logo img {
+            width: 180px;
+            height: 60px;
+            transition: transform 0.3s;
+    }
+
+    .header .logo img:hover {
+            transform: scale(1.25);
+    }
+
+    .nav {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0 0.9375rem;
+    }
+
+    nav ul li a {
+        color: #333;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1rem;
+        padding: 0.5rem;
+        transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+        color: #ff6f61;
+    }
+
+    /* Search Bar */
+    .search-container {
+        position: relative;
+    }
+
+    .search-icon {
+        font-size: 1.25rem;
+        color: #333;
+        cursor: pointer;
+        padding: 0.5rem;
+        transition: color 0.3s;
+    }
+
+    .search-icon:hover {
+        color: #ff6f61;
+    }
+
+    .search-bar {
+        position: absolute;
+        top: 2.5rem;
+        right: 0;
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        padding: 0.625rem;
+        display: none;
+        width: 15.625rem;
+        z-index: 1000;
+    }
+
+    .search-bar input {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 0.875rem;
+        outline: none;
+    }
+
+    .search-bar.active {
+        display: block;
+    }
+
+    /* Hero Section */
+    .hero {
+        position: relative;
+        height: 700px;
+        background: linear-gradient(135deg, #f9f9f9, #e9ecef);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 2.5rem;
+    }
+
+    .hero-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        width: 100%;
+    }
+
+    .hero-text {
+        width: 50%;
+        padding-right: 1.25rem;
+        text-align: left;
+    }
+
+    .hero-text h1 {
+        font-family: 'Dancing Script', cursive;
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        color: #1a2a44;
+        margin-bottom: 1.25rem;
+        animation: fadeInDown 1s ease-in-out;
+    }
+
+    .hero-text p {
+        font-size: clamp(1rem, 2vw, 1.5rem);
+        margin-bottom: 2.5rem;
+        font-weight: 300;
+        color: #666;
+        animation: fadeInUp 1s ease-in-out 0.5s;
+    }
+
+    .hero-image {
+        width: 50%;
+        height: 100%;
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        animation: fadeInRight 1s ease-in-out;
+    }
+
+    .cta-button {
+        display: inline-block;
+        background-color: #ff6f61;
+        color: white;
+        padding: 0.9375rem 1.875rem;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        border-radius: 5px;
+        transition: background-color 0.3s, transform 0.3s;
+        animation: pulse 2s infinite;
+        min-width: 150px;
+        text-align: center;
+    }
+
+    .cta-button:hover {
+        background-color: #e65a50;
+        transform: scale(1.05);
+    }
+
+    /* About Section */
+    .about {
+        padding: 6.25rem 2.5rem;
+        text-align: center;
+        background-color: #f9f9f9;
+    }
+
+    .about h2 {
+        font-family: 'Dancing Script', cursive;
+        font-size: clamp(2rem, 5vw, 3rem);
+        color: #1a2a44;
+        margin-bottom: 1.25rem;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .about p {
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: 1rem;
+        line-height: 1.8;
+        color: #666;
+        animation: fadeIn 1s ease-in-out 0.5s;
+    }
+
+    /* Experience Section */
+    .experience {
+        padding: 5rem 2.5rem;
+        text-align: center;
+        background: url('https://www.transparenttextures.com/patterns/asfalt-light.png'), linear-gradient(135deg, #1a2a44, #2c3e50);
+        background-size: cover;
+        color: white;
+    }
+
+    .experience h2 {
+        font-family: 'Dancing Script', cursive;
+        font-size: clamp(2rem, 5vw, 3rem);
+        margin-bottom: 2.5rem;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .experience-grid {
+        display: flex;
+        justify-content: center;
+        gap: 2.5rem;
+        flex-wrap: wrap;
+    }
+
+    .experience-item {
+        max-width: 200px;
+    }
+
+    .experience-item h3 {
+        font-size: 2.25rem;
+        font-weight: 700;
+        margin-bottom: 0.625rem;
+        color: #ff6f61;
+    }
+
+    .experience-item p {
+        font-size: 1rem;
+        color: #ddd;
+    }
+
+    /* Services Section */
+    .services {
+        padding: 6.25rem 2.5rem;
+        text-align: center;
+        background-color: white;
+    }
+
+    .services h2 {
+        font-family: 'Dancing Script', cursive;
+        font-size: clamp(2rem, 5vw, 3rem);
+        color: #1a2a44;
+        margin-bottom: 3.75rem;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .service-grid {
+        display: flex;
+        justify-content: center;
+        gap: 1.875rem;
+        flex-wrap: wrap;
+    }
+
+    .service-item {
+        max-width: 350px;
+        text-align: left;
+        transition: transform 0.3s;
+    }
+
+    .service-item:hover {
+        transform: translateY(-10px);
+    }
+
+    .service-item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 1.25rem;
+        loading: lazy;
+    }
+
+    .service-item h3 {
+        font-size: 1.5rem;
+        color: #1a2a44;
+        margin-bottom: 0.9375rem;
+        transition: color 0.3s;
+    }
+
+    .service-item:hover h3 {
+        color: #ff6f61;
+        animation: bounce 0.5s ease-in-out;
+    }
+
+    .service-item p {
+        font-size: 1rem;
+        color: #666;
+        line-height: 1.6;
+    }
+
+    /* Portfolio Section */
+    .portfolio {
+        padding: 6.25rem 2.5rem;
+        text-align: center;
+        background: url('https://www.transparenttextures.com/patterns/asfalt-light.png'), #f9f9f9;
+        background-size: cover;
+    }
+
+    .portfolio h2 {
+        font-family: 'Dancing Script', cursive;
+        font-size: clamp(2rem, 5vw, 3rem);
+        color: #1a2a44;
+        margin-bottom: 3.75rem;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .portfolio-grid {
+        display: flex;
+        justify-content: center;
+        gap: 1.25rem;
+        flex-wrap: wrap;
+    }
+
+    .portfolio-item {
+        position: relative;
+        max-width: 350px;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    .portfolio-item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.3s;
+        loading: lazy;
+    }
+
+    .portfolio-item:hover img {
+        transform: scale(1.1);
+    }
+
+    .portfolio-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s;
+        touch-action: none;
+    }
+
+    .portfolio-item:hover .portfolio-overlay,
+    .portfolio-item:active .portfolio-overlay {
+        opacity: 1;
+    }
+
+    .portfolio-overlay span {
+        color: white;
+        font-size: 1.25rem;
+        font-weight: 500;
+    }
+
+    /* Upcoming Events Section */
+    .upcoming-events {
+        padding: 6.25rem 2.5rem;
+        text-align: center;
+        background-color: white;
+    }
+
+    .upcoming-events h2 {
+        font-family: 'Dancing Script', cursive;
+        font-size: clamp(2rem, 5vw, 3rem);
+        color: #1a2a44;
+        margin-bottom: 3.75rem;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .event-grid {
+        display: flex;
+        justify-content: center;
+        gap: 1.875rem;
+        flex-wrap: wrap;
+    }
+
+    .event-item {
+        max-width: 350px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: transform 0.3s;
+    }
+
+    .event-item:hover {
+        transform: scale(1.05);
+    }
+
+    .event-item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        loading: lazy;
+    }
+
+    .event-item .event-info {
+        padding: 1.25rem;
+        text-align: left;
+    }
+
+    .event-item h3 {
+        font-size: 1.25rem;
+        color: #1a2a44;
+        margin-bottom: 0.625rem;
+    }
+
+    .event-item p {
+        font-size: 0.875rem;
+        color: #666;
+        margin-bottom: 0.625rem;
+    }
+
+    .event-item .event-date {
+        color: #ff6f61;
+        font-weight: 500;
+    }
+
+    /* CTA Section */
+    .cta-section {
+        padding: 5rem 2.5rem;
+        text-align: center;
+        background: linear-gradient(135deg, #ff6f61, #e65a50);
+        color: white;
+    }
+
+    .cta-section h2 {
+        font-family: 'Dancing Script', cursive;
+        font-size: clamp(2rem, 5vw, 3rem);
+        margin-bottom: 1.25rem;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .cta-section p {
+        font-size: 1.125rem;
+        margin-bottom: 1.875rem;
+        animation: fadeIn 1s ease-in-out 0.5s;
+    }
+
+    /* Why Choose Us Section */
+    .why-choose-us {
+        padding: 6.25rem 2.5rem;
+        text-align: center;
+        background-color: white;
+    }
+
+    .why-choose-us h2 {
+        font-family: 'Dancing Script', cursive;
+        font-size: clamp(2rem, 5vw, 3rem);
+        color: #1a2a44;
+        margin-bottom: 3.75rem;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .why-grid {
+        display: flex;
+        justify-content: center;
+        gap: 1.875rem;
+        flex-wrap: wrap;
+    }
+
+    .why-item {
+        max-width: 350px;
+        text-align: left;
+    }
+
+    .why-item h3 {
+        font-size: 1.5rem;
+        color: #1a2a44;
+        margin-bottom: 0.9375rem;
+    }
+
+    .why-item p {
+        font-size: 1rem;
+        color: #666;
+        line-height: 1.6;
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+        padding: 6.25rem 2.5rem;
+        text-align: center;
+        background: url('https://www.transparenttextures.com/patterns/asfalt-light.png'), white;
+        background-size: cover;
+    }
+
+    .testimonials h2 {
+        font-family: 'Dancing Script', cursive;
+        font-size: clamp(2rem, 5vw, 3rem);
+        color: #1a2a44;
+        margin-bottom: 3.75rem;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .testimonial-grid {
+        display: flex;
+        justify-content: center;
+        gap: 1.875rem;
+        flex-wrap: wrap;
+    }
+
+    .testimonial-item {
+        max-width: 350px;
+        background-color: #f9f9f9;
+        padding: 1.875rem;
+        border-radius: 10px;
+        position: relative;
+        transition: transform 0.3s;
+    }
+
+    .testimonial-item:hover {
+        transform: translateY(-10px);
+    }
+
+    .testimonial-item p {
+        font-size: 1rem;
+        color: #666;
+        line-height: 1.8;
+        margin-bottom: 1.25rem;
+    }
+
+    .testimonial-item h4 {
+        font-size: 1.125rem;
+        color: #1a2a44;
+        font-weight: 600;
+    }
+
+    .testimonial-item span {
+        font-size: 0.875rem;
+        color: #ff6f61;
+    }
+    /* Footer */
+    footer {
+        background-color: white;
+        color: rgb(6, 6, 6);
+        padding: 3.75rem 2.5rem;
+        text-align: center;
+    }
+
+    footer .footer-grid {
+        display: flex;
+        justify-content: space-between;
+        gap: 1.875rem;
+        flex-wrap: wrap;
+        margin-bottom: 2.5rem;
+    }
+
+    footer .footer-column {
+        max-width: 300px;
+        text-align: left;
+    }
+
+    footer .footer-column img {
+        width: 150px;
+        margin-bottom: 1.25rem;
+    }
+
+    footer .footer-column h4 {
+        font-size: 1.25rem;
+        margin-bottom: 1.25rem;
+    }
+
+    footer .footer-column p,
+    footer .footer-column a {
+        font-size: 0.875rem;
+        color: #080707;
+        line-height: 1.8;
+        text-decoration: none;
+    }
+
+    footer .footer-column a:hover {
+        color: #ff6f61;
+    }
+    
+    footer .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0);
+        padding-top: 1.25rem;
+        font-size: 0.875rem;
+        color: #838080;
+    }
+
+    /* Responsive Design */
+    /* Tablet (768px - 1024px) */
+    @media (max-width: 1024px) {
+        .hero {
+            height: 600px;
+        }
+
+        .hero-text {
+            padding-right: 1rem;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+        }
+
+        .hero-text p {
+            font-size: clamp(0.875rem, 1.5vw, 1.25rem);
+        }
+
+        .service-grid,
+        .portfolio-grid,
+        .event-grid,
+        .why-grid,
+        .testimonial-grid {
+            gap: 1.5rem;
+        }
+    }
+
+    /* Mobile (below 768px) */
+    @media (max-width: 768px) {
+        header {
+            flex-direction: column;
+            padding: 0.625rem 1.25rem;
+        }
+
+        nav {
+            margin: 0.625rem 0;
+        }
+
+        nav ul {
+            flex-direction: column;
+        }
+
+        nav ul li {
+            margin: 0.625rem 0;
+        }
+
+        nav ul li a {
+            font-size: 1.125rem;
+        }
+
+        .search-container {
+            margin-top: 0.625rem;
+        }
+
+        .search-bar {
+            top: 1.875rem;
+            width: 200px;
+        }
+
+        .hero {
+            height: auto;
+            padding: 2.5rem 1.25rem;
+        }
+
+        .hero-content {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-text {
+            width: 100%;
+            padding: 0 1rem;
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 400px;
+        }
+
+        .experience-grid,
+        .service-grid,
+        .portfolio-grid,
+        .event-grid,
+        .why-grid,
+        .testimonial-grid {
+            flex-direction: column;
+            align-items: center;
+            gap: 1.25rem;
+        }
+        footer .footer-grid {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        footer .footer-column {
+            text-align: center;
+        }
+    }
     .body {
         background-color: #fff;
         color: #333;
@@ -1335,3 +2022,4 @@
     </script>
 </body>
 </html>
+
