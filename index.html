@@ -53,6 +53,78 @@
     color: white;
     text-align: center;
     }
+    .header {
+            position: sticky;
+            top: 0;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 1.25rem 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+    .header .logo img {
+            width: 180px;
+            height: 60px;
+            transition: transform 0.3s;
+        }
+
+    .header .logo img:hover {
+          transform: scale(1.25);
+      }
+
+    .nav {
+          flex-grow: 1;
+          display: flex;
+          justify-content: center;
+      }
+
+    .nav ul {
+          list-style: none;
+          display: flex;
+          align-items: center;
+      }
+
+    .nav ul li {
+          margin: 0 0.9375rem;
+      }
+
+    .nav ul li a {
+          color: #333;
+          text-decoration: none;
+          font-weight: 500;
+          font-size: 1rem;
+          padding: 0.5rem;
+          transition: color 0.3s;
+      }
+
+    .nav ul li a:hover {
+          color: #ff6f61;
+      }
+    .cta-banner {
+      background: linear-gradient(to right, #facc15, #eab308);
+      color: #1a202c;
+      text-align: center;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    @media (max-width: 768px) {
+      .hero {
+        height: 70vh;
+      }
+      .logo {
+        width: 120px;
+      }
+      .stat-number {
+        font-size: 2rem;
+      }
+      .map-container {
+        height: 300px;
+      }
+    }
 
         /* About Section */
     .about {
@@ -1101,4 +1173,5 @@
     </script>
 </body>
 </html>
+
 
