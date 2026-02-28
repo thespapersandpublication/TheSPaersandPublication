@@ -18,16 +18,16 @@
       overflow-x: hidden;
     }
     .header {
-            position: sticky;
-            top: 0;
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            padding: 1.25rem 2.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        position: sticky;
+        top: 0;
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        padding: 1.25rem 2.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
     .header .logo img {
         width: 180px;
@@ -67,7 +67,6 @@
     .nav ul li a:hover {
         color: #ff6f61;
     }
-
     .hero {
       background-image: url("carousel-1.jpeg");
       background-size: cover;
@@ -800,33 +799,50 @@
     }
     }
     </style>
-  <!-- Navbar -->
+  <!-- Navbar 
     <header>
         <nav class="navbar fixed w-full z-50 bg-transparent py-4">
             <div class="container mx-auto flex justify-between items-center px-4">
-            <a href="#home">
+                <a href="#home">
                 <img src="logo-removebg-preview.png" alt="The S Papers And Publication Logo" class="logo">
-            </a>
-            <div class="space-x-6 hidden md:flex">
-                <a href="#home" class="text-white hover:text-yellow-400">Home</a>
-                <a href="#about" class="text-white hover:text-yellow-400">About</a>
-                <a href="#services" class="text-white hover:text-yellow-400">Services</a>
-                <a href="#testimonials" class="text-white hover:text-yellow-400">Testimonials</a>
-                <a href="#contact" class="text-white hover:text-yellow-400">Contact</a>
-            </div>
-            <button id="menu-btn" class="md:hidden text-white">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
-            <div id="mobile-menu" class="hidden md:hidden bg-gray-900 w-full absolute top-16 left-0 py-4">
-                <a href="#home" class="block text-white hover:text-yellow-400 py-2 px-4">Home</a>
-                <a href="#about" class="block text-white hover:text-yellow-400 py-2 px-4">About</a>
-                <a href="#services" class="block text-white hover:text-yellow-400 py-2 px-4">Services</a>
-                <a href="#testimonials" class="block text-white hover:text-yellow-400 py-2 px-4">Testimonials</a>
-                <a href="#contact" class="block text-white hover:text-yellow-400 py-2 px-4">Contact</a>
-            </div>
+                </a>
+                <div class="space-x-6 hidden md:flex">
+                    <a href="#home" class="text-white hover:text-yellow-400">Home</a>
+                    <a href="#about" class="text-white hover:text-yellow-400">About</a>
+                    <a href="#services" class="text-white hover:text-yellow-400">Services</a>
+                    <a href="#testimonials" class="text-white hover:text-yellow-400">Testimonials</a>
+                    <a href="#contact" class="text-white hover:text-yellow-400">Contact</a>
+                </div>
+                <button id="menu-btn" class="md:hidden text-white">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                <div id="mobile-menu" class="hidden md:hidden bg-gray-900 w-full absolute top-16 left-0 py-4">
+                    <a href="#home" class="block text-white hover:text-yellow-400 py-2 px-4">Home</a>
+                    <a href="#about" class="block text-white hover:text-yellow-400 py-2 px-4">About</a>
+                    <a href="#services" class="block text-white hover:text-yellow-400 py-2 px-4">Services</a>
+                    <a href="#testimonials" class="block text-white hover:text-yellow-400 py-2 px-4">Testimonials</a>
+                    <a href="#contact" class="block text-white hover:text-yellow-400 py-2 px-4">Contact</a>
+                </div>
             </div>
         </nav>
+    </header> -->
+    <header>
+        <div class="logo">
+            <a href="#home">
+                <img src="logo-removebg-preview.png" alt="The S Papers and Publication" width="250" height="80">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
+
   <!-- Hero Section -->
     <section id="home" class="hero">
         <div data-aos="fade-up" class="container mx-auto px-4">
@@ -1214,13 +1230,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
