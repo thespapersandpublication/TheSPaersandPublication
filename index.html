@@ -29,8 +29,19 @@
       text-align: center;
     }
 
-    .hero-overlay {
-    background-color: rgba(0, 0, 0, 0.5); /* Adds a dark tint */
+    @media (max-width: 768px) {
+      .hero {
+        height: 70vh;
+      }
+      .logo {
+        width: 120px;
+      }
+      .stat-number {
+        font-size: 2rem;
+      }
+      .map-container {
+        height: 300px;
+      }
     }
 
     .hero-content {
@@ -1090,3 +1101,4 @@
     </script>
 </body>
 </html>
+
