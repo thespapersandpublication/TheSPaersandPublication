@@ -14,7 +14,94 @@
   <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 <style> 
-    body {
+    body 
+  <header style="
+  background-color: #111;
+  color: #fff;
+  padding: 15px 20px;
+  font-family: Arial, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+">
+  <div style="max-width: 1200px; margin: auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+
+    <!-- Logo -->
+    <div>
+      <a href="/">
+        <img src="images/logo.png" alt="Company Logo" style="width:160px; height:auto;">
+      </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navMenu" style="display: flex; gap: 25px; flex-wrap: wrap;">
+      <a href="/" style="color:#ccc; text-decoration:none; font-weight:500; transition:0.3s;" 
+         onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Home</a>
+      <a href="/about" style="color:#ccc; text-decoration:none; font-weight:500; transition:0.3s;" 
+         onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">About</a>
+      <a href="/services" style="color:#ccc; text-decoration:none; font-weight:500; transition:0.3s;" 
+         onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Services</a>
+      <a href="/contact" style="color:#ccc; text-decoration:none; font-weight:500; transition:0.3s;" 
+         onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Contact</a>
+    </nav>
+
+    <!-- CTA Button -->
+    <div>
+      <a href="mailto:info@yourcompany.com" style="
+        background-color: #25D366;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.3s;
+      " onmouseover="this.style.backgroundColor='#1ebe57'" onmouseout="this.style.backgroundColor='#25D366'">
+        Contact Us
+      </a>
+    </div>
+
+    <!-- Hamburger Menu (Mobile) -->
+    <div id="hamburger" style="display:none; flex-direction:column; cursor:pointer;">
+      <span style="width:25px; height:3px; background:#ccc; margin:4px 0; transition:0.3s;"></span>
+      <span style="width:25px; height:3px; background:#ccc; margin:4px 0; transition:0.3s;"></span>
+      <span style="width:25px; height:3px; background:#ccc; margin:4px 0; transition:0.3s;"></span>
+    </div>
+
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" style="display:none; flex-direction:column; background-color:#111; padding:10px 20px;">
+    <a href="/" style="color:#ccc; text-decoration:none; padding:10px 0; border-bottom:1px solid #333;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Home</a>
+    <a href="/about" style="color:#ccc; text-decoration:none; padding:10px 0; border-bottom:1px solid #333;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">About</a>
+    <a href="/services" style="color:#ccc; text-decoration:none; padding:10px 0; border-bottom:1px solid #333;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Services</a>
+    <a href="/contact" style="color:#ccc; text-decoration:none; padding:10px 0;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Contact</a>
+  </div>
+</header>
+
+<!-- Responsive JS -->
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+  });
+
+  function resizeMenu() {
+    if (window.innerWidth <= 768) {
+      document.getElementById('navMenu').style.display = 'none';
+      hamburger.style.display = 'flex';
+    } else {
+      document.getElementById('navMenu').style.display = 'flex';
+      hamburger.style.display = 'none';
+      mobileMenu.style.display = 'none';
+    }
+  }
+
+  window.addEventListener('resize', resizeMenu);
+  window.addEventListener('load', resizeMenu);
+</script>
+  {
       font-family: 'Roboto', Arial, sans-serif;
       overflow-x: hidden;
     }
