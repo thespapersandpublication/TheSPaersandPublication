@@ -85,7 +85,47 @@
     <a href="https://thespapersandpublication.com/#contact" style="color:#ccc; text-decoration:none; padding:10px 0;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Contact</a>
   </div>
 </header>
+<!-- ================= Hero Section ================= -->
+<section style="
+  background: url('https://thespapersandpublication.com/carousel-1.jpeg') center/cover no-repeat;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+">
+  <!-- Overlay for better text visibility -->
+  <div style="
+    position: absolute;
+    top:0; left:0; width:100%; height:100%;
+    background-color: rgba(0,0,0,0.6);
+    z-index:1;
+  "></div>
 
+  <!-- Hero Content -->
+  <div style="position: relative; z-index:2; max-width:800px; padding: 0 20px;">
+    <h1 style="font-size:3rem; margin-bottom:20px; line-height:1.2;">
+      We Build Modern Websites
+    </h1>
+    <p style="font-size:1.2rem; margin-bottom:30px; color:#ccc;">
+      Fast, responsive, and visually stunning websites that help your business grow.
+    </p>
+    <a href="mailto:contact@thespapersandpublication.com" style="
+      background-color: #25D366;
+      color: #fff;
+      padding: 15px 35px;
+      border-radius: 30px;
+      font-size:1.1rem;
+      font-weight:600;
+      text-decoration: none;
+      transition: 0.3s;
+    " onmouseover="this.style.backgroundColor='#1ebe57'" onmouseout="this.style.backgroundColor='#25D366'">
+      Get Started
+    </a>
+  </div>
+</section>
 <!-- Responsive JS -->
 <script>
   const hamburger = document.getElementById('hamburger');
@@ -1695,6 +1735,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </body>
 </html>
+
 
 
 
