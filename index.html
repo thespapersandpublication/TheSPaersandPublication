@@ -16,166 +16,7 @@
 <style> 
   body { margin:0; font-family: Arial, sans-serif; }
     a { transition: 0.3s; }
-  </style>
-</head>
-<body>
-  <header style="
-  background-color: #111;
-  color: #fff;
-  padding: 15px 20px;
-  font-family: Arial, sans-serif;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
-">
-  <div style="max-width: 1200px; margin: auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
-
-    <!-- Logo -->
-    <div>
-      <a href="/">
-        <img src="https://thespapersandpublication.com/logowithbg.png" alt="Company Logo" style="width:160px; height:auto;">
-      </a>
-    </div>
-
-    <!-- Navigation -->
-    <nav id="navMenu" style="display: flex; gap: 25px; flex-wrap: wrap;">
-      <a href="/" style="color:#ccc; text-decoration:none; font-weight:500; transition:0.3s;" 
-         onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Home</a>
-      <a href="https://thespapersandpublication.com/#about" style="color:#ccc; text-decoration:none; font-weight:500; transition:0.3s;" 
-         onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">About</a>
-      <a href="https://thespapersandpublication.com/#services" style="color:#ccc; text-decoration:none; font-weight:500; transition:0.3s;" 
-         onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Services</a>
-      <a href="https://thespapersandpublication.com/#testimonials" style="color:#ccc; text-decoration:none; font-weight:500; transition:0.3s;" 
-         onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Testimonials</a>
-      <a href="https://thespapersandpublication.com/#contact" style="color:#ccc; text-decoration:none; font-weight:500; transition:0.3s;" 
-         onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Contact</a>
-    </nav>
-
-    <!-- CTA Button -->
-    <div>
-      <a href="mailto:contact@thespapersandpublication.com" style="
-        background-color: #25D366;
-        color: #fff;
-        padding: 10px 20px;
-        border-radius: 25px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: 0.3s;
-      " onmouseover="this.style.backgroundColor='#1ebe57'" onmouseout="this.style.backgroundColor='#25D366'">
-        Contact Us
-      </a>
-    </div>
-
-    <!-- Hamburger Menu (Mobile) -->
-    <div id="hamburger" style="display:none; flex-direction:column; cursor:pointer;">
-      <span style="width:25px; height:3px; background:#ccc; margin:4px 0; transition:0.3s;"></span>
-      <span style="width:25px; height:3px; background:#ccc; margin:4px 0; transition:0.3s;"></span>
-      <span style="width:25px; height:3px; background:#ccc; margin:4px 0; transition:0.3s;"></span>
-    </div>
-
-  </div>
-
-  <!-- Mobile Menu -->
-  <div id="mobileMenu" style="display:none; flex-direction:column; background-color:#111; padding:10px 20px;">
-    <a href="/" style="color:#ccc; text-decoration:none; padding:10px 0; border-bottom:1px solid #333;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Home</a>
-    <a href="https://thespapersandpublication.com/#about" style="color:#ccc; text-decoration:none; padding:10px 0; border-bottom:1px solid #333;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">About</a>
-    <a href="https://thespapersandpublication.com/#services" style="color:#ccc; text-decoration:none; padding:10px 0; border-bottom:1px solid #333;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Services</a>
-   <a href="https://thespapersandpublication.com/#testimonials" style="color:#ccc; text-decoration:none; padding:10px 0; border-bottom:1px solid #333;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Testimonials</a>
-    <a href="https://thespapersandpublication.com/#contact" style="color:#ccc; text-decoration:none; padding:10px 0;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Contact</a>
-  </div>
-</header>
-<!-- ================= Hero Section ================= -->
-<section style="
-  background: url('https://thespapersandpublication.com/carousel-1.jpeg') center/cover no-repeat;
-  height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #fff;
-  position: relative;
-">
-  <!-- Overlay for better text visibility -->
-  <div style="
-    position: absolute;
-    top:0; left:0; width:100%; height:100%;
-    background-color: rgba(0,0,0,0.6);
-    z-index:1;
-  "></div>
-
-  <!-- Hero Content -->
-  <div style="position: relative; z-index:2; max-width:800px; padding: 0 20px;">
-    <h1 style="font-size:3rem; margin-bottom:20px; line-height:1.2;">Premier Academic Writing & Research Excellence</h1>
-    <p style="font-size:1.2rem; margin-bottom:30px; color:#ccc;">
-      99% success rate in Scopus/SCI journals. Tailored, ethical, and confidential support from thesis to journal submission, globally. 100% original work, delivered on time.
-    </p>
-    <a href="https://wa.me/+919208482366" style="
-      background-color: #25D366;
-      color: #fff;
-      padding: 15px 35px;
-      border-radius: 30px;
-      font-size:1.1rem;
-      font-weight:600;
-      text-decoration: none;
-      transition: 0.3s;
-    " onmouseover="this.style.backgroundColor='#1ebe57'" onmouseout="this.style.backgroundColor='#25D366'">
-      Chat On Whatsapp
-    </a>
-  </div>
-</section>
-<!-- ================= About Us Section ================= -->
-<section style="
-  background-color: #111; /* matching header/footer */
-  color: #fff;
-  padding: 80px 20px;
-  font-family: Arial, sans-serif;
-">
-  <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 40px;">
-
-    <!-- Text Column -->
-    <div style="flex: 1 1 500px;">
-      <h2 style="font-size: 2.2rem; margin-bottom: 20px; color: #25D366;">
-        About Us
-      </h2>
-      <p style="font-size: 1.1rem; line-height: 1.7; color: #ccc; margin-bottom: 20px;">
-        We empower scholars, researchers, and academics globally with publication-ready thesis, papers, and analyses. With a 99% success rate in Scopus/SCI journals, our services are ethical, confidential, and tailored to each client’s needs.
-      </p>
-      <p style="font-size: 1.1rem; line-height: 1.7; color: #ccc;">
-        From thesis proposals to journal submissions, advanced data analysis, and full-cycle research support, we provide 100% original work delivered on time. From Delhi to the world – your success story starts here.
-      </p>
-    </div>
-
-    <!-- Image Column -->
-    <div style="flex: 1 1 400px; text-align: center;">
-      <img src="https://thespapersandpublication.com/aboutus1.png" alt="About Us" style="max-width: 100%; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.5);">
-    </div>
-
-  </div>
-</section>
-  <!-- Responsive JS -->
-<script>
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  hamburger.addEventListener('click', () => {
-    mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
-  });
-
-  function resizeMenu() {
-    if (window.innerWidth <= 768) {
-      document.getElementById('navMenu').style.display = 'none';
-      hamburger.style.display = 'flex';
-    } else {
-      document.getElementById('navMenu').style.display = 'flex';
-      hamburger.style.display = 'none';
-      mobileMenu.style.display = 'none';
-    }
-  }
-
-  window.addEventListener('resize', resizeMenu);
-  window.addEventListener('load', resizeMenu);
-</script>
-    /* About Section */
+  /* About Section */
     .about {
         padding: 6.25rem 2.5rem;
         text-align: center;
@@ -1051,6 +892,166 @@
         height: 300px;
     }
     }
+  </style>
+</head>
+<body>
+  <header style="
+  background-color: #111;
+  color: #fff;
+  padding: 15px 20px;
+  font-family: Arial, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+">
+  <div style="max-width: 1200px; margin: auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+
+    <!-- Logo -->
+    <div>
+      <a href="/">
+        <img src="https://thespapersandpublication.com/logowithbg.png" alt="Company Logo" style="width:160px; height:auto;">
+      </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navMenu" style="display: flex; gap: 25px; flex-wrap: wrap;">
+      <a href="/" style="color:#ccc; text-decoration:none; font-weight:500; transition:0.3s;" 
+         onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Home</a>
+      <a href="https://thespapersandpublication.com/#about" style="color:#ccc; text-decoration:none; font-weight:500; transition:0.3s;" 
+         onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">About</a>
+      <a href="https://thespapersandpublication.com/#services" style="color:#ccc; text-decoration:none; font-weight:500; transition:0.3s;" 
+         onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Services</a>
+      <a href="https://thespapersandpublication.com/#testimonials" style="color:#ccc; text-decoration:none; font-weight:500; transition:0.3s;" 
+         onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Testimonials</a>
+      <a href="https://thespapersandpublication.com/#contact" style="color:#ccc; text-decoration:none; font-weight:500; transition:0.3s;" 
+         onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Contact</a>
+    </nav>
+
+    <!-- CTA Button -->
+    <div>
+      <a href="mailto:contact@thespapersandpublication.com" style="
+        background-color: #25D366;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.3s;
+      " onmouseover="this.style.backgroundColor='#1ebe57'" onmouseout="this.style.backgroundColor='#25D366'">
+        Contact Us
+      </a>
+    </div>
+
+    <!-- Hamburger Menu (Mobile) -->
+    <div id="hamburger" style="display:none; flex-direction:column; cursor:pointer;">
+      <span style="width:25px; height:3px; background:#ccc; margin:4px 0; transition:0.3s;"></span>
+      <span style="width:25px; height:3px; background:#ccc; margin:4px 0; transition:0.3s;"></span>
+      <span style="width:25px; height:3px; background:#ccc; margin:4px 0; transition:0.3s;"></span>
+    </div>
+
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" style="display:none; flex-direction:column; background-color:#111; padding:10px 20px;">
+    <a href="/" style="color:#ccc; text-decoration:none; padding:10px 0; border-bottom:1px solid #333;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Home</a>
+    <a href="https://thespapersandpublication.com/#about" style="color:#ccc; text-decoration:none; padding:10px 0; border-bottom:1px solid #333;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">About</a>
+    <a href="https://thespapersandpublication.com/#services" style="color:#ccc; text-decoration:none; padding:10px 0; border-bottom:1px solid #333;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Services</a>
+   <a href="https://thespapersandpublication.com/#testimonials" style="color:#ccc; text-decoration:none; padding:10px 0; border-bottom:1px solid #333;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Testimonials</a>
+    <a href="https://thespapersandpublication.com/#contact" style="color:#ccc; text-decoration:none; padding:10px 0;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Contact</a>
+  </div>
+</header>
+<!-- ================= Hero Section ================= -->
+<section style="
+  background: url('https://thespapersandpublication.com/carousel-1.jpeg') center/cover no-repeat;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+">
+  <!-- Overlay for better text visibility -->
+  <div style="
+    position: absolute;
+    top:0; left:0; width:100%; height:100%;
+    background-color: rgba(0,0,0,0.6);
+    z-index:1;
+  "></div>
+
+  <!-- Hero Content -->
+  <div style="position: relative; z-index:2; max-width:800px; padding: 0 20px;">
+    <h1 style="font-size:3rem; margin-bottom:20px; line-height:1.2;">Premier Academic Writing & Research Excellence</h1>
+    <p style="font-size:1.2rem; margin-bottom:30px; color:#ccc;">
+      99% success rate in Scopus/SCI journals. Tailored, ethical, and confidential support from thesis to journal submission, globally. 100% original work, delivered on time.
+    </p>
+    <a href="https://wa.me/+919208482366" style="
+      background-color: #25D366;
+      color: #fff;
+      padding: 15px 35px;
+      border-radius: 30px;
+      font-size:1.1rem;
+      font-weight:600;
+      text-decoration: none;
+      transition: 0.3s;
+    " onmouseover="this.style.backgroundColor='#1ebe57'" onmouseout="this.style.backgroundColor='#25D366'">
+      Chat On Whatsapp
+    </a>
+  </div>
+</section>
+<!-- ================= About Us Section ================= -->
+<section style="
+  background-color: #111; /* matching header/footer */
+  color: #fff;
+  padding: 80px 20px;
+  font-family: Arial, sans-serif;
+">
+  <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 40px;">
+
+    <!-- Text Column -->
+    <div style="flex: 1 1 500px;">
+      <h2 style="font-size: 2.2rem; margin-bottom: 20px; color: #25D366;">
+        About Us
+      </h2>
+      <p style="font-size: 1.1rem; line-height: 1.7; color: #ccc; margin-bottom: 20px;">
+        We empower scholars, researchers, and academics globally with publication-ready thesis, papers, and analyses. With a 99% success rate in Scopus/SCI journals, our services are ethical, confidential, and tailored to each client’s needs.
+      </p>
+      <p style="font-size: 1.1rem; line-height: 1.7; color: #ccc;">
+        From thesis proposals to journal submissions, advanced data analysis, and full-cycle research support, we provide 100% original work delivered on time. From Delhi to the world – your success story starts here.
+      </p>
+    </div>
+
+    <!-- Image Column -->
+    <div style="flex: 1 1 400px; text-align: center;">
+      <img src="https://thespapersandpublication.com/aboutus1.png" alt="About Us" style="max-width: 100%; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.5);">
+    </div>
+
+  </div>
+</section>
+  <!-- Responsive JS -->
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+  });
+
+  function resizeMenu() {
+    if (window.innerWidth <= 768) {
+      document.getElementById('navMenu').style.display = 'none';
+      hamburger.style.display = 'flex';
+    } else {
+      document.getElementById('navMenu').style.display = 'flex';
+      hamburger.style.display = 'none';
+      mobileMenu.style.display = 'none';
+    }
+  }
+
+  window.addEventListener('resize', resizeMenu);
+  window.addEventListener('load', resizeMenu);
+</script>
+    
     </style>
     <section class="about" id="about">
             <h2>About Us</h2>
@@ -1507,6 +1508,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </body>
 </html>
+
 
 
 
