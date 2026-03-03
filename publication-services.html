@@ -3,6 +3,68 @@
 <head>
     <title>Publication Services</title>
     <link rel="stylesheet" href="style.css">
+    <style>/* Hero Section */
+.pub-hero {
+    background: url('your-image.jpg') center/cover no-repeat;
+    height: 350px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pub-overlay {
+    background: rgba(0,0,0,0.6);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pub-overlay h1 {
+    font-size: 48px;
+}
+
+.pub-content {
+    padding: 60px 20px;
+    background: #f4f4f4;
+}
+
+.pub-content .container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.pub-content h2 {
+    margin-bottom: 20px;
+}
+
+.pub-content ul {
+    margin-top: 20px;
+    line-height: 1.8;
+}
+
+.pub-cta {
+    background: #1e40af;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.cta-btn {
+    display: inline-block;
+    background: white;
+    color: #1e40af;
+    padding: 12px 35px;
+    border-radius: 50px;
+    margin-top: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+    </style>
 </head>
 
 <body>
@@ -74,8 +136,45 @@
     <a href="https://thespapersandpublication.com/#contact" style="color:#ccc; text-decoration:none; padding:10px 0;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Contact</a>
   </div>
 </header>
-    
-    <!-- PAGE CONTENT GOES HERE -->
+    <!-- HERO SECTION GOES HERE -->
+
+    <section class="pub-hero">
+    <div class="pub-overlay">
+        <h1>Publication Services</h1>
+        <p>End-to-end support to get your research published in top-tier journals.</p>
+    </div>
+</section>
+    <!--Content Section-->
+    <section class="pub-content">
+    <div class="container">
+        <h2>Professional Journal Publication Assistance</h2>
+
+        <p>
+        At APA PUB, we provide expert publication support services to help scholars, researchers,
+        and professionals get published in reputed journals including Scopus, Web of Science,
+        UGC CARE, and SCI-indexed journals.
+        </p>
+
+        <h3>Our Publication Services Include:</h3>
+
+        <ul>
+            <li><strong>Journal Shortlisting:</strong> Based on your research domain and scope.</li>
+            <li><strong>Manuscript Formatting:</strong> Compliance with journal guidelines.</li>
+            <li><strong>Plagiarism Reduction:</strong> Rewriting and originality enhancement.</li>
+            <li><strong>Cover Letter & Submission:</strong> Complete submission support.</li>
+            <li><strong>Peer Review Response:</strong> Help with revisions and rebuttal letters.</li>
+            <li><strong>Publication Tracking:</strong> Updates till final acceptance.</li>
+        </ul>
+    </div>
+</section>
+    <!-- CTA -->
+    <section class="pub-cta">
+    <div class="container">
+        <h2>Accelerate Your Journey to Publication</h2>
+        <p>Join hundreds of scholars who trust APA PUB for expert guidance.</p>
+        <a href="contact.html" class="cta-btn">Let's Get Published</a>
+    </div>
+</section>
 
     <!-- SAME FOOTER -->
     <footer style="
