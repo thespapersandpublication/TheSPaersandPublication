@@ -1,1 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Academic Writing</title>
+    <link rel="stylesheet" href="style.css">
+    <style>/* Hero Section */
+.pub-hero {
+    background: url('carousel-1.jpeg') center/cover no-repeat;
+    height: 350px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.pub-overlay {
+    background: rgba(0,0,0,0.6);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pub-overlay h1 {
+    font-size: 48px;
+}
+
+.pub-content {
+    padding: 60px 20px;
+    background: #f4f4f4;
+}
+
+.pub-content .container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.pub-content h2 {
+    margin-bottom: 20px;
+}
+
+.pub-content ul {
+    margin-top: 20px;
+    line-height: 1.8;
+}
+
+.pub-cta {
+    background: #1e40af;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.cta-btn {
+    display: inline-block;
+    background: white;
+    color: #1e40af;
+    padding: 12px 35px;
+    border-radius: 50px;
+    margin-top: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+    </style>
+    <style>
+        /* ===== Trusted Publications Section ===== */
+
+.trusted-section {
+    background: #f4f4f4;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.trusted-section h2 {
+    margin-bottom: 40px;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.trusted-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.trusted-logos img {
+    max-height: 60px;
+    object-fit: contain;
+    transition: 0.3s ease;
+}
+
+.trusted-logos img:hover {
+    transform: scale(1.1);
+}
+    </style>
+    <style>
+        /* ===== Pricing Highlight Section ===== */
+
+.pricing-highlight {
+    background: #ffffff;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.pricing-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.pricing-box {
+    max-width: 500px;
+    margin: auto;
+    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    color: white;
+    padding: 50px 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+.price-amount {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.price-subtext {
+    font-size: 16px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.price-description {
+    font-size: 15px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.pricing-btn {
+    display: inline-block;
+    background: white;
+    color: #0ea5e9;
+    padding: 12px 35px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.pricing-btn:hover {
+    background: #f3f4f6;
+}
+    </style>
+  <style>
+    /* ===== Academic Writing Section ===== */
+
+.academic-section {
+    background: #f8f9fb;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.academic-small-title {
+    color: #2563eb;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.academic-main-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 60px;
+}
+
+.academic-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.academic-card {
+    background: #ffffff;
+    padding: 40px 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: 0.3s ease;
+}
+
+.academic-card:hover {
+    transform: translateY(-8px);
+}
+
+.academic-card .icon {
+    font-size: 40px;
+    color: #2563eb;
+    margin-bottom: 20px;
+}
+
+.academic-card h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.academic-card p {
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .academic-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .academic-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .academic-main-title {
+        font-size: 26px;
+    }
+}
+  </style>
+</head>
+
+<body>
+
+    <!-- SAME HEADER -->
+  <header style="
+  background-color: #111;
+  color: #fff;
+  padding: 15px 20px;
+  font-family: Arial, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+">
+  <div style="max-width: 1200px; margin: auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+
+    <!-- Logo -->
+    <div>
+      <a href="/">
+        <img src="https://thespapersandpublication.com/logowithbg.png" alt="Company Logo" style="width:160px; height:auto;">
+      </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navMenu" style="display: flex; gap: 25px; flex-wrap: wrap;">
+      <a href="/" style="color:#ccc; text-decoration:none; font-weight:500; transition:0.3s;" 
+         onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Home</a>
+      <a href="https://thespapersandpublication.com/#about" style="color:#ccc; text-decoration:none; font-weight:500; transition:0.3s;" 
+         onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">About</a>
+      <a href="https://thespapersandpublication.com/#services" style="color:#ccc; text-decoration:none; font-weight:500; transition:0.3s;" 
+         onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Services</a>
+      <a href="https://thespapersandpublication.com/#testimonials" style="color:#ccc; text-decoration:none; font-weight:500; transition:0.3s;" 
+         onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Testimonials</a>
+      <a href="https://thespapersandpublication.com/#contact" style="color:#ccc; text-decoration:none; font-weight:500; transition:0.3s;" 
+         onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Contact</a>
+    </nav>
+
+    <!-- CTA Button -->
+    <div>
+      <a href="mailto:contact@thespapersandpublication.com" style="
+        background-color: #25D366;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.3s;
+      " onmouseover="this.style.backgroundColor='#1ebe57'" onmouseout="this.style.backgroundColor='#25D366'">
+        Contact Us
+      </a>
+    </div>
+
+    <!-- Hamburger Menu (Mobile) -->
+    <div id="hamburger" style="display:none; flex-direction:column; cursor:pointer;">
+      <span style="width:25px; height:3px; background:#ccc; margin:4px 0; transition:0.3s;"></span>
+      <span style="width:25px; height:3px; background:#ccc; margin:4px 0; transition:0.3s;"></span>
+      <span style="width:25px; height:3px; background:#ccc; margin:4px 0; transition:0.3s;"></span>
+    </div>
+
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" style="display:none; flex-direction:column; background-color:#111; padding:10px 20px;">
+    <a href="/" style="color:#ccc; text-decoration:none; padding:10px 0; border-bottom:1px solid #333;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Home</a>
+    <a href="https://thespapersandpublication.com/#about" style="color:#ccc; text-decoration:none; padding:10px 0; border-bottom:1px solid #333;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">About</a>
+    <a href="https://thespapersandpublication.com/#services" style="color:#ccc; text-decoration:none; padding:10px 0; border-bottom:1px solid #333;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Services</a>
+   <a href="https://thespapersandpublication.com/#testimonials" style="color:#ccc; text-decoration:none; padding:10px 0; border-bottom:1px solid #333;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Testimonials</a>
+    <a href="https://thespapersandpublication.com/#contact" style="color:#ccc; text-decoration:none; padding:10px 0;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Contact</a>
+  </div>
+</header>
+    <!-- HERO SECTION GOES HERE -->
+
+    <section class="pub-hero">
+    <div class="pub-overlay">
+        <h1>Academic writing</h1>
+        <p>Clear, original, and impactful academic content tailored for excellence.</p>
+    </div>
+</section>
+    <!--Content Section-->
+    <section class="pub-content">
+    <div class="container">
+        <h2>Academic Writing that Gets Noticed
+</h2>
+
+        <p>
+        At THE S PAPERS AND PUBLICATION, we offer professional academic writing services tailored for researchers, scholars, and students across all disciplines. Our writers are subject-matter experts with extensive experience in crafting publication-ready content that meets international standards.<br>
+          <br>
+        Whether you're preparing a research article, review paper, conference submission, or university assignment, our goal is to ensure your work is clear, structured, original, and citation-compliant (APA, MLA, IEEE, Chicago, and more).<br>
+<br>
+Our content goes through rigorous review and quality checks to help you meet deadlines with confidence — and stand out where it matters.
+        </p>
+    </div>
+</section>
+  <section class="academic-section">
+  <div class="container">
+
+    <p class="academic-small-title">Our Academic Writing Includes</p>
+    <h2 class="academic-main-title">
+      Services Tailored to Your Research Goals
+    </h2>
+
+    <div class="academic-grid">
+
+      <div class="academic-card">
+        <div class="icon">📘</div>
+        <h3>Research Articles</h3>
+        <p>Journal-specific, peer-reviewed content structured for top indexing platforms.</p>
+      </div>
+
+      <div class="academic-card">
+        <div class="icon">📜</div>
+        <h3>Review Papers</h3>
+        <p>Critical literature reviews with gap analysis and structured referencing.</p>
+      </div>
+
+      <div class="academic-card">
+        <div class="icon">✒️</div>
+        <h3>Essays & Assignments</h3>
+        <p>Custom academic tasks that meet your subject, rubric, and formatting needs.</p>
+      </div>
+
+      <div class="academic-card">
+        <div class="icon">🎤</div>
+        <h3>Conference Papers</h3>
+        <p>High-impact papers tailored for presentation and international conferences.</p>
+      </div>
+
+      <div class="academic-card">
+        <div class="icon">📊</div>
+        <h3>Academic Reports</h3>
+        <p>Formal documentation with analysis, citations, and formatting precision.</p>
+      </div>
+
+      <div class="academic-card">
+        <div class="icon">📄</div>
+        <h3>Case Studies & White Papers</h3>
+        <p>Research-based case insights and white papers for academic or industry use.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+    <section class="pricing-highlight">
+  <div class="container">
+    
+    <h2 class="pricing-title">Affordable Publication Packages</h2>
+
+    <div class="pricing-box">
+      <div class="price-amount">₹14,999</div>
+      <p class="price-subtext">Basic Package</p>
+      <p class="price-description">
+        Complete end-to-end publication assistance including journal selection,
+        formatting, plagiarism check, submission & review response support.
+      </p>
+      <a href="https://wa.me/+919298482366" class="pricing-btn">Discuss Now</a>
+    </div>
+
+  </div>
+</section>
+    <section class="trusted-section">
+  <div class="container">
+    <h2>Trusted by Industry Renowned Publications</h2>
+
+    <div class="trusted-logos">
+
+      <img src="ex1.jpg" alt="DOAJ">
+      <img src="ex2.jpg" alt="SCI Journal">
+      <img src="ex3.jpg" alt="PubMed">
+      <img src="ex4.jpg" alt="Clarivate">
+      <img src="ex5.jpg" alt="Scopus">
+      <img src="ex6.jpg" alt="Springer">
+
+    </div>
+  </div>
+</section>
+    <!-- CTA -->
+    <section class="pub-cta">
+    <div class="container">
+        <h2>Ready to Elevate Your Academic Writing?</h2>
+        <p>JConnect with our expert team today for research-backed, publication-ready content tailored to your needs.</p>
+        <a href="https://wa.me/+9208482366" class="cta-btn">Get Started</a>
+    </div>
+</section>
+
+    <!-- SAME FOOTER -->
+    <footer style="
+  background-color: #111;
+  color: #fff;
+  padding: 50px 20px;
+  font-family: Arial, sans-serif;
+">
+  <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between;">
+
+    <!-- Logo & About -->
+    <div style="flex: 1 1 250px; margin-bottom: 20px;">
+      <h2>
+  <img src="https://thespapersandpublication.com/logowithbg.png" alt="Company Logo" style="width: 160px; height: auto;">
+</h2>
+      <p style="color: #ccc; line-height: 1.6;">
+        Delhi-based leaders in academic excellence.<br>
+        Empowering research since 2015. Excellence in<br>
+        every page. 100% satisfaction guaranteed.<br>
+        Free consultation and submission support.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div style="flex: 1 1 200px; margin-bottom: 20px;">
+      <h3 style="color: #fff;">Quick Links</h3>
+      <ul style="list-style: none; padding: 0; color: #ccc; line-height: 2;">
+        <li><a href="https://thespapersandpublication.com" style="color: #ccc; text-decoration: none;">Home</a></li>
+        <li><a href="https://thespapersandpublication.com/#about" style="color: #ccc; text-decoration: none;">About Us</a></li>
+        <li><a href="https://thespapersandpublication.com/#services" style="color: #ccc; text-decoration: none;">Services</a></li>
+        <li><a href="https://thespapersandpublication.com/#contact" style="color: #ccc; text-decoration: none;">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div style="flex: 1 1 250px; margin-bottom: 20px;">
+      <h3 style="color: #fff;">Contact Us</h3>
+      <p style="color: #ccc; line-height: 1.6;">
+        📍 Address: 29/17,First Floor,West Patel Nagar, Central Delhi, DELHI 110008<br>
+        📧 Email: <a href="mailto:contact@thespapersandpublication.com" style="color: #25D366; text-decoration: none;">contact@thespapersandpublication.com</a><br>
+        📞 Phone: <a href="tel:+919208482366" style="color: #25D366; text-decoration: none;">+91 9208482366</a>
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Social Icons -->
+  <div style="text-align: center; margin-top: 30px;">
+    <a href="https://www.facebook.com/profile.php?id=61581000752337" style="margin: 0 10px; color: #ccc; font-size: 24px; text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://www.instagram.com/the_spapers" style="margin: 0 10px; color: #ccc; font-size: 24px; text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div style="text-align: center; color: #777; padding-top: 20px; border-top: 1px solid #333;">
+    © 2026 The S Papers and Publication. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>
