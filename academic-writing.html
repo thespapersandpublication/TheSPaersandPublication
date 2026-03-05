@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academic Writing</title>
     <link rel="stylesheet" href="style.css">
-    <style>/* Hero Section */
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+     body{
+font-family:'Poppins', sans-serif;
+}   
+        /* Hero Section */
 .pub-hero {
     background: url('carousel-1.jpeg') center/cover no-repeat;
     height: 350px;
@@ -148,6 +154,88 @@ font-weight:bold;
 
 .price-btn:hover{
 background:#1f3a96;
+}
+        /* ===== MOBILE RESPONSIVE ===== */
+
+@media (max-width: 992px){
+
+.pub-overlay h1{
+font-size:36px;
+}
+
+.academic-main-title{
+font-size:28px;
+}
+
+}
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+/* Hero */
+.pub-hero{
+height:260px;
+}
+
+.pub-overlay h1{
+font-size:28px;
+}
+
+.pub-overlay p{
+font-size:14px;
+padding:0 20px;
+}
+
+/* Content */
+.pub-content{
+padding:40px 15px;
+}
+
+/* Academic grid */
+.academic-grid{
+grid-template-columns:1fr;
+gap:20px;
+}
+
+/* Pricing */
+.pricing-box{
+width:90%;
+padding:30px 20px;
+}
+
+.pricing-box h1{
+font-size:32px;
+}
+
+/* Trusted logos */
+.trusted-logos{
+gap:20px;
+}
+
+.trusted-logos img{
+max-height:40px;
+}
+
+/* CTA */
+.pub-cta{
+padding:40px 15px;
+}
+
+}
+
+/* NAVBAR MOBILE */
+
+@media (max-width:900px){
+
+#navMenu{
+display:none !important;
+}
+
+#hamburger{
+display:flex !important;
+}
+
 }
     </style>
   <style>
@@ -384,7 +472,7 @@ Our content goes through rigorous review and quality checks to help you meet dea
 <p>✔ Publication Ready Content</p>
 <p>✔ Meets International Standards</p>
 
-<a href="https://wa.me/923001234567?text=Hello%20I%20am%20interested%20in%20your%20Basic%Academic Writing%20Package" target="_blank" class="price-btn">
+<a href="https://wa.me/+919208482366?text=Hello%20I%20am%20interested%20in%20your%20Academic%20Writing%20Package" target="_blank" class="price-btn">
 Get Started
 </a>
 
@@ -478,6 +566,22 @@ Get Started
     © 2026 The S Papers and Publication. All rights reserved.
   </div>
 </footer>
+<script>
 
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+
+hamburger.addEventListener("click", function(){
+    
+if(mobileMenu.style.display === "flex"){
+mobileMenu.style.display = "none";
+}
+else{
+mobileMenu.style.display = "flex";
+}
+
+});
+
+</script>
 </body>
 </html>
