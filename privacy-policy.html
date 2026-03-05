@@ -101,9 +101,15 @@ border-radius:25px;
     <a href="https://thespapersandpublication.com/#contact" style="color:#ccc; text-decoration:none; padding:10px 0;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Contact</a>
   </div>
 </header>
+<section class="privacy-hero">
+  <div class="privacy-overlay">
+    <h1>Privacy Policy</h1>
+    <p>Your privacy is important to us.</p>
+  </div>
+</section>
   <!-- ================= Hero Section ================= -->
 <section style="
-  background: url('https://thespapersandpublication.com/carousel-1.jpeg') center/cover no-repeat;
+  background: url('https://thespapersandpublication.com/privacyimage.png') center/cover no-repeat;
   height: 80vh;
   display: flex;
   align-items: center;
@@ -149,6 +155,51 @@ border-radius:25px;
   window.addEventListener('resize', resizeMenu);
   window.addEventListener('load', resizeMenu);
 </script>
+
+  /* Privacy Hero Section */
+.privacy-hero{
+  background-image:url('privacy-banner.jpg'); /* your image */
+  background-size:cover;
+  background-position:center;
+  height:350px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+}
+
+.privacy-overlay{
+  background:rgba(0,0,0,0.5);
+  padding:20px 40px;
+  border-radius:8px;
+}
+
+.privacy-overlay h1{
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+.privacy-overlay p{
+  font-size:18px;
+}
+
+/* Mobile Responsive */
+@media (max-width:768px){
+
+  .privacy-hero{
+    height:180px;
+  }
+
+  .privacy-overlay h1{
+    font-size:26px;
+  }
+
+  .privacy-overlay p{
+    font-size:14px;
+  }
+
+}
     
     </style>
 
