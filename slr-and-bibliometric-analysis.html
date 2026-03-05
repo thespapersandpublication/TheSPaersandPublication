@@ -222,6 +222,32 @@ font-size:26px;
 
 }
 
+  /* MOBILE NAVBAR FIX */
+
+@media(max-width:768px){
+
+#navMenu{
+display:none !important;
+}
+
+#hamburger{
+display:flex !important;
+}
+
+header .cta-btn{
+display:none;
+}
+
+#mobileMenu{
+display:none;
+flex-direction:column;
+}
+
+#mobileMenu.active{
+display:flex;
+}
+
+}
 </style>
 
 </head>
@@ -278,7 +304,7 @@ font-size:26px;
     </div>
 
     <!-- Hamburger Menu (Mobile) -->
-    <div id="hamburger" style="display:none; flex-direction:column; cursor:pointer;">
+    <div id="hamburger" style="display:none; flex-direction:column; cursor:pointer; margin-left:auto;">
       <span style="width:25px; height:3px; background:#ccc; margin:4px 0; transition:0.3s;"></span>
       <span style="width:25px; height:3px; background:#ccc; margin:4px 0; transition:0.3s;"></span>
       <span style="width:25px; height:3px; background:#ccc; margin:4px 0; transition:0.3s;"></span>
@@ -475,5 +501,15 @@ Talk to Our Experts
 </footer>
   <!-- Font Awesome CDN for Social Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script>
+
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+
+hamburger.addEventListener("click", function(){
+mobileMenu.classList.toggle("active");
+});
+
+</script>
 </body>
 </html>
