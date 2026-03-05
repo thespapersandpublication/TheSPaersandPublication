@@ -101,10 +101,59 @@ border-radius:25px;
     <a href="https://thespapersandpublication.com/#contact" style="color:#ccc; text-decoration:none; padding:10px 0;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Contact</a>
   </div>
 </header>
+  <!-- ================= Hero Section ================= -->
+<section style="
+  background: url('https://thespapersandpublication.com/carousel-1.jpeg') center/cover no-repeat;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+">
+  <!-- Overlay for better text visibility -->
+  <div style="
+    position: absolute;
+    top:0; left:0; width:100%; height:100%;
+    background-color: rgba(0,0,0,0.6);
+    z-index:1;
+  "></div>
+
+  <!-- Hero Content -->
+  <div style="position: relative; z-index:2; max-width:800px; padding: 0 20px;">
+    <h1 style="font-size:3rem; margin-bottom:20px; line-height:1.2;">Privacy Policy</h1>
+    <p style="font-size:1.2rem; margin-bottom:30px; color:#ccc;">
+    </p>
+    </div>
+</section>
+  <!-- Responsive JS -->
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+  });
+
+  function resizeMenu() {
+    if (window.innerWidth <= 768) {
+      document.getElementById('navMenu').style.display = 'none';
+      hamburger.style.display = 'flex';
+    } else {
+      document.getElementById('navMenu').style.display = 'flex';
+      hamburger.style.display = 'none';
+      mobileMenu.style.display = 'none';
+    }
+  }
+
+  window.addEventListener('resize', resizeMenu);
+  window.addEventListener('load', resizeMenu);
+</script>
+    
+    </style>
+
 
 <div class="container">
-
-<h1>Privacy Policy</h1>
 
 <p>
 At THE S PAPERS AND PUBLICATION, accessible via https://thespapersandpublication.com, we prioritize the privacy of our users.
