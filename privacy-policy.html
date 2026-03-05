@@ -91,12 +91,12 @@ box-shadow:0 2px 6px rgba(0,0,0,0.4);
 <!-- Logo -->
 <div>
 <a href="https://thespapersandpublication.com">
-<img src="https://thespapersandpublication.com/logowithbg.png" style="width:160px;height:auto;">
+<img src="https://thespapersandpublication.com/logowithbg.png" style="width:160px;">
 </a>
 </div>
 
-<!-- Navigation -->
-<nav id="navMenu" style="display:flex;gap:25px;flex-wrap:wrap;">
+<!-- Desktop Navigation -->
+<nav id="navMenu" style="display:flex;gap:25px;">
 <a href="https://thespapersandpublication.com" style="color:#ccc;text-decoration:none;">Home</a>
 <a href="https://thespapersandpublication.com/#about" style="color:#ccc;text-decoration:none;">About</a>
 <a href="https://thespapersandpublication.com/#services" style="color:#ccc;text-decoration:none;">Services</a>
@@ -104,7 +104,7 @@ box-shadow:0 2px 6px rgba(0,0,0,0.4);
 <a href="https://thespapersandpublication.com/#contact" style="color:#ccc;text-decoration:none;">Contact</a>
 </nav>
 
-<!-- Contact Button -->
+<!-- CTA -->
 <a href="mailto:contact@thespapersandpublication.com" style="
 background:#25D366;
 color:#fff;
@@ -116,9 +116,25 @@ font-weight:600;
 Contact Us
 </a>
 
+<!-- Hamburger -->
+<div id="hamburger" style="display:none;flex-direction:column;cursor:pointer;">
+<span style="width:25px;height:3px;background:#ccc;margin:4px 0;"></span>
+<span style="width:25px;height:3px;background:#ccc;margin:4px 0;"></span>
+<span style="width:25px;height:3px;background:#ccc;margin:4px 0;"></span>
 </div>
-</header>
 
+</div>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" style="display:none;flex-direction:column;background:#111;padding:10px 20px;">
+<a href="https://thespapersandpublication.com" style="color:#ccc;padding:10px 0;text-decoration:none;">Home</a>
+<a href="https://thespapersandpublication.com/#about" style="color:#ccc;padding:10px 0;text-decoration:none;">About</a>
+<a href="https://thespapersandpublication.com/#services" style="color:#ccc;padding:10px 0;text-decoration:none;">Services</a>
+<a href="https://thespapersandpublication.com/#testimonials" style="color:#ccc;padding:10px 0;text-decoration:none;">Testimonials</a>
+<a href="https://thespapersandpublication.com/#contact" style="color:#ccc;padding:10px 0;text-decoration:none;">Contact</a>
+</div>
+
+</header>
 
 <!-- PAGE CONTENT -->
 
@@ -260,5 +276,35 @@ Empowering research since 2015. Excellence in every page.
 </footer>
 <!-- Font Awesome CDN for Social Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+      <script>
+
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+const navMenu = document.getElementById("navMenu");
+
+hamburger.addEventListener("click", () => {
+mobileMenu.style.display =
+mobileMenu.style.display === "flex" ? "none" : "flex";
+});
+
+function checkScreen() {
+
+if(window.innerWidth <= 768){
+navMenu.style.display = "none";
+hamburger.style.display = "flex";
+}
+else{
+navMenu.style.display = "flex";
+hamburger.style.display = "none";
+mobileMenu.style.display = "none";
+}
+
+}
+
+window.addEventListener("resize",checkScreen);
+window.addEventListener("load",checkScreen);
+
+</script>
 </body>
 </html>
