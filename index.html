@@ -1,1630 +1,496 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>The S Papers and Publication</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-  <!-- Tailwind CSS CDN -->
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <!-- AOS Library for Animations -->
-<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <!-- Font Awesome for Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-<style> 
-  body { margin:0; font-family: Arial, sans-serif; }
-    a { transition: 0.3s; }
-  /* About Section */
-    .about {
-        padding: 6.25rem 2.5rem;
-        text-align: center;
-        background-color: #f9f9f9;
-    }
 
-    .about h2 {
-        font-family: 'Dancing Script', cursive;
-        font-size: clamp(2rem, 5vw, 3rem);
-        color: #1a2a44;
-        margin-bottom: 1.25rem;
-        animation: fadeIn 1s ease-in-out;
-    }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    .about p {
-        max-width: 800px;
-        margin: 0 auto;
-        font-size: 1rem;
-        line-height: 1.8;
-        color: #666;
-        animation: fadeIn 1s ease-in-out 0.5s;
-    }
+<style>
 
-    /* Experience Section */
-    .experience {
-        padding: 5rem 2.5rem;
-        text-align: center;
-        background: url('https://www.transparenttextures.com/patterns/asfalt-light.png'), linear-gradient(135deg, #1a2a44, #2c3e50);
-        background-size: cover;
-        color: white;
-    }
-
-    .experience h2 {
-        font-family: 'Dancing Script', cursive;
-        font-size: clamp(2rem, 5vw, 3rem);
-        margin-bottom: 2.5rem;
-        animation: fadeIn 1s ease-in-out;
-    }
-
-    .experience-grid {
-        display: flex;
-        justify-content: center;
-        gap: 2.5rem;
-        flex-wrap: wrap;
-    }
-
-    .experience-item {
-        max-width: 200px;
-    }
-
-    .experience-item h3 {
-        font-size: 2.25rem;
-        font-weight: 700;
-        margin-bottom: 0.625rem;
-        color: #ff6f61;
-    }
-
-    .experience-item p {
-        font-size: 1rem;
-        color: #ddd;
-    }
-
-    /* Services Section */
-    .services {
-        padding: 6.25rem 2.5rem;
-        text-align: center;
-        background-color: white;
-    }
-
-    .services h2 {
-        font-family: 'Dancing Script', cursive;
-        font-size: clamp(2rem, 5vw, 3rem);
-        color: #1a2a44;
-        margin-bottom: 3.75rem;
-        animation: fadeIn 1s ease-in-out;
-    }
-
-    .service-grid {
-        display: flex;
-        justify-content: center;
-        gap: 1.875rem;
-        flex-wrap: wrap;
-    }
-
-    .service-item {
-        max-width: 350px;
-        text-align: left;
-        transition: transform 0.3s;
-    }
-
-    .service-item:hover {
-        transform: translateY(-10px);
-    }
-
-    .service-item img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        border-radius: 10px;
-        margin-bottom: 1.25rem;
-        loading: lazy;
-    }
-
-    .service-item h3 {
-        font-size: 1.5rem;
-        color: #1a2a44;
-        margin-bottom: 0.9375rem;
-        transition: color 0.3s;
-    }
-
-    .service-item:hover h3 {
-        color: #ff6f61;
-        animation: bounce 0.5s ease-in-out;
-    }
-
-    .service-item p {
-        font-size: 1rem;
-        color: #666;
-        line-height: 1.6;
-    }
-
-    /* Portfolio Section */
-    .portfolio {
-        padding: 6.25rem 2.5rem;
-        text-align: center;
-        background: url('https://www.transparenttextures.com/patterns/asfalt-light.png'), #f9f9f9;
-        background-size: cover;
-    }
-
-    .portfolio h2 {
-        font-family: 'Dancing Script', cursive;
-        font-size: clamp(2rem, 5vw, 3rem);
-        color: #1a2a44;
-        margin-bottom: 3.75rem;
-        animation: fadeIn 1s ease-in-out;
-    }
-
-    .portfolio-grid {
-        display: flex;
-        justify-content: center;
-        gap: 1.25rem;
-        flex-wrap: wrap;
-    }
-
-    .portfolio-item {
-        position: relative;
-        max-width: 350px;
-        overflow: hidden;
-        border-radius: 10px;
-    }
-
-    .portfolio-item img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        display: block;
-        transition: transform 0.3s;
-        loading: lazy;
-    }
-
-    .portfolio-item:hover img {
-        transform: scale(1.1);
-    }
-
-    .portfolio-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-        transition: opacity 0.3s;
-        touch-action: none;
-    }
-
-    .portfolio-item:hover .portfolio-overlay,
-    .portfolio-item:active .portfolio-overlay {
-        opacity: 1;
-    }
-
-    .portfolio-overlay span {
-        color: white;
-        font-size: 1.25rem;
-        font-weight: 500;
-    }
-
-    /* Upcoming Events Section */
-    .upcoming-events {
-        padding: 6.25rem 2.5rem;
-        text-align: center;
-        background-color: white;
-    }
-
-    .upcoming-events h2 {
-        font-family: 'Dancing Script', cursive;
-        font-size: clamp(2rem, 5vw, 3rem);
-        color: #1a2a44;
-        margin-bottom: 3.75rem;
-        animation: fadeIn 1s ease-in-out;
-    }
-
-    .event-grid {
-        display: flex;
-        justify-content: center;
-        gap: 1.875rem;
-        flex-wrap: wrap;
-    }
-
-    .event-item {
-        max-width: 350px;
-        background-color: #f9f9f9;
-        border-radius: 10px;
-        overflow: hidden;
-        transition: transform 0.3s;
-    }
-
-    .event-item:hover {
-        transform: scale(1.05);
-    }
-
-    .event-item img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        loading: lazy;
-    }
-
-    .event-item .event-info {
-        padding: 1.25rem;
-        text-align: left;
-    }
-
-    .event-item h3 {
-        font-size: 1.25rem;
-        color: #1a2a44;
-        margin-bottom: 0.625rem;
-    }
-
-    .event-item p {
-        font-size: 0.875rem;
-        color: #666;
-        margin-bottom: 0.625rem;
-    }
-
-    .event-item .event-date {
-        color: #ff6f61;
-        font-weight: 500;
-    }
-
-    /* CTA Section */
-    .cta-section {
-        padding: 5rem 2.5rem;
-        text-align: center;
-        background: linear-gradient(135deg, #ff6f61, #e65a50);
-        color: white;
-    }
-
-    .cta-section h2 {
-        font-family: 'Dancing Script', cursive;
-        font-size: clamp(2rem, 5vw, 3rem);
-        margin-bottom: 1.25rem;
-        animation: fadeIn 1s ease-in-out;
-    }
-
-    .cta-section p {
-        font-size: 1.125rem;
-        margin-bottom: 1.875rem;
-        animation: fadeIn 1s ease-in-out 0.5s;
-    }
-
-    /* Why Choose Us Section */
-    .why-choose-us {
-        padding: 6.25rem 2.5rem;
-        text-align: center;
-        background-color: white;
-    }
-
-    .why-choose-us h2 {
-        font-family: 'Dancing Script', cursive;
-        font-size: clamp(2rem, 5vw, 3rem);
-        color: #1a2a44;
-        margin-bottom: 3.75rem;
-        animation: fadeIn 1s ease-in-out;
-    }
-
-    .why-grid {
-        display: flex;
-        justify-content: center;
-        gap: 1.875rem;
-        flex-wrap: wrap;
-    }
-
-    .why-item {
-        max-width: 350px;
-        text-align: left;
-    }
-
-    .why-item h3 {
-        font-size: 1.5rem;
-        color: #1a2a44;
-        margin-bottom: 0.9375rem;
-    }
-
-    .why-item p {
-        font-size: 1rem;
-        color: #666;
-        line-height: 1.6;
-    }
-
-    /* Testimonials Section */
-    .testimonials {
-        padding: 6.25rem 2.5rem;
-        text-align: center;
-        background: url('https://www.transparenttextures.com/patterns/asfalt-light.png'), white;
-        background-size: cover;
-    }
-
-    .testimonials h2 {
-        font-family: 'Dancing Script', cursive;
-        font-size: clamp(2rem, 5vw, 3rem);
-        color: #1a2a44;
-        margin-bottom: 3.75rem;
-        animation: fadeIn 1s ease-in-out;
-    }
-
-    .testimonial-grid {
-        display: flex;
-        justify-content: center;
-        gap: 1.875rem;
-        flex-wrap: wrap;
-    }
-
-    .testimonial-item {
-        max-width: 350px;
-        background-color: #f9f9f9;
-        padding: 1.875rem;
-        border-radius: 10px;
-        position: relative;
-        transition: transform 0.3s;
-    }
-
-    .testimonial-item:hover {
-        transform: translateY(-10px);
-    }
-
-    .testimonial-item p {
-        font-size: 1rem;
-        color: #666;
-        line-height: 1.8;
-        margin-bottom: 1.25rem;
-    }
-
-    .testimonial-item h4 {
-        font-size: 1.125rem;
-        color: #1a2a44;
-        font-weight: 600;
-    }
-
-    .testimonial-item span {
-        font-size: 0.875rem;
-        color: #ff6f61;
-    }
-    .fade-in-up { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
-    .fade-in-up.visible { opacity: 1; transform: translateY(0); }
-    .logos-section img { max-width: 120px; margin: 15px; opacity: 0.7; transition: all 0.3s; filter: grayscale(100%); }
-    .logos-section img:hover { opacity: 1; transform: scale(1.3) rotate(5deg); filter: grayscale(0%); }
-    .testimonial-card { background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-left: 5px solid #007bff; transition: transform 0.3s; }
-    .testimonial-card:hover { transform: translateX(10px); }
-    .blog-preview { transition: all 0.3s; border-radius: 10px; overflow: hidden; }
-    .blog-preview:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.15); transform: translateY(-5px) rotate(1deg); }
-    .process-step { transition: all 0.3s; }
-    .process-step:hover { transform: scale(1.05); }
-    .stats { animation: countUp 2s ease-out; }
-
-    /* Responsive Design */
-    /* Tablet (768px - 1024px) */
-    @media (max-width: 1024px) {
-        .service-grid,
-        .portfolio-grid,
-        .event-grid,
-        .why-grid,
-        .testimonial-grid {
-            gap: 1.5rem;
-        }
-    }
-        /* About Section */
-    .about {
-        padding: 6.25rem 2.5rem;
-        text-align: center;
-        background-color: #f9f9f9;
-    }
-
-    .about h2 {
-        font-family: 'Dancing Script', cursive;
-        font-size: clamp(2rem, 5vw, 3rem);
-        color: #1a2a44;
-        margin-bottom: 1.25rem;
-        animation: fadeIn 1s ease-in-out;
-    }
-
-    .about p {
-        max-width: 800px;
-        margin: 0 auto;
-        font-size: 1rem;
-        line-height: 1.8;
-        color: #666;
-        animation: fadeIn 1s ease-in-out 0.5s;
-    }
-
-    /* Experience Section */
-    .experience {
-        padding: 5rem 2.5rem;
-        text-align: center;
-        background: url('https://www.transparenttextures.com/patterns/asfalt-light.png'), linear-gradient(135deg, #1a2a44, #2c3e50);
-        background-size: cover;
-        color: white;
-    }
-
-    .experience h2 {
-        font-family: 'Dancing Script', cursive;
-        font-size: clamp(2rem, 5vw, 3rem);
-        margin-bottom: 2.5rem;
-        animation: fadeIn 1s ease-in-out;
-    }
-
-    .experience-grid {
-        display: flex;
-        justify-content: center;
-        gap: 2.5rem;
-        flex-wrap: wrap;
-    }
-
-    .experience-item {
-        max-width: 200px;
-    }
-
-    .experience-item h3 {
-        font-size: 2.25rem;
-        font-weight: 700;
-        margin-bottom: 0.625rem;
-        color: #ff6f61;
-    }
-
-    .experience-item p {
-        font-size: 1rem;
-        color: #ddd;
-    }
-
-    /* Services Section */
-    .services {
-        padding: 6.25rem 2.5rem;
-        text-align: center;
-        background-color: white;
-    }
-
-    .services h2 {
-        font-family: 'Dancing Script', cursive;
-        font-size: clamp(2rem, 5vw, 3rem);
-        color: #1a2a44;
-        margin-bottom: 3.75rem;
-        animation: fadeIn 1s ease-in-out;
-    }
-
-    .service-grid {
-        display: flex;
-        justify-content: center;
-        gap: 1.875rem;
-        flex-wrap: wrap;
-    }
-
-    .service-item {
-        max-width: 350px;
-        text-align: left;
-        transition: transform 0.3s;
-    }
-
-    .service-item:hover {
-        transform: translateY(-10px);
-    }
-
-    .service-item img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        border-radius: 10px;
-        margin-bottom: 1.25rem;
-        loading: lazy;
-    }
-
-    .service-item h3 {
-        font-size: 1.5rem;
-        color: #1a2a44;
-        margin-bottom: 0.9375rem;
-        transition: color 0.3s;
-    }
-
-    .service-item:hover h3 {
-        color: #ff6f61;
-        animation: bounce 0.5s ease-in-out;
-    }
-
-    .service-item p {
-        font-size: 1rem;
-        color: #666;
-        line-height: 1.6;
-    }
-
-    /* Portfolio Section */
-    .portfolio {
-        padding: 6.25rem 2.5rem;
-        text-align: center;
-        background: url('https://www.transparenttextures.com/patterns/asfalt-light.png'), #f9f9f9;
-        background-size: cover;
-    }
-
-    .portfolio h2 {
-        font-family: 'Dancing Script', cursive;
-        font-size: clamp(2rem, 5vw, 3rem);
-        color: #1a2a44;
-        margin-bottom: 3.75rem;
-        animation: fadeIn 1s ease-in-out;
-    }
-
-    .portfolio-grid {
-        display: flex;
-        justify-content: center;
-        gap: 1.25rem;
-        flex-wrap: wrap;
-    }
-
-    .portfolio-item {
-        position: relative;
-        max-width: 350px;
-        overflow: hidden;
-        border-radius: 10px;
-    }
-
-    .portfolio-item img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        display: block;
-        transition: transform 0.3s;
-        loading: lazy;
-    }
-
-    .portfolio-item:hover img {
-        transform: scale(1.1);
-    }
-
-    .portfolio-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-        transition: opacity 0.3s;
-        touch-action: none;
-    }
-
-    .portfolio-item:hover .portfolio-overlay,
-    .portfolio-item:active .portfolio-overlay {
-        opacity: 1;
-    }
-
-    .portfolio-overlay span {
-        color: white;
-        font-size: 1.25rem;
-        font-weight: 500;
-    }
-
-    /* Upcoming Events Section */
-    .upcoming-events {
-        padding: 6.25rem 2.5rem;
-        text-align: center;
-        background-color: white;
-    }
-
-    .upcoming-events h2 {
-        font-family: 'Dancing Script', cursive;
-        font-size: clamp(2rem, 5vw, 3rem);
-        color: #1a2a44;
-        margin-bottom: 3.75rem;
-        animation: fadeIn 1s ease-in-out;
-    }
-
-    .event-grid {
-        display: flex;
-        justify-content: center;
-        gap: 1.875rem;
-        flex-wrap: wrap;
-    }
-
-    .event-item {
-        max-width: 350px;
-        background-color: #f9f9f9;
-        border-radius: 10px;
-        overflow: hidden;
-        transition: transform 0.3s;
-    }
-
-    .event-item:hover {
-        transform: scale(1.05);
-    }
-
-    .event-item img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        loading: lazy;
-    }
-
-    .event-item .event-info {
-        padding: 1.25rem;
-        text-align: left;
-    }
-
-    .event-item h3 {
-        font-size: 1.25rem;
-        color: #1a2a44;
-        margin-bottom: 0.625rem;
-    }
-
-    .event-item p {
-        font-size: 0.875rem;
-        color: #666;
-        margin-bottom: 0.625rem;
-    }
-
-    .event-item .event-date {
-        color: #ff6f61;
-        font-weight: 500;
-    }
-
-    /* CTA Section */
-    .cta-section {
-        padding: 5rem 2.5rem;
-        text-align: center;
-        background: linear-gradient(135deg, #ff6f61, #e65a50);
-        color: white;
-    }
-
-    .cta-section h2 {
-        font-family: 'Dancing Script', cursive;
-        font-size: clamp(2rem, 5vw, 3rem);
-        margin-bottom: 1.25rem;
-        animation: fadeIn 1s ease-in-out;
-    }
-
-    .cta-section p {
-        font-size: 1.125rem;
-        margin-bottom: 1.875rem;
-        animation: fadeIn 1s ease-in-out 0.5s;
-    }
-
-    /* Why Choose Us Section */
-    .why-choose-us {
-        padding: 6.25rem 2.5rem;
-        text-align: center;
-        background-color: white;
-    }
-
-    .why-choose-us h2 {
-        font-family: 'Dancing Script', cursive;
-        font-size: clamp(2rem, 5vw, 3rem);
-        color: #1a2a44;
-        margin-bottom: 3.75rem;
-        animation: fadeIn 1s ease-in-out;
-    }
-
-    .why-grid {
-        display: flex;
-        justify-content: center;
-        gap: 1.875rem;
-        flex-wrap: wrap;
-    }
-
-    .why-item {
-        max-width: 350px;
-        text-align: left;
-    }
-
-    .why-item h3 {
-        font-size: 1.5rem;
-        color: #1a2a44;
-        margin-bottom: 0.9375rem;
-    }
-
-    .why-item p {
-        font-size: 1rem;
-        color: #666;
-        line-height: 1.6;
-    }
-
-    /* Testimonials Section */
-    .testimonials {
-        padding: 6.25rem 2.5rem;
-        text-align: center;
-        background: url('https://www.transparenttextures.com/patterns/asfalt-light.png'), white;
-        background-size: cover;
-    }
-
-    .testimonials h2 {
-        font-family: 'Dancing Script', cursive;
-        font-size: clamp(2rem, 5vw, 3rem);
-        color: #1a2a44;
-        margin-bottom: 3.75rem;
-        animation: fadeIn 1s ease-in-out;
-    }
-
-    .testimonial-grid {
-        display: flex;
-        justify-content: center;
-        gap: 1.875rem;
-        flex-wrap: wrap;
-    }
-
-    .testimonial-item {
-        max-width: 350px;
-        background-color: #f9f9f9;
-        padding: 1.875rem;
-        border-radius: 10px;
-        position: relative;
-        transition: transform 0.3s;
-    }
-
-    .testimonial-item:hover {
-        transform: translateY(-10px);
-    }
-
-    .testimonial-item p {
-        font-size: 1rem;
-        color: #666;
-        line-height: 1.8;
-        margin-bottom: 1.25rem;
-    }
-
-    .testimonial-item h4 {
-        font-size: 1.125rem;
-        color: #1a2a44;
-        font-weight: 600;
-    }
-
-    .testimonial-item span {
-        font-size: 0.875rem;
-        color: #ff6f61;
-    }
-    }
-    .navbar {
-    transition: all 0.3s ease;
-    }
-    .navbar.scrolled {
-    background-color: #1a202c;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-    .service-card, .team-card, .testimonial-card, .blog-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .service-card:hover, .team-card:hover, .testimonial-card:hover, .blog-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-    }
-    .tracking-section {
-    background: url('https://via.placeholder.com/1920x600?text=Tracking+Background') center/cover;
-    color: white;
-    }
-    .parallax {
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    }
-    .logo {
-    width: 150px;
-    height: auto;
-    transition: transform 0.3s ease;
-    }
-    .logo:hover {
-    transform: scale(1.1);
-    }
-    .faq-item {
-    cursor: pointer;
-    }
-    .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    }
-    .faq-item.active .faq-answer {
-    max-height: 200px;
-    }
-    .stat-number {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #1a202c;
-    }
-    .chat-bubble {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #facc15;
-    color: #1a202c;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-    z-index: 1000;
-    }
-    .chat-bubble:hover {
-    transform: scale(1.2);
-    }
-    .preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #1a202c;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    transition: opacity 0.5s ease;
-    }
-    .preloader.hidden {
-    opacity: 0;
-    pointer-events: none;
-    }
-    .preloader img {
-    width: 100px;
-    animation: spin 1s linear infinite;
-    }
-    @keyframes spin {
-    100% { transform: rotate(360deg); }
-    }
-    .map-container {
-    height: 400px;
-    border-radius: 8px;
-    overflow: hidden;
-    }
-    .cta-banner {
-    background: linear-gradient(to right, #facc15, #eab308);
-    color: #1a202c;
-    text-align: center;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-    @media (max-width: 768px) {
-    .hero {
-        height: 70vh;
-    }
-    .logo {
-        width: 120px;
-    }
-    .stat-number {
-        font-size: 2rem;
-    }
-    .map-container {
-        height: 300px;
-    }
-    }
-  </style>
-  <style>
-  .services-section {
-  padding: 80px 20px;
-  background: #f4f4f4;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
 }
 
-/* Grid Layout */
-.services-grid {
-  max-width: 1200px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
-  gap: 30px;
+body{
+line-height:1.6;
+color:#333;
+scroll-behavior:smooth;
 }
 
-/* Card Design */
-.service-card {
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 40px 30px;
-  text-align: center;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
-  transition: 0.3s ease;
+/* HEADER */
+
+header{
+background:#111;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
-.service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+.navbar{
+max-width:1200px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:15px 20px;
 }
 
-/* Icon */
-.icon {
-  font-size: 55px;
-  margin-bottom: 20px;
-  color: #2349b6;
+.logo{
+width:160px;
 }
 
-/* Title */
-.service-card h3 {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 15px;
-  color: #222;
+.nav-links{
+display:flex;
+gap:25px;
 }
 
-/* Description */
-.service-card p {
-  font-size: 14px;
-  color: #6b7280;
-  line-height: 1.6;
-  margin-bottom: 25px;
+.nav-links a{
+color:#ccc;
+text-decoration:none;
+font-weight:500;
+transition:.3s;
 }
 
-/* Button */
-.explore-btn {
-  display: inline-block;
-  background: #2ecc71;
-  color: #ffffff;
-  padding: 12px 35px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s ease;
+.nav-links a:hover{
+color:#25D366;
 }
 
-.explore-btn:hover {
-  background: #27ae60;
+.contact-btn{
+background:#25D366;
+padding:10px 20px;
+border-radius:25px;
+color:white;
+text-decoration:none;
+font-weight:bold;
 }
 
-/* Responsive: 1 column on mobile */
-@media (max-width: 768px) {
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-}
-    </style>
-  <style>
-    /* Elegant Heading Style */
-.services-title {
-  text-align: center;
-  font-family: 'Dancing Script', cursive;
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 500;
-  color: #1a2a44;
-  margin-bottom: 2.5rem;
-  animation: fadeIn 1s ease-in-out;
-  letter-spacing: 1px;
-}
-    @media (max-width: 768px) {
-  .services-title {
-    font-size: 40px;
-    margin-bottom: 40px;
-  }
-}
-    </style>
-  <style>
-    .consult-btn {
-  display: inline-block;
-  background-color: #38bdf8; /* Sky Blue */
-  color: #ffffff;
-  padding: 14px 40px;
-  border-radius: 50px; /* Bullet / Pill Shape */
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: 600;
-  transition: 0.3s ease;
+.hamburger{
+display:none;
+flex-direction:column;
+cursor:pointer;
 }
 
-.consult-btn:hover {
-  background-color: #0ea5e9; /* Slightly darker on hover */
-  transform: translateY(-3px);
+.hamburger span{
+width:25px;
+height:3px;
+background:white;
+margin:4px;
 }
-    .consult-section {
-  text-align: center;
+
+.mobile-menu{
+display:none;
+flex-direction:column;
+background:#111;
+padding:10px 20px;
 }
-    </style>
+
+.mobile-menu a{
+color:#ccc;
+padding:10px 0;
+text-decoration:none;
+border-bottom:1px solid #333;
+}
+
+/* HERO */
+
+.hero{
+height:90vh;
+background:url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+}
+
+.hero-overlay{
+background:rgba(0,0,0,0.65);
+width:100%;
+height:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.hero-content{
+max-width:800px;
+padding:20px;
+}
+
+.hero h1{
+font-size:3rem;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:1.2rem;
+margin-bottom:30px;
+}
+
+.cta-btn{
+background:#25D366;
+padding:15px 35px;
+border-radius:30px;
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* SECTIONS */
+
+section{
+padding:80px 20px;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+text-align:center;
+}
+
+h2{
+margin-bottom:20px;
+font-size:32px;
+}
+
+/* SERVICES */
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.service-card{
+padding:35px;
+border-radius:10px;
+border:1px solid #eee;
+transition:.3s;
+background:white;
+}
+
+.service-card:hover{
+transform:translateY(-8px);
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.service-card i{
+font-size:40px;
+color:#25D366;
+margin-bottom:15px;
+}
+
+/* JOURNALS */
+
+.journals{
+background:#f7f7f7;
+}
+
+.journal-logos{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:40px;
+margin-top:40px;
+}
+
+.journal-logos img{
+height:60px;
+opacity:.8;
+transition:.3s;
+}
+
+.journal-logos img:hover{
+opacity:1;
+transform:scale(1.1);
+}
+
+/* TRUST */
+
+.trust{
+background:#fff;
+}
+
+.trust-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.trust-box{
+padding:30px;
+border-radius:10px;
+background:#f8f8f8;
+}
+
+.trust-box i{
+font-size:40px;
+color:#25D366;
+margin-bottom:10px;
+}
+
+/* CTA */
+
+.cta{
+background:#1e40af;
+color:white;
+text-align:center;
+padding:70px 20px;
+}
+
+.cta a{
+background:white;
+color:#1e40af;
+padding:15px 35px;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+color:#aaa;
+padding:40px 20px;
+text-align:center;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.nav-links{
+display:none;
+}
+
+.contact-btn{
+display:none;
+}
+
+.hamburger{
+display:flex;
+}
+
+.hero h1{
+font-size:2rem;
+}
+
+.hero{
+height:75vh;
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
-  <header style="
-  background-color: #111;
-  color: #fff;
-  padding: 15px 20px;
-  font-family: Arial, sans-serif;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
-">
-  <div style="max-width: 1200px; margin: auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
 
-    <!-- Logo -->
-    <div>
-      <a href="/">
-        <img src="https://thespapersandpublication.com/logowithbg.png" alt="Company Logo" style="width:160px; height:auto;">
-      </a>
-    </div>
+<header>
 
-    <!-- Navigation -->
-    <nav id="navMenu" style="display: flex; gap: 25px; flex-wrap: wrap;">
-      <a href="/" style="color:#ccc; text-decoration:none; font-weight:500; transition:0.3s;" 
-         onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Home</a>
-      <a href="https://thespapersandpublication.com/#about" style="color:#ccc; text-decoration:none; font-weight:500; transition:0.3s;" 
-         onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">About</a>
-      <a href="https://thespapersandpublication.com/#services" style="color:#ccc; text-decoration:none; font-weight:500; transition:0.3s;" 
-         onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Services</a>
-      <a href="https://thespapersandpublication.com/#testimonials" style="color:#ccc; text-decoration:none; font-weight:500; transition:0.3s;" 
-         onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Testimonials</a>
-      <a href="https://thespapersandpublication.com/#contact" style="color:#ccc; text-decoration:none; font-weight:500; transition:0.3s;" 
-         onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Contact</a>
-    </nav>
+<div class="navbar">
 
-    <!-- CTA Button -->
-    <div>
-      <a href="mailto:contact@thespapersandpublication.com" style="
-        background-color: #25D366;
-        color: #fff;
-        padding: 10px 20px;
-        border-radius: 25px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: 0.3s;
-      " onmouseover="this.style.backgroundColor='#1ebe57'" onmouseout="this.style.backgroundColor='#25D366'">
-        Contact Us
-      </a>
-    </div>
+<img src="https://thespapersandpublication.com/logowithbg.png" class="logo">
 
-    <!-- Hamburger Menu (Mobile) -->
-    <div id="hamburger" style="display:none; flex-direction:column; cursor:pointer;">
-      <span style="width:25px; height:3px; background:#ccc; margin:4px 0; transition:0.3s;"></span>
-      <span style="width:25px; height:3px; background:#ccc; margin:4px 0; transition:0.3s;"></span>
-      <span style="width:25px; height:3px; background:#ccc; margin:4px 0; transition:0.3s;"></span>
-    </div>
+<nav class="nav-links">
+<a href="#">Home</a>
+<a href="#services">Services</a>
+<a href="#journals">Journals</a>
+<a href="#trust">Why Us</a>
+<a href="#contact">Contact</a>
+</nav>
 
-  </div>
+<a href="mailto:contact@thespapersandpublication.com" class="contact-btn">
+Contact Us
+</a>
 
-  <!-- Mobile Menu -->
-  <div id="mobileMenu" style="display:none; flex-direction:column; background-color:#111; padding:10px 20px;">
-    <a href="/" style="color:#ccc; text-decoration:none; padding:10px 0; border-bottom:1px solid #333;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Home</a>
-    <a href="https://thespapersandpublication.com/#about" style="color:#ccc; text-decoration:none; padding:10px 0; border-bottom:1px solid #333;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">About</a>
-    <a href="https://thespapersandpublication.com/#services" style="color:#ccc; text-decoration:none; padding:10px 0; border-bottom:1px solid #333;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Services</a>
-   <a href="https://thespapersandpublication.com/#testimonials" style="color:#ccc; text-decoration:none; padding:10px 0; border-bottom:1px solid #333;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Testimonials</a>
-    <a href="https://thespapersandpublication.com/#contact" style="color:#ccc; text-decoration:none; padding:10px 0;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Contact</a>
-  </div>
+<div class="hamburger" onclick="toggleMenu()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+</div>
+
+<div class="mobile-menu" id="mobileMenu">
+<a href="#">Home</a>
+<a href="#services">Services</a>
+<a href="#journals">Journals</a>
+<a href="#trust">Why Us</a>
+<a href="#contact">Contact</a>
+</div>
+
 </header>
-<!-- ================= Hero Section ================= -->
-<section style="
-  background: url('https://thespapersandpublication.com/carousel-1.jpeg') center/cover no-repeat;
-  height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #fff;
-  position: relative;
-">
-  <!-- Overlay for better text visibility -->
-  <div style="
-    position: absolute;
-    top:0; left:0; width:100%; height:100%;
-    background-color: rgba(0,0,0,0.6);
-    z-index:1;
-  "></div>
 
-  <!-- Hero Content -->
-  <div style="position: relative; z-index:2; max-width:800px; padding: 0 20px;">
-    <h1 style="font-size:3rem; margin-bottom:20px; line-height:1.2;">Premier Academic Writing & Research Excellence</h1>
-    <p style="font-size:1.2rem; margin-bottom:30px; color:#ccc;">
-      99% success rate in Scopus/SCI journals. Tailored, ethical, and confidential support from thesis to journal submission, globally. 100% original work, delivered on time.
-    </p>
-    <a href="https://wa.me/+919208482366" style="
-      background-color: #25D366;
-      color: #fff;
-      padding: 15px 35px;
-      border-radius: 30px;
-      font-size:1.1rem;
-      font-weight:600;
-      text-decoration: none;
-      transition: 0.3s;
-    " onmouseover="this.style.backgroundColor='#1ebe57'" onmouseout="this.style.backgroundColor='#25D366'">
-      Chat On Whatsapp
-    </a>
-  </div>
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-overlay">
+
+<div class="hero-content">
+
+<h1>Publish Your Research in Top Journals</h1>
+
+<p>
+Professional assistance for Scopus, SCI, Web of Science and reputed journal publication.
+</p>
+
+<a href="https://wa.me/919208482366" class="cta-btn">
+Talk to Expert
+</a>
+
+</div>
+
+</div>
+
 </section>
-  <!-- Responsive JS -->
-<script>
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  hamburger.addEventListener('click', () => {
-    mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
-  });
 
-  function resizeMenu() {
-    if (window.innerWidth <= 768) {
-      document.getElementById('navMenu').style.display = 'none';
-      hamburger.style.display = 'flex';
-    } else {
-      document.getElementById('navMenu').style.display = 'flex';
-      hamburger.style.display = 'none';
-      mobileMenu.style.display = 'none';
-    }
-  }
+<!-- SERVICES -->
 
-  window.addEventListener('resize', resizeMenu);
-  window.addEventListener('load', resizeMenu);
-</script>
-    
-    </style>
-    <section class="about" id="about">
-            <h2>About Us</h2>
-            <p>
-                From Delhi to the world – your success story starts here. We offer full-cycle services inspired by top platforms: Publication services, Writing Services including thesis, review and research writing from proposal to defense, journal submissions with revisions, advanced data analysis, and more. 100% original, on-time delivery guaranteed.
-            </p>
-    </section>
+<section id="services">
 
-    <section class="experience" id="experience">
-        <h2>Our Experience</h2>
-        <div class="experience-grid">
-            <div class="experience-item">
-                <h3 class="counter" data-target="5000">5000+</h3>
-                <p>Thesis Completed</p>
-            </div>
-            <div class="experience-item">
-                <h3>95%</h3>
-                <p>Publication Success</p>
-            </div>
-            <div class="experience-item">
-                <h3 class="counter" data-target="60">60+</h3>
-                <p>PhD Experts</p>
-            </div>
-            <div class="experience-item">
-                <h3>24x7</h3>
-                <p>Support</p>
-            </div>
-        </div>
-    </section>
-  <div class="services-container">
+<div class="container">
 
-   </div>
-  <section class="services-section">
-    <h2 class="services-title">Our Services</h2>
-  <div class="services-grid">
+<h2>Our Services</h2>
 
-      <!-- Academic Writing -->
-    <div class="service-card">
-        <div class="icon">✒️</div>
-        <h3>Academic Writing</h3>
-        <p>
-            Well-structured research and review articles tailored to academic standards, ensuring clarity and publication potential.
-        </p>
-        <a href="https://thespapersandpublication.com/academic-writing.html" class="explore-btn">Explore →</a>
-    </div>
-        
-      <!-- Publication Services -->
-    <div class="service-card">
-        <div class="icon">🌐</div>
-        <h3>Publication Services</h3>
-        <p>
-            End-to-end support for publishing in Scopus, SCI, and UGC-approved journals—covering journal selection, formatting, submission, and reviewer responses.
-        </p>
-        <a href="https://thespapersandpublication.com/publication-services.html" class="explore-btn">Explore →</a>
-    </div>
+<div class="services-grid">
 
-        <!-- Thesis & Dissertation Support -->
-  <div class="service-card">
-    <div class="icon">📘</div>
-    <h3>Thesis & Dissertation Support</h3>
-    <p>
-      Comprehensive guidance for thesis, dissertation, synopsis, and proposal writing — from ideation to submission.
-    </p>
-    <a href="https://thespapersandpublication.com/thesis-dissertation.html" class="explore-btn">Explore →</a>
-  </div>
+<div class="service-card">
+<i class="fa-solid fa-book"></i>
+<h3>Research Writing</h3>
+<p>Complete research paper writing and thesis assistance.</p>
+</div>
 
-        <!-- SLR & Bibliometric Analysis -->
-  <div class="service-card">
-    <div class="icon">🔍</div>
-    <h3>SLR & Bibliometric Analysis</h3>
-    <p>
-      Structured systematic literature reviews and bibliometric mapping to strengthen your research foundation.
-    </p>
-    <a href="#" class="explore-btn">Explore →</a>
-  </div>
-        <!-- Data & Statistical Analysis -->
-  <div class="service-card">
-    <div class="icon">📊</div>
-    <h3>Data & Statistical Analysis</h3>
-    <p>
-      Expert assistance using SPSS, R, Python and more for in-depth, publication-grade statistical insights.
-    </p>
-    <a href="#" class="explore-btn">Explore →</a>
-  </div>
+<div class="service-card">
+<i class="fa-solid fa-magnifying-glass"></i>
+<h3>Journal Selection</h3>
+<p>Selection of Scopus / SCI indexed journals.</p>
+</div>
 
-        <!-- Editing & Proofreading -->
-  <div class="service-card">
-    <div class="icon">✏️</div>
-    <h3>Editing & Proofreading</h3>
-    <p>
-      Language polishing, formatting, and academic consistency to refine and elevate your final document.
-    </p>
-    <a href="#" class="explore-btn">Explore →</a>
-  </div>
+<div class="service-card">
+<i class="fa-solid fa-pen"></i>
+<h3>Manuscript Editing</h3>
+<p>Proofreading, plagiarism reduction and formatting.</p>
+</div>
 
-        <!-- Plagiarism Reduction -->
-  <div class="service-card">
-    <div class="icon">🛡️</div>
-    <h3>Plagiarism Reduction</h3>
-    <p>
-      Content refinement and rewriting to reduce plagiarism and AI-detected text while preserving originality.
-    </p>
-    <a href="#" class="explore-btn">Explore →</a>
-  </div>
-        
-                   
-    </section>
+<div class="service-card">
+<i class="fa-solid fa-upload"></i>
+<h3>Submission Support</h3>
+<p>Complete journal submission and review support.</p>
+</div>
 
-    <section class="portfolio" id="portfolio">
-        <h2>Trusted by Industry Renowned Publications</h2>
-        <div class="portfolio-grid">
-             <div class="portfolio-item" data-animate="zoomIn">
-                <img src="ex1.jpg" alt="doa" width="155" height="120">
-                <div class="portfolio-overlay">
-                    <span></span>
-                </div>
-            </div>
-            <div class="portfolio-item" data-animate="zoomIn">
-                <img src="ex2.jpg" alt="journal" width="155" height="120">
-                <div class="portfolio-overlay">
-                    <span></span>
-                </div>
-            </div>
-            <div class="portfolio-item" data-animate="zoomIn">
-                <img src="ex3.jpg" alt="pubmed" width="155" height="120">
-                <div class="portfolio-overlay">
-                    <span></span>
-                </div>
-            </div>
-          <div class="portfolio-item" data-animate="zoomIn">
-                <img src="ex4.jpg" alt="clarivate" width="155.99" height="86.55">
-                <div class="portfolio-overlay">
-                    <span></span>
-                </div>
-            </div>
-          <div class="portfolio-item" data-animate="zoomIn">
-                <img src="ex5.jpg" alt="scopus" width="155" height="120">
-                <div class="portfolio-overlay">
-                    <span></span>
-                </div>
-            </div>
-          <div class="portfolio-item" data-animate="zoomIn">
-                <img src="ex6.jpg" alt="springer" width="155" height="120">
-                <div class="portfolio-overlay">
-                    <span></span>
-                </div>
-            </div>
-        </div>
-    </section>
+</div>
 
-    <section class="cta-section">
-        <h2>Consult to our Experts for Free</h2>
-        <p>Our team of experts are available for you round the clock!</p>
-        <a href="tel:+919208482366" class="consult-btn">Call Now</a>
-    </section>
+</div>
 
-    <section class="why-choose-us">
-        <h2>Why Choose Us?</h2>
-        <div class="why-grid">
-            <div class="why-item">
-                <h3>Experienced Team</h3>
-                <p>With 5 years in the industry and a team of 60+ experts, we bring expertise to every project.</p>
-            </div>
-            <div class="why-item">
-                <h3>Client Satisfaction</h3>
-                <p>Over 13K+ Research Professionals trust us to deliver exceptional experiences.</p>
-            </div>
-            <div class="why-item">
-                <h3>Creative Solutions</h3>
-                <p>Unlike generic services, We focus on SEO-Optimized content for better visibility, ethical practices to uphold academic integrity, and innovative tools like AI-assisted analysis(Human Verified)for faster turnaound.</p>
-            </div>
-        </div>
-    </section>
+</section>
 
-    <section class="testimonials" id="testimonials">
-        <h2>Testimonials</h2>
-        <div class="testimonial-grid">
-            <div class="testimonial-item" data-animate="slideInLeft">
-                <p>"The S Papers turned my chaotic notes into a Scopus-published paper. Their data analysis expertise was game-changing!"</p>
-                <h4>- Dr. Emily T</h4>
-                <span>Harvard PhD</span>
-            </div>
-            <div class="testimonial-item" data-animate="slideInLeft">
-                <p>"Conference paper accepted after their revisions. Highly recommend for quick turnarounds."</p>
-                <h4>- Prof. Amit S.</h4>
-                <span>Global Scholar</span>
-            </div>
-            <div class="testimonial-item" data-animate="slideInLeft">
-                <p>"Exceptional thesis editing – my committee loved it. 100% original and perfectly formatted."</p>
-                <h4>- Dr. Sarah L.</h4>
-                <span>PhD Candidate</span>
-            </div>
-        </div>
-    </section>
-    <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                target.scrollIntoView({ behavior: 'smooth' });
-            });
-        });
+<!-- JOURNALS -->
 
-        // Add animation on scroll for sections
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate__animated', 'animate__fadeIn');
+<section class="journals" id="journals">
 
-                    // Animate child elements with data-animate attribute
-                    const animatableElements = entry.target.querySelectorAll('[data-animate]');
-                    animatableElements.forEach((element, index) => {
-                        const animation = element.getAttribute('data-animate');
-                        element.classList.add('animate__animated', `animate__${animation}`);
-                        element.style.animationDelay = `${index * 0.2}s`;
-                    });
-                }
-            });
-        }, { threshold: 0.1 });
+<div class="container">
 
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
+<h2>Supported Journal Indexing</h2>
 
-        // Number increasing animation for experience section
-        const counters = document.querySelectorAll('.counter');
-        const speed = 200;
+<div class="journal-logos">
 
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    counters.forEach((counter, index) => {
-                        const updateCounter = () => {
-                            const target = +counter.getAttribute('data-target');
-                            const count = +counter.innerText;
-                            const increment = target / speed;
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/06/Scopus_logo.svg">
 
-                            if (count < target) {
-                                counter.innerText = Math.ceil(count + increment);
-                                setTimeout(updateCounter, 20);
-                            } else {
-                                counter.innerText = target;
-                                if (target > 5) counter.innerText += '+';
-                            }
-                        };
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Web_of_Science_logo.png">
 
-                        setTimeout(updateCounter, index * 300);
-                    });
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Google_Scholar_logo.png">
 
-                    counterObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
+</div>
 
-        const experienceSection = document.querySelector('#experience');
-        counterObserver.observe(experienceSection);
+</div>
 
-        // Search bar toggle
-        const searchIcon = document.querySelector('.search-icon');
-        const searchBar = document.querySelector('.search-bar');
-        const searchInput = document.querySelector('#search-input');
-        const searchContainer = document.querySelector('.search-container');
+</section>
 
-        searchIcon.addEventListener('click', () => {
-            searchBar.classList.toggle('active');
-            if (searchBar.classList.contains('active')) {
-                searchInput.focus();
-            }
-        });
+<!-- TRUST -->
 
-        searchInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                const query = searchInput.value.trim();
-                if (query) {
-                    console.log('Search query:', query);
-                    alert(`Searching for: ${query}`);
-                    searchInput.value = '';
-                    searchBar.classList.remove('active');
-                }
-            }
-        });
+<section class="trust" id="trust">
 
-        document.addEventListener('click', (e) => {
-            if (!searchContainer.contains(e.target) && !searchBar.contains(e.target)) {
-                searchBar.classList.remove('active');
-            }
-        });
+<div class="container">
 
-        // Chatbot functionality
-        const chatbot = document.querySelector('.chatbot');
-        const chatbotToggle = document.querySelector('.chatbot-toggle');
-        const chatbotWindow = document.querySelector('.chatbot-window');
-        const chatbotBody = document.querySelector('#chatbot-body');
-        const chatbotInput = document.querySelector('#chatbot-input');
+<h2>Why Choose Us</h2>
 
-        chatbotToggle.addEventListener('click', () => {
-            chatbotWindow.classList.toggle('active');
-            if (chatbotWindow.classList.contains('active')) {
-                chatbotInput.focus();
-            }
-        });
-    </script>
-  <a href="https://wa.me/919208482366" target="_blank" style="
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 55px;
-  height: 55px;
-  background-color: #25D366;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  z-index: 1000;
-">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-       alt="WhatsApp"
-       style="width: 28px; height: 28px;">
-</a>
-<a href="mailto:contact@thespapersandpublication.com" style="
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  width: 55px;
-  height: 55px;
-  background-color: #EA4335;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  z-index: 1000;
-  text-decoration: none;
-">
-  <svg xmlns="http://www.w3.org/2000/svg" 
-       viewBox="0 0 24 24" 
-       width="28" 
-       height="28" 
-       fill="white">
-    <path d="M12 13.065L.015 4.5A2 2 0 012 3h20a2 2 0 011.985 1.5L12 13.065zM12 15L0 6v12a2 2 0 002 2h20a2 2 0 002-2V6l-12 9z"/>
-  </svg>
-</a>
-  <footer style="
-  background-color: #111;
-  color: #fff;
-  padding: 50px 20px;
-  font-family: Arial, sans-serif;
-">
-  <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between;">
+<div class="trust-grid">
 
-    <!-- Logo & About -->
-    <div style="flex: 1 1 250px; margin-bottom: 20px;">
-      <h2>
-  <img src="https://thespapersandpublication.com/logowithbg.png" alt="Company Logo" style="width: 160px; height: auto;">
-</h2>
-      <p style="color: #ccc; line-height: 1.6;">
-        Delhi-based leaders in academic excellence.<br>
-        Empowering research since 2015. Excellence in<br>
-        every page. 100% satisfaction guaranteed.<br>
-        Free consultation and submission support.
-      </p>
-    </div>
+<div class="trust-box">
+<i class="fa-solid fa-user-graduate"></i>
+<h3>500+ Scholars Helped</h3>
+</div>
 
-    <!-- Quick Links -->
-    <div style="flex: 1 1 200px; margin-bottom: 20px;">
-      <h3 style="color: #fff;">Quick Links</h3>
-      <ul style="list-style: none; padding: 0; color: #ccc; line-height: 2;">
-        <li><a href="https://thespapersandpublication.com" style="color: #ccc; text-decoration: none;">Home</a></li>
-        <li><a href="https://thespapersandpublication.com/#about" style="color: #ccc; text-decoration: none;">About Us</a></li>
-        <li><a href="https://thespapersandpublication.com/#services" style="color: #ccc; text-decoration: none;">Services</a></li>
-        <li><a href="https://thespapersandpublication.com/privacy-policy.html" style="color: #ccc; text-decoration: none;">Privacy Policy</a></li>
-        <li><a href="https://thespapersandpublication.com/#contact" style="color: #ccc; text-decoration: none;">Contact</a></li>
-      </ul>
-    </div>
+<div class="trust-box">
+<i class="fa-solid fa-check-circle"></i>
+<h3>High Success Rate</h3>
+</div>
 
-    <!-- Contact Info -->
-    <div style="flex: 1 1 250px; margin-bottom: 20px;">
-      <h3 style="color: #fff;">Contact Us</h3>
-      <p style="color: #ccc; line-height: 1.6;">
-        🪪 Legal Name: Hrituj Agrahari<br>
-        📍 Address: 29/17,First Floor,West Patel Nagar, Central Delhi, DELHI 110008<br>
-        📧 Email: <a href="mailto:contact@thespapersandpublication.com" style="color: #25D366; text-decoration: none;">contact@thespapersandpublication.com</a><br>
-        📞 Phone: <a href="tel:+919208482366" style="color: #25D366; text-decoration: none;">+91 9208482366</a>
-      </p>
-    </div>
+<div class="trust-box">
+<i class="fa-solid fa-clock"></i>
+<h3>Fast Support</h3>
+</div>
 
-  </div>
+<div class="trust-box">
+<i class="fa-solid fa-headset"></i>
+<h3>Expert Guidance</h3>
+</div>
 
-  <!-- Social Icons -->
-  <div style="text-align: center; margin-top: 30px;">
-    <a href="https://www.facebook.com/profile.php?id=61581000752337" style="margin: 0 10px; color: #ccc; font-size: 24px; text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">
-      <i class="fab fa-facebook-f"></i>
-    </a>
-    <a href="https://www.instagram.com/the_spapers" style="margin: 0 10px; color: #ccc; font-size: 24px; text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">
-      <i class="fab fa-instagram"></i>
-    </a>
-  </div>
+</div>
 
-  <!-- Bottom Bar -->
-  <div style="text-align: center; color: #777; padding-top: 20px; border-top: 1px solid #333;">
-    © 2026 The S Papers and Publication. All rights reserved.
-  </div>
+</div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta">
+
+<h2>Start Your Publication Journey Today</h2>
+
+<p>Connect with our experts now.</p>
+
+<br>
+
+<a href="https://wa.me/919208482366">Chat on WhatsApp</a>
+
+</section>
+
+<footer>
+
+<p>© 2026 The S Papers and Publication. All Rights Reserved.</p>
+
 </footer>
 
-<!-- Font Awesome CDN for Social Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script>
+
+function toggleMenu(){
+
+var menu=document.getElementById("mobileMenu");
+
+if(menu.style.display==="flex"){
+menu.style.display="none";
+}else{
+menu.style.display="flex";
+}
+
+}
+
+</script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
