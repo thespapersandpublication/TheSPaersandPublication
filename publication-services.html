@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publication Services</title>
     <link rel="stylesheet" href="style.css">
     <style>/* Hero Section */
@@ -96,6 +97,17 @@
 .trusted-logos img:hover {
     transform: scale(1.1);
 }
+.logo-grid{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.logo-grid img{
+width:120px;
+height:auto;
+}
     </style>
     <style>
         /* PRICING SECTION */
@@ -148,6 +160,77 @@ font-weight:bold;
 
 .price-btn:hover{
 background:#1f3a96;
+}
+.pricing-card{
+max-width:350px;
+margin:auto;
+padding:30px;
+}
+.container{
+max-width:1100px;
+margin:auto;
+padding:20px;
+}
+
+    </style>
+    <style>
+        /* MOBILE VIEW */
+
+@media (max-width:768px){
+
+.hero h1{
+font-size:32px;
+}
+
+.hero p{
+font-size:16px;
+padding:0 15px;
+}
+
+.container{
+padding:20px;
+text-align:left;
+}
+
+.pricing-card{
+width:90%;
+}
+
+.logo-grid img{
+width:90px;
+}
+
+footer{
+text-align:center;
+}
+
+footer .footer-columns{
+flex-direction:column;
+gap:30px;
+}
+
+}
+        @media (max-width:768px){
+
+nav ul{
+flex-direction:column;
+background:#000;
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+display:none;
+}
+
+nav ul.show{
+display:block;
+}
+
+.menu-toggle{
+display:block;
+cursor:pointer;
+}
+
 }
     </style>
 </head>
