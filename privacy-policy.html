@@ -1,337 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy</title>
 
-<link rel="stylesheet" href="style.css">
+<title>Privacy Policy | The S Papers and Publication</title>
 
 <style>
-.container{
-max-width:800px;
-margin:50px auto;
-padding:40px;
-text-align:center;
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+color:#333;
 }
 
-h1{margin-bottom:20px;}
-h2{margin-top:35px;}
-p{line-height:1.7;color:#555;}
+/* Privacy Content */
+
+.container{
+max-width:850px;
+margin:50px auto;
+padding:20px;
+line-height:1.8;
+}
+
+.container h1{
+text-align:center;
+margin-bottom:10px;
+}
+
+.subtitle{
+text-align:center;
+color:#666;
+margin-bottom:40px;
+}
+
+h2{
+margin-top:35px;
+color:#111;
+}
+
+p{
+color:#555;
+}
 
 .home-btn{
 display:inline-block;
 margin-top:40px;
 padding:12px 25px;
-background:#1e4ed8;
+background:#25D366;
 color:white;
 text-decoration:none;
 border-radius:25px;
-}
-/* Privacy Hero Section */
-
-.privacy-hero{
-background:url('https://thespapersandpublication.com/privacyimage.png') center/cover no-repeat;
-height:320px;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:white;
-position:relative;
+font-weight:600;
 }
 
-.privacy-hero::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
+.home-btn:hover{
+background:#1ebe57;
 }
-
-.privacy-content{
-position:relative;
-z-index:2;
-}
-
-.privacy-content h1{
-font-size:42px;
-margin-bottom:10px;
-}
-
-.privacy-content p{
-font-size:18px;
-color:#ddd;
-}
-
-/* Mobile */
 
 @media(max-width:768px){
 
-.privacy-hero{
-height:180px;
-}
-
-.privacy-content h1{
-font-size:26px;
-}
-
-.privacy-content p{
-font-size:14px;
+.container{
+padding:20px;
 }
 
 }
+
 </style>
 
 </head>
 
 <body>
 
-<!-- COPY YOUR WEBSITE HEADER HERE -->
+<!-- HEADER -->
 <header style="
-  background-color: #111;
-  color: #fff;
-  padding: 15px 20px;
-  font-family: Arial, sans-serif;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+background-color:#111;
+color:#fff;
+padding:15px 20px;
+font-family:Arial,sans-serif;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 2px 6px rgba(0,0,0,0.4);
 ">
-  <div style="max-width: 1200px; margin: auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
 
-    <!-- Logo -->
-    <div>
-      <a href="/">
-        <img src="https://thespapersandpublication.com/logowithbg.png" alt="Company Logo" style="width:160px; height:auto;">
-      </a>
-    </div>
+<div style="max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;">
 
-    <!-- Navigation -->
-    <nav id="navMenu" style="display: flex; gap: 25px; flex-wrap: wrap;">
-      <a href="/" style="color:#ccc; text-decoration:none; font-weight:500; transition:0.3s;" 
-         onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Home</a>
-      <a href="https://thespapersandpublication.com/#about" style="color:#ccc; text-decoration:none; font-weight:500; transition:0.3s;" 
-         onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">About</a>
-      <a href="https://thespapersandpublication.com/#services" style="color:#ccc; text-decoration:none; font-weight:500; transition:0.3s;" 
-         onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Services</a>
-      <a href="https://thespapersandpublication.com/#testimonials" style="color:#ccc; text-decoration:none; font-weight:500; transition:0.3s;" 
-         onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Testimonials</a>
-      <a href="https://thespapersandpublication.com/#contact" style="color:#ccc; text-decoration:none; font-weight:500; transition:0.3s;" 
-         onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Contact</a>
-    </nav>
-
-    <!-- CTA Button -->
-    <div>
-      <a href="mailto:contact@thespapersandpublication.com" style="
-        background-color: #25D366;
-        color: #fff;
-        padding: 10px 20px;
-        border-radius: 25px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: 0.3s;
-      " onmouseover="this.style.backgroundColor='#1ebe57'" onmouseout="this.style.backgroundColor='#25D366'">
-        Contact Us
-      </a>
-    </div>
-
-    <!-- Hamburger Menu (Mobile) -->
-    <div id="hamburger" style="display:none; flex-direction:column; cursor:pointer;">
-      <span style="width:25px; height:3px; background:#ccc; margin:4px 0; transition:0.3s;"></span>
-      <span style="width:25px; height:3px; background:#ccc; margin:4px 0; transition:0.3s;"></span>
-      <span style="width:25px; height:3px; background:#ccc; margin:4px 0; transition:0.3s;"></span>
-    </div>
-
-  </div>
-
-  <!-- Mobile Menu -->
-  <div id="mobileMenu" style="display:none; flex-direction:column; background-color:#111; padding:10px 20px;">
-    <a href="/" style="color:#ccc; text-decoration:none; padding:10px 0; border-bottom:1px solid #333;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Home</a>
-    <a href="https://thespapersandpublication.com/#about" style="color:#ccc; text-decoration:none; padding:10px 0; border-bottom:1px solid #333;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">About</a>
-    <a href="https://thespapersandpublication.com/#services" style="color:#ccc; text-decoration:none; padding:10px 0; border-bottom:1px solid #333;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Services</a>
-   <a href="https://thespapersandpublication.com/#testimonials" style="color:#ccc; text-decoration:none; padding:10px 0; border-bottom:1px solid #333;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Testimonials</a>
-    <a href="https://thespapersandpublication.com/#contact" style="color:#ccc; text-decoration:none; padding:10px 0;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">Contact</a>
-  </div>
-</header>
-<!-- ================= Hero Section ================= -->
-<section class="privacy-hero">
-
-<div class="privacy-content">
-<h1>Privacy Policy</h1>
-<p>Your privacy is important to us.</p>
+<!-- Logo -->
+<div>
+<a href="https://thespapersandpublication.com">
+<img src="https://thespapersandpublication.com/logowithbg.png" style="width:160px;height:auto;">
+</a>
 </div>
 
-</section>
-  <!-- Overlay for better text visibility -->
-  <div style="
-    position: absolute;
-    top:0; left:0; width:100%; height:100%;
-    background-color: rgba(0,0,0,0.6);
-    z-index:1;
-  "></div>
+<!-- Navigation -->
+<nav id="navMenu" style="display:flex;gap:25px;flex-wrap:wrap;">
+<a href="https://thespapersandpublication.com" style="color:#ccc;text-decoration:none;">Home</a>
+<a href="https://thespapersandpublication.com/#about" style="color:#ccc;text-decoration:none;">About</a>
+<a href="https://thespapersandpublication.com/#services" style="color:#ccc;text-decoration:none;">Services</a>
+<a href="https://thespapersandpublication.com/#testimonials" style="color:#ccc;text-decoration:none;">Testimonials</a>
+<a href="https://thespapersandpublication.com/#contact" style="color:#ccc;text-decoration:none;">Contact</a>
+</nav>
 
-  <!-- Hero Content -->
-  <div style="position: relative; z-index:2; max-width:800px; padding: 0 20px;">
-    <h1 style="font-size:3rem; margin-bottom:20px; line-height:1.2;">Privacy Policy</h1>
-    <p style="font-size:1.2rem; margin-bottom:30px; color:#ccc;">
-    </p>
-    </div>
-</section>
-  <!-- Responsive JS -->
-<script>
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  hamburger.addEventListener('click', () => {
-    mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
-  });
+<!-- Contact Button -->
+<a href="mailto:contact@thespapersandpublication.com" style="
+background:#25D366;
+color:#fff;
+padding:10px 20px;
+border-radius:25px;
+text-decoration:none;
+font-weight:600;
+">
+Contact Us
+</a>
 
-  function resizeMenu() {
-    if (window.innerWidth <= 768) {
-      document.getElementById('navMenu').style.display = 'none';
-      hamburger.style.display = 'flex';
-    } else {
-      document.getElementById('navMenu').style.display = 'flex';
-      hamburger.style.display = 'none';
-      mobileMenu.style.display = 'none';
-    }
-  }
+</div>
+</header>
 
-  window.addEventListener('resize', resizeMenu);
-  window.addEventListener('load', resizeMenu);
-</script>
 
+<!-- PAGE CONTENT -->
 
 <div class="container">
 
+<h1>Privacy Policy</h1>
+<p class="subtitle">Your privacy is important to us.</p>
+
 <p>
-At THE S PAPERS AND PUBLICATION, accessible via https://thespapersandpublication.com, we prioritize the privacy of our users.
-This Privacy Policy outlines the types of data we collect and how we utilize it.
+At <strong>The S Papers and Publication</strong>, accessible from
+https://thespapersandpublication.com, protecting the privacy of our visitors
+is one of our main priorities. This Privacy Policy document outlines the types
+of information that are collected and recorded by our website and how we use it.
 </p>
 
 <h2>Consent</h2>
-<p>By using our website, you consent to our Privacy Policy and agree to its terms.</p>
+<p>
+By using our website, you hereby consent to our Privacy Policy and agree to its terms.
+</p>
 
 <h2>Information We Collect</h2>
 <p>
-The personal information we ask for will be made clear at the point of collection.
+The personal information that you are asked to provide will be made clear
+at the point we ask you to provide your personal information.
 </p>
 
 <h2>How We Use Your Information</h2>
 
 <p>
-Operate and manage our website<br>
-Enhance and personalize your experience<br>
-Analyze how the site is used<br>
-Develop new services and features<br>
-Communicate for support and updates
+• Operate and maintain our website<br>
+• Improve and personalize user experience<br>
+• Understand how users interact with our website<br>
+• Develop new services and features<br>
+• Communicate with users for support and updates
 </p>
 
 <h2>Log Files</h2>
 <p>
-thespapersandpublication.com uses standard log files including IP address, browser type, ISP,
-timestamps, and referring pages.
+The S Papers and Publication follows a standard procedure of using log files.
+These files log visitors when they visit websites. The information collected
+may include IP addresses, browser type, Internet Service Provider (ISP),
+date and time stamp, referring/exit pages, and number of clicks.
 </p>
 
 <h2>Cookies and Web Beacons</h2>
 <p>
-We use cookies to store user preferences and improve user experience.
-</p>
-
-<h2>Advertising Partners</h2>
-<p>
-Third-party advertisers may use cookies, JavaScript, or web beacons.
+Like many other websites, we use cookies to store information including
+visitors’ preferences and the pages on the website that the visitor accessed.
 </p>
 
 <h2>Third-Party Privacy Policies</h2>
 <p>
 Our Privacy Policy does not apply to other advertisers or websites.
+We advise you to consult the respective Privacy Policies of third-party
+ad servers for more detailed information.
 </p>
 
 <h2>CCPA Privacy Rights</h2>
 <p>
-Users may request disclosure, deletion, or opt-out from sale of personal data.
+Under the CCPA, California consumers have the right to request that a business
+discloses the categories and specific pieces of personal data collected about them.
 </p>
 
 <h2>GDPR Data Protection Rights</h2>
 <p>
-Users have rights to access, correct, delete or restrict their personal data.
+Every user is entitled to the following rights: access, rectification,
+erasure, restriction of processing, and data portability.
 </p>
 
 <h2>Confidentiality</h2>
 <p>
-We maintain strict confidentiality of all user data and follow
-industry-standard security practices.
+We maintain strict confidentiality of all user information and follow
+industry-standard security practices to protect personal data.
 </p>
 
-<a href="index.html" class="home-btn">Go Back To Home</a>
+<a href="https://thespapersandpublication.com" class="home-btn">
+Go Back To Home
+</a>
 
 </div>
 
 
-<!-- COPY YOUR WEBSITE FOOTER HERE -->
- <footer style="
-  background-color: #111;
-  color: #fff;
-  padding: 50px 20px;
-  font-family: Arial, sans-serif;
+<!-- FOOTER -->
+
+<footer style="
+background-color:#111;
+color:#fff;
+padding:50px 20px;
+font-family:Arial,sans-serif;
 ">
-  <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between;">
 
-    <!-- Logo & About -->
-    <div style="flex: 1 1 250px; margin-bottom: 20px;">
-      <h2>
-  <img src="https://thespapersandpublication.com/logowithbg.png" alt="Company Logo" style="width: 160px; height: auto;">
-</h2>
-      <p style="color: #ccc; line-height: 1.6;">
-        Delhi-based leaders in academic excellence.<br>
-        Empowering research since 2015. Excellence in<br>
-        every page. 100% satisfaction guaranteed.<br>
-        Free consultation and submission support.
-      </p>
-    </div>
+<div style="max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;justify-content:space-between;">
 
-    <!-- Quick Links -->
-    <div style="flex: 1 1 200px; margin-bottom: 20px;">
-      <h3 style="color: #fff;">Quick Links</h3>
-      <ul style="list-style: none; padding: 0; color: #ccc; line-height: 2;">
-        <li><a href="https://thespapersandpublication.com" style="color: #ccc; text-decoration: none;">Home</a></li>
-        <li><a href="https://thespapersandpublication.com/#about" style="color: #ccc; text-decoration: none;">About Us</a></li>
-        <li><a href="https://thespapersandpublication.com/#services" style="color: #ccc; text-decoration: none;">Services</a></li>
-        <li><a href="https://thespapersandpublication.com/privacy-policy.html" style="color: #ccc; text-decoration: none;">Privacy Policy</a></li>
-        <li><a href="https://thespapersandpublication.com/#contact" style="color: #ccc; text-decoration: none;">Contact</a></li>
-      </ul>
-    </div>
+<div style="flex:1 1 250px;margin-bottom:20px;">
+<img src="https://thespapersandpublication.com/logowithbg.png" style="width:160px;">
+<p style="color:#ccc;line-height:1.6;">
+Delhi-based leaders in academic excellence.<br>
+Empowering research since 2015. Excellence in every page.
+</p>
+</div>
 
-    <!-- Contact Info -->
-    <div style="flex: 1 1 250px; margin-bottom: 20px;">
-      <h3 style="color: #fff;">Contact Us</h3>
-      <p style="color: #ccc; line-height: 1.6;">
-        🪪 Legal Name: Hrituj Agrahari<br>
-        📍 Address: 29/17,First Floor,West Patel Nagar, Central Delhi, DELHI 110008<br>
-        📧 Email: <a href="mailto:contact@thespapersandpublication.com" style="color: #25D366; text-decoration: none;">contact@thespapersandpublication.com</a><br>
-        📞 Phone: <a href="tel:+919208482366" style="color: #25D366; text-decoration: none;">+91 9208482366</a>
-      </p>
-    </div>
+<div style="flex:1 1 200px;margin-bottom:20px;">
+<h3>Quick Links</h3>
+<ul style="list-style:none;padding:0;line-height:2;color:#ccc;">
+<li><a href="https://thespapersandpublication.com" style="color:#ccc;text-decoration:none;">Home</a></li>
+<li><a href="https://thespapersandpublication.com/#about" style="color:#ccc;text-decoration:none;">About</a></li>
+<li><a href="https://thespapersandpublication.com/#services" style="color:#ccc;text-decoration:none;">Services</a></li>
+<li><a href="https://thespapersandpublication.com/privacy-policy.html" style="color:#ccc;text-decoration:none;">Privacy Policy</a></li>
+<li><a href="https://thespapersandpublication.com/#contact" style="color:#ccc;text-decoration:none;">Contact</a></li>
+</ul>
+</div>
 
-  </div>
+<div style="flex:1 1 250px;margin-bottom:20px;">
+<h3>Contact Us</h3>
+<p style="color:#ccc;line-height:1.6;">
+📍 West Patel Nagar, Delhi 110008<br>
+📧 contact@thespapersandpublication.com<br>
+📞 +91 9208482366
+</p>
+</div>
 
-  <!-- Social Icons -->
-  <div style="text-align: center; margin-top: 30px;">
-    <a href="https://www.facebook.com/profile.php?id=61581000752337" style="margin: 0 10px; color: #ccc; font-size: 24px; text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">
-      <i class="fab fa-facebook-f"></i>
-    </a>
-    <a href="https://www.instagram.com/the_spapers" style="margin: 0 10px; color: #ccc; font-size: 24px; text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#ccc'">
-      <i class="fab fa-instagram"></i>
-    </a>
-  </div>
+</div>
 
-  <!-- Bottom Bar -->
-  <div style="text-align: center; color: #777; padding-top: 20px; border-top: 1px solid #333;">
-    © 2026 The S Papers and Publication. All rights reserved.
-  </div>
+<div style="text-align:center;color:#777;padding-top:20px;border-top:1px solid #333;">
+© 2026 The S Papers and Publication. All rights reserved.
+</div>
+
 </footer>
+
 </body>
 </html>
