@@ -123,34 +123,24 @@ margin-bottom:10px;
 margin-bottom:40px;
 }
 
-.pricing-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-max-width:1000px;
+.pricing-box{
+max-width:350px;
 margin:auto;
-}
-
-.price-card{
 background:#f9f9f9;
 padding:40px;
 border-radius:10px;
 box-shadow:0 10px 25px rgba(0,0,0,0.08);
-transition:0.3s;
 }
 
-.price-card:hover{
-transform:translateY(-10px);
-}
-
-.price-card h1{
+.pricing-box h1{
 color:#2b4cb5;
 margin:20px 0;
+font-size:40px;
 }
 
-.price-card p{
-color:#555;
+.pricing-box p{
 margin:10px 0;
+color:#555;
 }
 
 .price-btn{
@@ -161,30 +151,11 @@ background:#2b4cb5;
 color:white;
 border-radius:25px;
 text-decoration:none;
+font-weight:bold;
 }
 
 .price-btn:hover{
 background:#1f3a96;
-}
-
-/* Highlighted card */
-
-.popular{
-background:#2b4cb5;
-color:white;
-}
-
-.popular p{
-color:#eee;
-}
-
-.popular h1{
-color:white;
-}
-
-.popular .price-btn{
-background:white;
-color:#2b4cb5;
 }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -352,30 +323,31 @@ proper referencing, and a logical flow.
 
 </section>
 
+<!-- PRICING SECTION -->
+
 <section class="pricing">
 
 <h4>Our Pricing</h4>
-<h2>Affordable Thesis Support Packages</h2>
+<h2>Basic Thesis Support Package</h2>
 
-<div class="pricing-grid">
-
-<div class="price-card">
+<div class="pricing-box">
 
 <h3>Basic Package</h3>
 
 <h1>₹29,999</h1>
 
-<p>Topic Selection</p>
-<p>Research Proposal</p>
-<p>Basic Guidance</p>
-<p>Email Support</p>
+<p>✔ Topic Selection</p>
+<p>✔ Research Proposal</p>
+<p>✔ Basic Guidance</p>
+<p>✔ Email Support</p>
 
-<a href="https://wa.me/923001234567" target="_blank" class="price-btn">
+<a href="https://wa.me/+919208482366?text=Hello%20I%20am%20interested%20in%20your%20Basic%20Thesis%20Package" target="_blank" class="price-btn">
 Get Started
 </a>
 
 </div>
 
+</section>
 
 <!-- CTA -->
 
