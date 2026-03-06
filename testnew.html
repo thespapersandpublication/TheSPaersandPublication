@@ -2,8 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
 <title>HRV Orbit — Business Growth Platform</title>
+
+<meta name="description" content="HRV Orbit helps startups launch and grow with company registration, GST, websites, SEO and digital marketing.">
+
+<meta property="og:title" content="HRV Orbit — Business Growth Platform">
+<meta property="og:description" content="Launch and scale your business with registration, websites and marketing.">
+<meta property="og:type" content="website">  
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
@@ -74,13 +80,13 @@ padding:0 10%
 }
 
 .hero h2{
-font-size:64px;
+font-size:clamp(36px,6vw,64px);
 font-weight:700;
 background:linear-gradient(90deg,#5eead4,#60a5fa,#a78bfa);
 -webkit-background-clip:text;
 color:transparent
 }
-
+  
 .hero p{
 margin-top:20px;
 font-size:18px;
@@ -326,8 +332,23 @@ z-index:-1
 </div>
 
 </div>
-</section>
+<!-- INSERT STEP 9 HERE -->
 
+<div style="text-align:center;margin-top:60px">
+<button class="btn">Book Free Consultation</button>
+</div>
+</section>
+<!-- STEP 10 INSERT HERE -->
+
+<section>
+<h2 class="section-title">Trusted by Startups</h2>
+
+<p style="text-align:center;color:#9ca3af;max-width:700px;margin:auto">
+Helping founders launch and scale businesses across India with company registration,
+websites, marketing and automation.
+</p>
+
+</section>
 <section>
 <h2 class="section-title">Marketing Growth Dashboard</h2>
 
@@ -454,11 +475,21 @@ animate();
 window.addEventListener("load",()=>{
 
 document.querySelectorAll(".bar-fill").forEach(el=>{
-el.style.width=el.dataset.width;
+
+gsap.to(el,{
+width:el.dataset.width,
+duration:1.5,
+ease:"power2.out",
+scrollTrigger:{
+trigger:el,
+start:"top 90%"
+}
 });
 
 });
 
+});
+  
 /* CHATBOT */
 
 function sendMsg(){
@@ -466,11 +497,24 @@ function sendMsg(){
 let input=document.getElementById("msg");
 let chat=document.getElementById("chat");
 
-let user=input.value;
+let user=input.value.toLowerCase();
 
 chat.innerHTML+=`<div><b>You:</b> ${user}</div>`;
 
-let reply="We help businesses with company registration, GST, websites and digital marketing. Leave your email for consultation.";
+let reply="";
+
+if(user.includes("price")||user.includes("cost")){
+reply="Our plans start at ₹9,999 for company setup.";
+}
+else if(user.includes("website")){
+reply="We build high converting business websites and ecommerce stores.";
+}
+else if(user.includes("gst")){
+reply="We provide complete GST registration and filing support.";
+}
+else{
+reply="Tell me about your business and we’ll help you grow it.";
+}
 
 chat.innerHTML+=`<div><b>AI:</b> ${reply}</div>`;
 
@@ -479,7 +523,20 @@ input.value="";
 chat.scrollTop=chat.scrollHeight;
 
 }
+/* SERVICES ANIMATION */
 
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.from(".card",{
+opacity:0,
+y:60,
+duration:1,
+stagger:0.2,
+scrollTrigger:{
+trigger:"#services",
+start:"top 80%"
+}
+});  
 </script>
 
 </body>
