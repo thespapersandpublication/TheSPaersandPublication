@@ -1,1 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HRV Orbit — Launch. Build. Scale.</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
+
+body{
+background:#05070f;
+color:white;
+overflow-x:hidden;
+}
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
+
+header{
+position:fixed;
+width:100%;
+backdrop-filter:blur(10px);
+background:rgba(0,0,0,0.4);
+z-index:1000
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%
+}
+
+nav h1{
+font-weight:700;
+letter-spacing:1px;
+background:linear-gradient(90deg,#5eead4,#60a5fa);
+-webkit-background-clip:text;
+color:transparent
+}
+
+nav ul{
+display:flex;
+gap:30px;
+list-style:none
+}
+
+nav a{
+color:#d1d5db;
+text-decoration:none;
+font-size:14px
+}
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:0 10%;
+position:relative
+}
+
+.hero video{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-2;
+opacity:.25
+}
+
+.hero h2{
+font-size:64px;
+font-weight:700;
+background:linear-gradient(90deg,#5eead4,#60a5fa,#a78bfa);
+-webkit-background-clip:text;
+color:transparent
+}
+
+.hero p{
+margin-top:20px;
+color:#cbd5f5;
+font-size:18px
+}
+
+.btn{
+margin-top:30px;
+padding:16px 34px;
+border:none;
+border-radius:40px;
+background:linear-gradient(90deg,#5eead4,#60a5fa);
+color:#000;
+font-weight:600;
+cursor:pointer;
+font-size:15px
+}
+
+section{
+padding:120px 10%
+}
+
+.section-title{
+text-align:center;
+font-size:40px;
+margin-bottom:70px
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:35px
+}
+
+.card{
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.08);
+padding:35px;
+border-radius:20px;
+transition:.4s;
+backdrop-filter:blur(8px)
+}
+
+.card:hover{
+transform:translateY(-10px);
+background:rgba(255,255,255,0.06)
+}
+
+.card h3{
+margin-bottom:12px;
+font-size:20px
+}
+
+.card p{
+color:#9ca3af;
+font-size:14px
+}
+
+.marketing-visual{
+margin-top:80px;
+display:flex;
+justify-content:center
+}
+
+.marketing-visual img{
+width:900px;
+max-width:100%;
+border-radius:20px
+}
+
+.funnel{
+background:#020617;
+text-align:center
+}
+
+.funnel input{
+padding:14px;
+border-radius:8px;
+border:none;
+margin-right:10px;
+width:260px
+}
+
+.chatbot{
+position:fixed;
+bottom:25px;
+right:25px;
+width:320px;
+background:#0f172a;
+border-radius:16px;
+overflow:hidden;
+display:flex;
+flex-direction:column;
+box-shadow:0 20px 40px rgba(0,0,0,0.5)
+}
+
+.chat-header{
+background:#60a5fa;
+padding:12px;
+font-weight:600;
+color:#000
+}
+
+.chat-messages{
+padding:12px;
+height:220px;
+overflow-y:auto;
+font-size:14px
+}
+
+.chat-input{
+display:flex
+}
+
+.chat-input input{
+flex:1;
+padding:10px;
+border:none
+}
+
+.chat-input button{
+padding:10px 14px;
+border:none;
+background:#60a5fa
+}
+
+footer{
+text-align:center;
+padding:40px;
+background:#020617;
+color:#6b7280
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="bg"></canvas>
+
+<header>
+<nav>
+<h1>HRV Orbit</h1>
+<ul>
+<li><a href="#services">Services</a></li>
+<li><a href="#growth">Growth</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<section class="hero">
+
+<video autoplay muted loop>
+<source src="https://cdn.coverr.co/videos/coverr-working-on-a-laptop-5173/1080p.mp4">
+</video>
+
+<div>
+<h2>Launch. Build. Scale.</h2>
+<p>All-in-one business growth platform — company registration, compliance, technology & digital marketing.</p>
+<button class="btn" onclick="openFunnel()">Get Free Strategy Call</button>
+</div>
+</section>
+
+<section id="services">
+<h2 class="section-title">Complete Business Ecosystem</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>Company Registration</h3>
+<p>Private Limited, LLP, OPC and Startup India registration.</p>
+</div>
+
+<div class="card">
+<h3>GST Registration & Filing</h3>
+<p>Automated GST filing and compliance management.</p>
+</div>
+
+<div class="card">
+<h3>Website Development</h3>
+<p>Modern conversion-focused websites and ecommerce stores.</p>
+</div>
+
+<div class="card">
+<h3>CRM Development</h3>
+<p>Custom CRM systems to automate leads and sales.</p>
+</div>
+
+<div class="card">
+<h3>SEO Optimization</h3>
+<p>Rank on Google and generate consistent organic traffic.</p>
+</div>
+
+<div class="card">
+<h3>Meta & Google Ads</h3>
+<p>High-ROI paid ad campaigns for rapid growth.</p>
+</div>
+
+</div>
+
+<div class="marketing-visual">
+<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
+</div>
+
+</section>
+
+<section class="funnel" id="growth">
+
+<h2 class="section-title">Get Your Free Growth Plan</h2>
+
+<p style="margin-bottom:30px;color:#9ca3af">Enter your email and our team will create a custom strategy.</p>
+
+<input placeholder="Your Email">
+<button class="btn">Get Strategy</button>
+
+</section>
+
+<footer>
+© 2026 HRV Orbit — Business Growth Ecosystem
+</footer>
+
+<div class="chatbot">
+<div class="chat-header">AI Assistant</div>
+<div class="chat-messages" id="chat"></div>
+<div class="chat-input">
+<input id="userInput" placeholder="Ask something...">
+<button onclick="sendMsg()">Send</button>
+</div>
+</div>
+
+<script>
+
+/* THREE JS BACKGROUND */
+
+const scene=new THREE.Scene()
+const camera=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000)
+
+const renderer=new THREE.WebGLRenderer({canvas:document.getElementById("bg"),alpha:true})
+renderer.setSize(window.innerWidth,window.innerHeight)
+
+const geometry=new THREE.TorusGeometry(10,3,16,100)
+const material=new THREE.MeshBasicMaterial({wireframe:true})
+const torus=new THREE.Mesh(geometry,material)
+scene.add(torus)
+
+camera.position.z=30
+
+function animate(){
+requestAnimationFrame(animate)
+torus.rotation.x+=0.002
+torus.rotation.y+=0.003
+renderer.render(scene,camera)
+}
+
+animate()
+
+/* GSAP SCROLL */
+
+gsap.registerPlugin(ScrollTrigger)
+
+gsap.from(".card",{
+scrollTrigger:".services",
+opacity:0,
+y:60,
+stagger:.2,
+duration:1
+})
+
+/* CHATBOT */
+
+function sendMsg(){
+
+const input=document.getElementById("userInput")
+const chat=document.getElementById("chat")
+
+const msg=input.value
+
+chat.innerHTML+=`<div>User: ${msg}</div>`
+
+let reply="Our team will help you with business registration, GST, websites and digital marketing. Leave your email for consultation."
+
+chat.innerHTML+=`<div>AI: ${reply}</div>`
+
+input.value=""
+
+chat.scrollTop=chat.scrollHeight
+
+}
+
+/* FUNNEL */
+
+function openFunnel(){
+alert("Book your free consultation with HRV Orbit team.")
+}
+
+</script>
+
+</body>
+</html>
