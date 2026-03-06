@@ -17,7 +17,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
 <style>
-
+  
+html{
+scroll-behavior:smooth;
+}
+  
 *{
 margin:0;
 padding:0;
@@ -103,6 +107,11 @@ color:black;
 font-weight:600;
 cursor:pointer
 }
+  
+.btn:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px rgba(96,165,250,0.6);
+}  
 
 /* SECTIONS */
 
@@ -448,7 +457,7 @@ renderer.setSize(window.innerWidth,window.innerHeight);
 const geometry=new THREE.BufferGeometry();
 const vertices=[];
 
-for(let i=0;i<5000;i++){
+for(let i=0;i<2000;i++){
 vertices.push((Math.random()-0.5)*200);
 vertices.push((Math.random()-0.5)*200);
 vertices.push((Math.random()-0.5)*200);
@@ -523,6 +532,19 @@ input.value="";
 chat.scrollTop=chat.scrollHeight;
 
 }
+
+/* NAVBAR SCROLL EFFECT */
+
+window.addEventListener("scroll",()=>{
+const header=document.querySelector("header");
+
+if(window.scrollY>50){
+header.style.background="rgba(0,0,0,0.7)";
+}else{
+header.style.background="rgba(0,0,0,0.4)";
+}
+});
+  
 /* SERVICES ANIMATION */
 
 gsap.registerPlugin(ScrollTrigger);
