@@ -24,6 +24,17 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
 <style>
+body{
+background:linear-gradient(-45deg,#020617,#0f172a,#020617,#1e293b);
+background-size:400% 400%;
+animation:gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
   
 html{
 scroll-behavior:smooth;
@@ -46,12 +57,21 @@ overflow-x:hidden
 
 header{
 position:fixed;
+top:0;
 width:100%;
-background:rgba(0,0,0,0.4);
-backdrop-filter:blur(10px);
-z-index:1000
-}
+padding:18px 10%;
+display:flex;
+justify-content:space-between;
+align-items:center;
 
+background:rgba(2,6,23,0.5);
+backdrop-filter:blur(12px);
+
+border-bottom:1px solid rgba(255,255,255,0.05);
+
+z-index:1000;
+transition:.3s;
+}
 nav{
 display:flex;
 justify-content:space-between;
@@ -508,15 +528,19 @@ z-index:-1
 </div>
 </section>
 
-<section>
-<h2 class="section-title">Trusted by Startups</h2>
+<section class="trust">
+<p>Trusted by teams worldwide</p>
 
-<p style="text-align:center;color:#9ca3af;max-width:700px;margin:auto">
-Helping founders launch and scale businesses across India with company registration,
-websites, marketing and automation.
-</p>
+<div class="logos">
+<img src="google.svg">
+<img src="shopify.svg">
+<img src="notion.svg">
+<img src="slack.svg">
+<img src="vercel.svg">
+</div>
 
 </section>
+  
 <section>
 <h2 class="section-title">Marketing Growth Dashboard</h2>
 
