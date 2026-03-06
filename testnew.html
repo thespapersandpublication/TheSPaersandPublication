@@ -142,19 +142,49 @@ box-shadow:0 10px 30px rgba(96,165,250,0.25);
 transform:translateY(-3px) scale(1.05);
 box-shadow:0 15px 40px rgba(96,165,250,0.6);
 }
+
+.stats{
+display:flex;
+justify-content:center;
+gap:80px;
+padding:80px 10%;
+text-align:center;
+}
+
+.stats h2{
+font-size:40px;
+background:linear-gradient(90deg,#5eead4,#60a5fa);
+-webkit-background-clip:text;
+color:transparent;
+}  
   
 /* SECTIONS */
 
-section{
-padding:120px 10%
-}
-
-.section-title{
+.trust{
 text-align:center;
-font-size:40px;
-margin-bottom:70px
+padding:60px 10%;
+opacity:.8;
 }
 
+.logos{
+display:flex;
+justify-content:center;
+gap:50px;
+flex-wrap:wrap;
+margin-top:25px;
+}
+
+.logos img{
+height:28px;
+filter:grayscale(100%);
+opacity:.7;
+transition:.3s;
+}
+
+.logos img:hover{
+filter:none;
+opacity:1;
+}
 /* SERVICES */
 
 .services{
@@ -485,6 +515,25 @@ z-index:-1
 <p>Company registration, compliance, websites and digital marketing in one platform.</p>
 <button class="btn">Start Your Business</button>
 </section>
+
+<section class="stats">
+
+<div>
+<h2>25k+</h2>
+<p>Businesses</p>
+</div>
+
+<div>
+<h2>$120M</h2>
+<p>Revenue Generated</p>
+</div>
+
+<div>
+<h2>98%</h2>
+<p>Customer Satisfaction</p>
+</div>
+
+</section>  
 
 <section id="services">
 <h2 class="section-title">Services</h2>
