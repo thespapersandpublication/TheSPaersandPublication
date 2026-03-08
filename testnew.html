@@ -1064,6 +1064,21 @@ for(const key in responses){
   document.querySelectorAll('.quick-btn').forEach(b=>b.addEventListener('click',()=>{addMsg(b.dataset.msg,'user');botReply(b.dataset.msg);}));
 });
 </script>
-  
+<script>
+/* Reveal animation */
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("in");
+    }
+  });
+},{
+  threshold:0.15
+});
+
+document.querySelectorAll(".reveal").forEach(el=>{
+  observer.observe(el);
+});
+</script>  
 </body>
 </html>
