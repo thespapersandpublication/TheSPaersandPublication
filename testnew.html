@@ -982,7 +982,7 @@ document.getElementById('nl-btn').addEventListener('click',()=>{
   sendBtn.addEventListener('click',sendMessage);
   inputEl.addEventListener('keydown',e=>{if(e.key==='Enter')sendMessage();});
   document.querySelectorAll('.quick-btn').forEach(b=>b.addEventListener('click',()=>{addMsg(b.dataset.msg,'user');botReply(b.dataset.msg);}));
-})();
+});
 </script>
 </body>
 </html>
