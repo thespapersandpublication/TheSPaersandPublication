@@ -904,10 +904,24 @@ window.addEventListener('scroll',()=>{
 document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('nav-links').classList.toggle('open'));
 document.querySelectorAll('#nav-links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nav-links').classList.remove('open')));
 
-/* ══ REVEAL ══ */
-const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});},{threshold:.07});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+/* ══ REVEAL ANIMATION ══ */
 
+const obs = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('in');
+      obs.unobserve(entry.target);
+    }
+  });
+},{
+  threshold:0.1
+});
+
+document.querySelectorAll('.reveal').forEach(el=>{
+  obs.observe(el);
+});
+
+  
 /* ══ COUNTERS ══ */
 document.querySelectorAll('[data-count]').forEach(el=>{
   const target=parseFloat(el.dataset.count),suf=el.dataset.suffix||'';let done=false;
@@ -1013,23 +1027,6 @@ function startCarousel(){
 }
 
 startCarousel();
-
-const reveals = document.querySelectorAll(".reveal");
-
-function revealOnScroll(){
-  const windowHeight = window.innerHeight;
-
-  reveals.forEach(el=>{
-    const elementTop = el.getBoundingClientRect().top;
-
-    if(elementTop < windowHeight - 80){
-      el.classList.add("in");
-    }
-  });
-}
-
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();  
 
 /* ══ CHATBOT ══ */
 (function(){
