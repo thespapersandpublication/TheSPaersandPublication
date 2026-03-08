@@ -2,916 +2,987 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">  
-<title>HRV Orbit — Business Growth Platform</title>
-<meta property="og:image" content="https://yourdomain.com/preview.jpg">
-
-<meta name="description" content="HRV Orbit helps startups launch and grow with company registration, GST, websites, SEO and digital marketing.">
-
-<meta property="og:title" content="HRV Orbit — Business Growth Platform">
-<meta property="og:description" content="Launch and scale your business with registration, websites and marketing.">
-<meta property="og:type" content="website">  
-<meta property="og:url" content="https://hrvorbit.com">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#05070f">
-<link rel="icon" href="favicon.png"> 
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>360 Biz Solution — Complete Business Solutions, India</title>
+<meta name="description" content="360 Biz Solution helps Indian businesses launch and grow with company registration, GST, websites, CRM and digital marketing.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
 <style>
-body{
-background:linear-gradient(-45deg,#020617,#0f172a,#020617,#1e293b);
-background-size:400% 400%;
-animation:gradientMove 15s ease infinite;
-}
-
-@keyframes gradientMove{
-0%{background-position:0% 50%}
-50%{background-position:100% 50%}
-100%{background-position:0% 50%}
-}
-  
-html{
-scroll-behavior:smooth;
-}
-  
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Inter,sans-serif
-}
-
-body{
-background:#05070f;
-color:white;
-overflow-x:hidden
-}
-
-/* NAVBAR */
-
-header{
-position:fixed;
-top:0;
-width:100%;
-padding:18px 10%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-background:rgba(2,6,23,0.5);
-backdrop-filter:blur(12px);
-
-border-bottom:1px solid rgba(255,255,255,0.05);
-
-z-index:1000;
-transition:.3s;
-}
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 8%
-}
-
-nav h1{
-font-weight:700;
-background:linear-gradient(90deg,#5eead4,#60a5fa);
--webkit-background-clip:text;
-color:transparent
-}
-
-nav ul{
-list-style:none;
-display:flex;
-gap:30px
-}
-
-nav a{
-text-decoration:none;
-color:#d1d5db;
-font-size:14px
-}
-
-/* HERO */
-
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:0 10%
-}
-
-.hero h1{
-font-size:60px;
-background:linear-gradient(90deg,#5eead4,#60a5fa,#c084fc);
--webkit-background-clip:text;
-color:transparent;
-}
-  
-.hero h2{
-font-size:clamp(36px,6vw,64px);
-font-weight:700;
-background:linear-gradient(90deg,#5eead4,#60a5fa,#a78bfa);
--webkit-background-clip:text;
-color:transparent
-}
-  
-.hero p{
-margin-top:20px;
-font-size:18px;
-color:#cbd5f5
-}
-
-.btn{
-margin-top:30px;
-padding:16px 36px;
-border:none;
-border-radius:40px;
-background:linear-gradient(90deg,#5eead4,#60a5fa);
-color:black;
-font-weight:600;
-cursor:pointer;
-transition:all .35s ease;
-display:inline-block;
-box-shadow:0 10px 30px rgba(96,165,250,0.25);
-}
-
-.btn:hover{
-transform:translateY(-3px) scale(1.05);
-box-shadow:0 15px 40px rgba(96,165,250,0.6);
-}
-
-.stats{
-display:flex;
-justify-content:center;
-gap:80px;
-padding:80px 10%;
-text-align:center;
-}
-
-.stats h2{
-font-size:40px;
-background:linear-gradient(90deg,#5eead4,#60a5fa);
--webkit-background-clip:text;
-color:transparent;
-}  
-  
-/* SECTIONS */
-
-section{
-padding:120px 10%
-}
-
-.section-title{
-text-align:center;
-font-size:40px;
-margin-bottom:70px
-}  
-
-.trust{
-text-align:center;
-padding:60px 10%;
-opacity:.8;
-}
-
-.logos{
-display:flex;
-justify-content:center;
-gap:50px;
-flex-wrap:wrap;
-margin-top:25px;
-}
-
-.logos img{
-height:28px;
-filter:grayscale(100%);
-opacity:.7;
-transition:.3s;
-}
-
-.logos img:hover{
-filter:none;
-opacity:1;
-}
-/* SERVICES */
-
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:35px
-}
-
-.card{
-background:rgba(255,255,255,0.04);
-backdrop-filter:blur(20px);
-padding:35px;
-border-radius:20px;
-border:1px solid rgba(255,255,255,0.08);
-transition:.4s;
-box-shadow:0 10px 40px rgba(0,0,0,0.4);
-}
-.card:hover{
-transform:translateY(-10px)
-}
-
-.card h3{
-margin-bottom:10px
-}
-
-.card p{
-color:#9ca3af;
-font-size:14px
-}
-
-/* DASHBOARD */
-
-.dashboard{
-max-width:800px;
-margin:auto
-}
-
-.bar{
-background:#1f2937;
-border-radius:6px;
-margin:12px 0
-}
-
-.bar-fill{
-height:28px;
-background:#60a5fa;
-border-radius:6px;
-width:0
-}
-
-/* PRICING */
-
-.pricing{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:40px;
-max-width:1000px;
-margin:auto
-}
-
-.plan{
-padding:40px;
-border-radius:20px;
-background:rgba(255,255,255,0.04);
-border:1px solid rgba(255,255,255,0.08);
-text-align:center
-}
-
-.plan h3{
-font-size:24px
-}
-
-.plan:hover{
-transform:translateY(-10px);
-box-shadow:0 20px 60px rgba(0,0,0,0.5);
-transition:.4s;
-}
-  
-.price{
-font-size:34px;
-margin:20px 0
-}
-
-.plan ul{
-list-style:none;
-margin-top:15px;
-color:#9ca3af
-}
-
-.plan li{
-margin:8px 0
-}
-
-/* FUNNEL */
-
-.funnel{
-text-align:center
-}
-
-.funnel input{
-padding:14px;
-border:none;
-border-radius:8px;
-margin:10px;
-width:260px;
-outline:none;
-}
-  
-.funnel button{
-margin-top:15px;
-}
-  
-/* CHATBOT */
-
-.chatbot{
-position:fixed;
-bottom:20px;
-right:20px;
-width:300px;
-max-width:90%;
-background:#0f172a;
-border-radius:14px;
-overflow:hidden
-}
-  
-.chat-header{
-background:#60a5fa;
-padding:10px;
-color:black;
-font-weight:600
-}
-
-.chat-messages{
-height:200px;
-overflow-y:auto;
-padding:10px;
-font-size:14px
-}
-
-.chat-input{
-display:flex
-}
-
-.chat-input input{
-flex:1;
-padding:10px;
-border:none
-}
-
-.chat-input button{
-padding:10px;
-border:none;
-background:#60a5fa
-}
-
-/* PREMIUM FOOTER */
-
-.footer{
-background:#020617;
-padding:90px 10% 40px;
-}
-
-.footer-container{
-display:flex;
-flex-wrap:wrap;
-gap:70px;
-justify-content:space-between;
-margin-bottom:50px;
-}
-
-.footer-brand{
-max-width:300px;
-}
-
-.footer-brand h2{
-font-size:28px;
-margin-bottom:10px;
-background:linear-gradient(90deg,#5eead4,#60a5fa);
--webkit-background-clip:text;
-color:transparent;
-}
-
-.footer-brand p{
-color:#9ca3af;
-font-size:14px;
-margin-bottom:20px;
-line-height:1.6;
-}
-
-/* SOCIAL ICONS */
-
-.social-icons{
-display:flex;
-gap:12px;
-}
-
-.social-icons a{
-width:36px;
-height:36px;
-display:flex;
-align-items:center;
-justify-content:center;
-background:rgba(255,255,255,0.05);
-border-radius:50%;
-text-decoration:none;
-transition:.3s;
-font-size:16px;
-}
-
-.social-icons a:hover{
-background:#60a5fa;
-transform:translateY(-4px);
-}
-
-/* FOOTER LINKS */
-
-.footer-links{
-display:flex;
-gap:60px;
-flex-wrap:wrap;
-}
-
-.footer-col{
-display:flex;
-flex-direction:column;
-gap:10px;
-}
-
-.footer-col h4{
-margin-bottom:10px;
-}
-
-.footer-col a{
-text-decoration:none;
-color:#9ca3af;
-font-size:14px;
-transition:.3s;
-}
-
-.footer-col a:hover{
-color:#60a5fa;
-transform:translateX(4px);
-}
-
-/* NEWSLETTER */
-
-.footer-newsletter{
-max-width:320px;
-}
-
-.footer-newsletter h4{
-margin-bottom:10px;
-}
-
-.footer-newsletter p{
-color:#9ca3af;
-font-size:14px;
-margin-bottom:15px;
-}
-
-.newsletter-box{
-display:flex;
-gap:10px;
-}
-
-.newsletter-box input{
-flex:1;
-padding:12px;
-border:none;
-border-radius:8px;
-background:#0f172a;
-color:white;
-}
-
-.newsletter-box button{
-padding:12px 16px;
-border:none;
-border-radius:8px;
-background:linear-gradient(90deg,#5eead4,#60a5fa);
-font-weight:600;
-cursor:pointer;
-}
-
-/* GLOW DIVIDER */
-
-.footer-divider{
-height:1px;
-background:linear-gradient(90deg,transparent,#60a5fa,transparent);
-margin:40px 0;
-opacity:.5;
-}
-
-/* BOTTOM */
-
-.footer-bottom{
-text-align:center;
-color:#6b7280;
-font-size:13px;
-}  
-
-canvas{
-position:fixed;
-top:0;
-left:0;
-z-index:-1
-}
-
+:root{
+  --navy:#0d1b2a;
+  --navy2:#112233;
+  --navy3:#162840;
+  --teal:#0ea5e9;
+  --teal2:#38bdf8;
+  --gold:#f59e0b;
+  --gold2:#fcd34d;
+  --emerald:#10b981;
+  --bg:#060e18;
+  --card:rgba(14,165,233,0.06);
+  --card-border:rgba(14,165,233,0.18);
+  --text:#e2eaf5;
+  --text-muted:#7b96b2;
+  --accent-line:rgba(14,165,233,0.22);
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Sora',sans-serif;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);overflow-x:hidden;}
+
+/* ══ CANVAS BG ══ */
+#bg-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-2;pointer-events:none;}
+
+/* ══ LAYERED BG SHAPES ══ */
+.bg-shapes{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none;overflow:hidden;}
+.bg-shapes svg{width:100%;height:100%;position:absolute;top:0;left:0;}
+
+/* Gradient orbs */
+.bg-orb{position:fixed;border-radius:50%;filter:blur(100px);pointer-events:none;z-index:-1;}
+.bg-orb-1{width:700px;height:700px;background:radial-gradient(circle,rgba(14,165,233,0.12),transparent 70%);top:-200px;left:-200px;animation:orbF1 14s ease-in-out infinite;}
+.bg-orb-2{width:500px;height:500px;background:radial-gradient(circle,rgba(245,158,11,0.08),transparent 70%);bottom:5%;right:-100px;animation:orbF2 18s ease-in-out infinite;}
+.bg-orb-3{width:400px;height:400px;background:radial-gradient(circle,rgba(16,185,129,0.07),transparent 70%);top:50%;left:30%;animation:orbF3 20s ease-in-out infinite;}
+@keyframes orbF1{0%,100%{transform:translate(0,0)}50%{transform:translate(80px,100px)}}
+@keyframes orbF2{0%,100%{transform:translate(0,0)}50%{transform:translate(-60px,80px)}}
+@keyframes orbF3{0%,100%{transform:translate(0,0)}50%{transform:translate(50px,-70px)}}
+
+/* Grid pattern */
+.bg-grid{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none;
+  background-image:linear-gradient(rgba(14,165,233,0.035) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(14,165,233,0.035) 1px,transparent 1px);
+  background-size:72px 72px;}
+
+/* ══ HEADER ══ */
+header{position:fixed;top:0;width:100%;padding:14px 7%;display:flex;justify-content:space-between;align-items:center;background:rgba(6,14,24,0.75);backdrop-filter:blur(24px);border-bottom:1px solid rgba(14,165,233,0.12);z-index:1000;transition:.3s;}
+nav{display:flex;justify-content:space-between;align-items:center;width:100%;gap:32px;}
+.logo-wrap{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-text{font-weight:800;font-size:18px;white-space:nowrap;background:linear-gradient(90deg,var(--teal),var(--gold));-webkit-background-clip:text;color:transparent;}
+.logo-badge{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--teal),var(--gold));display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;color:#060e18;}
+nav ul{list-style:none;display:flex;gap:28px;margin:0 auto;}
+nav a{text-decoration:none;color:var(--text-muted);font-size:14px;transition:color .2s;font-weight:500;}
+nav a:hover,nav a.active{color:var(--teal2);}
+.nav-cta{padding:9px 24px;border:none;border-radius:40px;background:linear-gradient(90deg,var(--teal),#0284c7);color:white!important;font-weight:600;font-size:13px;cursor:pointer;text-decoration:none;transition:all .3s;box-shadow:0 4px 18px rgba(14,165,233,0.3);}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(14,165,233,0.5);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+.hamburger span{width:22px;height:1.5px;background:rgba(255,255,255,0.7);display:block;border-radius:2px;transition:all .3s;}
+
+/* ══ HERO ══ */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:130px 8% 80px;position:relative;}
+.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:#10b981;animation:pulse 2s ease-in-out infinite;display:inline-block;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+
+/* Carousel */
+.carousel{position:relative;width:100%;max-width:840px;margin-bottom:52px;}
+.carousel-slide{position:absolute;top:0;left:0;width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1);pointer-events:none;}
+.carousel-slide.active{opacity:1;transform:translateY(0);pointer-events:auto;position:relative;}
+.carousel-slide.exit{opacity:0;transform:translateY(-18px);position:absolute;}
+.slide-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(14,165,233,0.1);border:1px solid rgba(14,165,233,0.25);border-radius:40px;padding:8px 20px;font-size:12px;font-weight:600;color:var(--teal2);margin-bottom:28px;backdrop-filter:blur(12px);letter-spacing:.04em;text-transform:uppercase;}
+.carousel-slide h2{font-size:clamp(36px,5.5vw,64px);font-weight:800;color:white;margin-bottom:18px;line-height:1.1;letter-spacing:-0.03em;}
+.carousel-slide h2 em{font-style:normal;background:linear-gradient(90deg,var(--teal2),var(--gold));-webkit-background-clip:text;color:transparent;}
+.carousel-slide p{font-size:17px;color:var(--text-muted);max-width:560px;line-height:1.75;font-weight:300;margin-bottom:36px;font-family:'DM Sans',sans-serif;}
+.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+
+/* Buttons */
+.btn{padding:14px 32px;border:none;border-radius:40px;background:linear-gradient(90deg,var(--teal),#0284c7);color:white;font-weight:600;cursor:pointer;transition:all .3s;display:inline-block;box-shadow:0 6px 22px rgba(14,165,233,0.35);text-decoration:none;font-size:14px;}
+.btn:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(14,165,233,0.55);}
+.btn-gold{padding:14px 32px;border:none;border-radius:40px;background:linear-gradient(90deg,var(--gold),#d97706);color:#060e18;font-weight:700;cursor:pointer;transition:all .3s;display:inline-block;font-size:14px;text-decoration:none;box-shadow:0 6px 22px rgba(245,158,11,0.3);}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(245,158,11,0.5);}
+.btn-outline{padding:13px 32px;border:1px solid rgba(14,165,233,0.35);border-radius:40px;background:rgba(14,165,233,0.06);color:var(--teal2);font-weight:500;cursor:pointer;transition:all .3s;display:inline-block;font-size:14px;text-decoration:none;backdrop-filter:blur(10px);}
+.btn-outline:hover{background:rgba(14,165,233,0.14);border-color:rgba(14,165,233,0.6);transform:scale(1.02);}
+.btn-wa{padding:14px 30px;border:none;border-radius:40px;background:#25d366;color:white;font-weight:600;cursor:pointer;transition:all .3s;display:inline-block;font-size:14px;text-decoration:none;}
+.btn-wa:hover{transform:translateY(-2px);background:#1db954;}
+
+.carousel-arrow{position:absolute;top:42%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(14,165,233,0.08);border:1px solid rgba(14,165,233,0.2);color:var(--teal2);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .25s;z-index:10;backdrop-filter:blur(8px);}
+.carousel-arrow:hover{background:rgba(14,165,233,0.2);border-color:rgba(14,165,233,0.5);transform:translateY(-50%) scale(1.1);}
+.carousel-prev{left:-60px;}.carousel-next{right:-60px;}
+.carousel-dots{display:flex;gap:8px;justify-content:center;margin:28px 0 10px;}
+.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.15);cursor:pointer;transition:all .3s;border:none;display:block;}
+.dot.active{background:linear-gradient(90deg,var(--teal),var(--gold));width:28px;border-radius:4px;}
+.carousel-progress{width:200px;height:2px;background:rgba(255,255,255,0.06);border-radius:2px;margin-bottom:44px;overflow:hidden;}
+.carousel-progress-bar{height:100%;background:linear-gradient(90deg,var(--teal),var(--gold));border-radius:2px;width:0%;transition:width .1s linear;}
+
+/* Stats */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(14,165,233,0.14);border:1px solid rgba(14,165,233,0.18);border-radius:20px;overflow:hidden;max-width:720px;width:100%;}
+.stat-item{background:rgba(6,14,24,0.85);backdrop-filter:blur(10px);padding:24px 16px;text-align:center;}
+.stat-num{font-size:28px;font-weight:800;letter-spacing:-0.03em;background:linear-gradient(90deg,var(--teal2),var(--gold));-webkit-background-clip:text;color:transparent;display:block;margin-bottom:4px;}
+.stat-label{font-size:10px;color:var(--text-muted);font-weight:600;letter-spacing:.07em;text-transform:uppercase;}
+
+/* ══ SECTION BASE ══ */
+.section{padding:110px 8%;}
+.section-header{margin-bottom:60px;}
+.section-header.center{text-align:center;}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:12px;}
+.section-title{font-size:clamp(26px,3.2vw,44px);font-weight:800;line-height:1.15;letter-spacing:-0.02em;color:white;margin-bottom:14px;}
+.section-title em{font-style:normal;background:linear-gradient(90deg,var(--teal2),var(--gold));-webkit-background-clip:text;color:transparent;}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(14,165,233,0.2),transparent);margin:0 8%;}
+
+/* ══ SERVICES ══ */
+#services{
+  position:relative;
+}
+#services::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(14,165,233,0.04),transparent);
+  pointer-events:none;
+}
+.services-grid-new{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative;z-index:1;}
+.svc-box{background:var(--navy2);border:1px solid var(--card-border);border-radius:20px;padding:32px 24px;text-decoration:none;color:white;display:flex;flex-direction:column;gap:12px;position:relative;overflow:hidden;transition:all .4s cubic-bezier(.4,0,.2,1);cursor:pointer;}
+.svc-box::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(14,165,233,0.08),rgba(245,158,11,0.04));opacity:0;transition:opacity .4s;}
+.svc-box::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--teal),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.4,0,.2,1);}
+.svc-box:hover{transform:translateY(-8px);border-color:rgba(14,165,233,0.45);box-shadow:0 20px 50px rgba(14,165,233,0.15);}
+.svc-box:hover::before{opacity:1;}
+.svc-box:hover::after{transform:scaleX(1);}
+.svc-box:hover .svc-icon{background:linear-gradient(135deg,var(--teal),var(--gold));transform:scale(1.1) rotate(-5deg);}
+.svc-icon{width:52px;height:52px;border-radius:14px;background:rgba(14,165,233,0.12);display:flex;align-items:center;justify-content:center;font-size:22px;transition:all .35s;flex-shrink:0;}
+.svc-num{font-size:10px;font-weight:700;letter-spacing:.1em;color:rgba(255,255,255,0.18);margin-bottom:4px;}
+.svc-name{font-size:16px;font-weight:700;color:white;line-height:1.3;}
+.svc-desc{font-size:13px;color:var(--text-muted);line-height:1.65;flex:1;font-family:'DM Sans',sans-serif;}
+.svc-arrow{font-size:13px;color:var(--teal2);font-weight:600;opacity:0;transform:translateX(-6px);transition:all .3s;margin-top:4px;}
+.svc-box:hover .svc-arrow{opacity:1;transform:translateX(0);}
+
+/* ══ ABOUT ══ */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+.about-img-card{background:var(--navy2);border:1px solid var(--card-border);border-radius:24px;padding:48px;display:flex;flex-direction:column;align-items:center;justify-content:center;aspect-ratio:1;position:relative;overflow:hidden;}
+.about-img-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(14,165,233,0.1),rgba(245,158,11,0.06));pointer-events:none;}
+.about-infinity{font-size:100px;font-weight:900;background:linear-gradient(135deg,var(--teal),var(--gold));-webkit-background-clip:text;color:transparent;line-height:1;}
+.about-badge-float{position:absolute;background:linear-gradient(90deg,var(--teal),#0284c7);border-radius:12px;padding:10px 18px;font-size:12px;font-weight:700;color:white;box-shadow:0 8px 24px rgba(14,165,233,0.35);}
+.about-badge-float.top{top:24px;right:24px;background:linear-gradient(90deg,var(--gold),#d97706);box-shadow:0 8px 24px rgba(245,158,11,0.35);}
+.about-badge-float.bottom{bottom:24px;left:24px;}
+.about-content p{font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:18px;font-family:'DM Sans',sans-serif;}
+.about-points{display:flex;flex-direction:column;gap:14px;margin:24px 0 32px;}
+.about-point{display:flex;align-items:flex-start;gap:14px;}
+.about-point-icon{width:36px;height:36px;border-radius:10px;background:rgba(14,165,233,0.12);border:1px solid rgba(14,165,233,0.2);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;margin-top:2px;}
+.about-point-text strong{display:block;font-size:14px;font-weight:700;color:white;margin-bottom:3px;}
+.about-point-text span{font-size:13px;color:var(--text-muted);}
+
+/* ══ TRUSTED BY ══ */
+.trusted-section{padding:70px 8%;text-align:center;}
+.trusted-label{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:40px;}
+.trusted-logos{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:28px;}
+.trusted-logo-slot{width:140px;height:64px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:14px;display:flex;align-items:center;justify-content:center;transition:all .3s;filter:grayscale(1);opacity:.45;}
+.trusted-logo-slot:hover{filter:grayscale(0);opacity:1;border-color:rgba(14,165,233,0.3);background:rgba(14,165,233,0.06);}
+.trusted-logo-slot span{font-size:13px;font-weight:700;color:var(--text-muted);}
+
+/* ══ ENQUIRY FORM ══ */
+.enquiry-section{padding:100px 8%;position:relative;}
+.enquiry-inner{display:grid;grid-template-columns:1fr 1.1fr;gap:60px;align-items:start;}
+.enquiry-left p{font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:28px;font-family:'DM Sans',sans-serif;}
+.enquiry-perks{display:flex;flex-direction:column;gap:16px;}
+.enquiry-perk{display:flex;align-items:center;gap:14px;}
+.enquiry-perk-icon{width:40px;height:40px;border-radius:12px;background:rgba(14,165,233,0.1);border:1px solid rgba(14,165,233,0.2);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.enquiry-perk strong{display:block;font-size:14px;font-weight:700;color:white;}
+.enquiry-perk span{font-size:13px;color:var(--text-muted);}
+.enquiry-form{background:var(--navy2);border:1px solid rgba(14,165,233,0.18);border-radius:24px;padding:44px;box-shadow:0 20px 60px rgba(14,165,233,0.08);}
+.enquiry-form h3{font-size:22px;font-weight:700;color:white;margin-bottom:6px;}
+.enquiry-form .form-sub{font-size:14px;color:var(--text-muted);margin-bottom:28px;font-family:'DM Sans',sans-serif;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+.form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;}
+.form-group label{font-size:12px;font-weight:600;color:var(--text-muted);letter-spacing:.04em;text-transform:uppercase;}
+.form-group input,.form-group select,.form-group textarea{background:rgba(255,255,255,0.04);border:1px solid rgba(14,165,233,0.15);border-radius:12px;padding:13px 16px;color:white;font-size:14px;outline:none;transition:border-color .25s,box-shadow .25s;font-family:'DM Sans',sans-serif;resize:none;}
+.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,0.22);}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:rgba(14,165,233,0.5);box-shadow:0 0 0 3px rgba(14,165,233,0.1);}
+.form-group select option{background:#112233;color:white;}
+.form-submit{width:100%;padding:16px;border:none;border-radius:40px;background:linear-gradient(90deg,var(--teal),#0284c7);color:white;font-size:15px;font-weight:700;cursor:pointer;transition:all .35s;box-shadow:0 8px 24px rgba(14,165,233,0.3);letter-spacing:.02em;}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(14,165,233,0.5);}
+.form-success{display:none;text-align:center;padding:40px 20px;}
+.form-success .success-icon{font-size:56px;margin-bottom:16px;}
+.form-success h4{font-size:20px;font-weight:700;color:white;margin-bottom:8px;}
+.form-success p{font-size:14px;color:var(--text-muted);}
+
+/* ══ BENTO ══ */
+.bento-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:auto auto;gap:16px;}
+.bento-card{background:var(--navy2);border:1px solid var(--card-border);border-radius:20px;padding:36px;transition:.4s;box-shadow:0 8px 32px rgba(0,0,0,0.3);}
+.bento-card:hover{transform:translateY(-6px);border-color:rgba(14,165,233,0.3);}
+.bento-card.brand{background:linear-gradient(135deg,#0d2236 0%,#142b3d 100%);border-color:rgba(245,158,11,0.25);}
+.bento-card-wide{grid-column:span 2;}
+.bento-icon{width:50px;height:50px;border-radius:14px;background:rgba(14,165,233,0.1);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px;}
+.bento-title{font-size:19px;font-weight:700;color:white;margin-bottom:8px;}
+.bento-desc{font-size:14px;color:var(--text-muted);line-height:1.65;font-family:'DM Sans',sans-serif;}
+.bento-metric{font-size:42px;font-weight:900;letter-spacing:-0.04em;background:linear-gradient(90deg,var(--gold),var(--teal2));-webkit-background-clip:text;color:transparent;margin-bottom:6px;}
+.chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+.chip{display:inline-flex;align-items:center;gap:5px;background:rgba(14,165,233,0.08);border:1px solid rgba(14,165,233,0.18);color:var(--teal2);border-radius:20px;padding:5px 12px;font-size:12px;font-weight:500;}
+
+/* ══ PROCESS ══ */
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.process-step{background:var(--navy2);border:1px solid var(--card-border);border-radius:20px;padding:36px 24px;transition:.4s;position:relative;overflow:hidden;}
+.process-step::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .4s;}
+.process-step:hover::before{transform:scaleX(1);}
+.process-step:hover{transform:translateY(-5px);border-color:rgba(14,165,233,0.3);}
+.step-num{font-size:52px;font-weight:900;letter-spacing:-0.04em;line-height:1;display:block;margin-bottom:18px;color:rgba(255,255,255,0.05);}
+.step-active .step-num{background:linear-gradient(90deg,var(--teal2),var(--gold));-webkit-background-clip:text;color:transparent;}
+.step-title{font-size:17px;font-weight:700;color:white;margin-bottom:8px;}
+.step-desc{font-size:13px;color:var(--text-muted);line-height:1.65;}
+
+/* ══ TESTIMONIALS ══ */
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.t-card{background:var(--navy2);border:1px solid var(--card-border);border-radius:20px;padding:30px;transition:.4s;}
+.t-card:hover{transform:translateY(-6px);border-color:rgba(14,165,233,0.3);}
+.t-stars{color:var(--gold);font-size:14px;letter-spacing:2px;margin-bottom:12px;}
+.t-text{font-size:14px;color:var(--text-muted);line-height:1.75;margin-bottom:20px;font-family:'DM Sans',sans-serif;}
+.t-author{display:flex;align-items:center;gap:12px;}
+.t-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--gold));display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:#060e18;flex-shrink:0;}
+.t-name{font-size:14px;font-weight:600;color:white;}
+.t-role{font-size:12px;color:rgba(255,255,255,0.3);}
+
+/* ══ LOCATION ══ */
+.location-band{background:var(--navy2);border:1px solid var(--card-border);border-radius:20px;padding:56px;display:flex;align-items:center;gap:48px;flex-wrap:wrap;}
+.location-flag{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--gold));display:flex;align-items:center;justify-content:center;font-size:38px;flex-shrink:0;}
+.location-content{flex:1;min-width:260px;}
+.location-pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:500;background:rgba(14,165,233,0.07);border:1px solid rgba(14,165,233,0.18);color:rgba(255,255,255,0.65);}
+
+/* ══ CTA ══ */
+.cta-section{padding:100px 8%;}
+.cta-inner{background:linear-gradient(135deg,var(--navy2),var(--navy3));border:1px solid rgba(14,165,233,0.18);border-radius:28px;padding:76px 60px;text-align:center;position:relative;overflow:hidden;}
+.cta-inner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 20% 50%,rgba(14,165,233,0.07),transparent),radial-gradient(ellipse 50% 60% at 80% 50%,rgba(245,158,11,0.05),transparent);}
+.cta-title{font-size:clamp(24px,3.2vw,44px);font-weight:800;background:linear-gradient(90deg,#fff,var(--teal2),var(--gold));-webkit-background-clip:text;color:transparent;position:relative;z-index:1;margin-bottom:12px;}
+.cta-sub{font-size:16px;color:var(--text-muted);margin-bottom:34px;position:relative;z-index:1;font-family:'DM Sans',sans-serif;}
+.cta-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;position:relative;z-index:1;}
+
+/* ══ WA FLOAT ══ */
+.wa-float{position:fixed;bottom:100px;right:28px;z-index:998;width:56px;height:56px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:transform .2s;}
+.wa-float:hover{transform:scale(1.12);}
+.wa-float svg{width:28px;height:28px;fill:white;}
+
+/* ══ CHATBOT ══ */
+.chatbot-btn{position:fixed;bottom:28px;right:28px;z-index:999;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--teal),#0284c7);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(14,165,233,0.45);transition:.25s;}
+.chatbot-btn:hover{transform:scale(1.1);}
+.chatbot-btn svg{width:26px;height:26px;fill:white;}
+.chatbot-window{position:fixed;bottom:96px;right:28px;z-index:997;width:340px;background:var(--navy2);border:1px solid rgba(14,165,233,0.2);border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,0.5);overflow:hidden;display:none;flex-direction:column;max-height:460px;}
+.chatbot-window.open{display:flex;}
+.chat-header{background:linear-gradient(90deg,var(--teal),#0284c7);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;}
+.chat-header-info{display:flex;align-items:center;gap:10px;}
+.chat-avatar{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:16px;}
+.chat-header-name{font-size:14px;font-weight:700;color:white;}
+.chat-header-status{font-size:11px;color:rgba(255,255,255,0.7);}
+.chat-close{background:none;border:none;color:rgba(255,255,255,0.7);font-size:20px;cursor:pointer;line-height:1;}
+.chat-messages{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;}
+.chat-msg{max-width:82%;padding:10px 14px;border-radius:12px;font-size:13px;line-height:1.55;}
+.chat-msg.bot{background:rgba(14,165,233,0.1);border:1px solid rgba(14,165,233,0.15);color:var(--text);align-self:flex-start;border-radius:4px 12px 12px 12px;}
+.chat-msg.user{background:linear-gradient(135deg,var(--teal),#0284c7);color:white;align-self:flex-end;border-radius:12px 4px 12px 12px;}
+.chat-typing{display:flex;gap:4px;align-items:center;padding:10px 14px;background:rgba(14,165,233,0.08);border-radius:4px 12px 12px 12px;width:fit-content;}
+.chat-typing span{width:6px;height:6px;background:var(--teal);border-radius:50%;animation:typingDot 1.2s ease-in-out infinite;}
+.chat-typing span:nth-child(2){animation-delay:.2s;}
+.chat-typing span:nth-child(3){animation-delay:.4s;}
+@keyframes typingDot{0%,100%{opacity:.3;transform:scale(.7)}50%{opacity:1;transform:scale(1)}}
+.chat-quick{padding:8px 12px;display:flex;flex-wrap:wrap;gap:6px;border-top:1px solid rgba(255,255,255,0.05);}
+.quick-btn{background:rgba(14,165,233,0.08);border:1px solid rgba(14,165,233,0.2);border-radius:20px;padding:5px 12px;font-size:12px;color:var(--teal2);cursor:pointer;transition:.2s;font-family:'Sora',sans-serif;}
+.quick-btn:hover{background:rgba(14,165,233,0.18);}
+.chat-input-row{display:flex;gap:8px;padding:12px;border-top:1px solid rgba(255,255,255,0.06);}
+#chat-input{flex:1;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:9px 14px;color:white;font-size:13px;outline:none;font-family:'Sora',sans-serif;}
+#chat-send{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--teal),#0284c7);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+#chat-send svg{width:15px;height:15px;fill:white;}
+
+/* ══ FOOTER ══ */
+footer{background:var(--navy);border-top:1px solid rgba(14,165,233,0.1);padding:72px 8% 0;}
+.footer-grid{display:grid;grid-template-columns:1.4fr 2fr 1fr;gap:50px;padding-bottom:48px;}
+.footer-brand{}
+.footer-brand h2{font-size:20px;font-weight:800;background:linear-gradient(90deg,var(--teal),var(--gold));-webkit-background-clip:text;color:transparent;margin-bottom:12px;}
+.footer-brand p{font-size:14px;color:var(--text-muted);line-height:1.75;margin-bottom:20px;font-family:'DM Sans',sans-serif;}
+.social-icons{display:flex;gap:12px;margin-bottom:24px;}
+.social-icons a{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:16px;transition:all .2s;}
+.social-icons a:hover{background:rgba(14,165,233,0.12);border-color:rgba(14,165,233,0.3);}
+.footer-contact-list{display:flex;flex-direction:column;gap:8px;}
+.footer-contact-list span{font-size:13px;color:var(--text-muted);}
+.footer-contact-list a{color:var(--text-muted);text-decoration:none;}
+.footer-links{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
+.footer-col h4{font-size:13px;font-weight:700;color:white;margin-bottom:16px;letter-spacing:.04em;}
+.footer-col a{display:block;font-size:13px;color:var(--text-muted);text-decoration:none;margin-bottom:10px;transition:color .2s;font-family:'DM Sans',sans-serif;}
+.footer-col a:hover{color:var(--teal2);}
+.footer-newsletter h4{font-size:13px;font-weight:700;color:white;margin-bottom:10px;}
+.footer-newsletter p{font-size:13px;color:var(--text-muted);margin-bottom:16px;font-family:'DM Sans',sans-serif;}
+.newsletter-box{display:flex;gap:8px;}
+#nl-email{flex:1;background:rgba(255,255,255,0.04);border:1px solid rgba(14,165,233,0.15);border-radius:40px;padding:10px 16px;color:white;font-size:13px;outline:none;font-family:'Sora',sans-serif;}
+#nl-btn{padding:10px 20px;border:none;border-radius:40px;background:linear-gradient(90deg,var(--teal),#0284c7);color:white;font-weight:600;font-size:13px;cursor:pointer;transition:.3s;}
+#nl-btn:hover{transform:scale(1.04);}
+.footer-divider{height:1px;background:rgba(255,255,255,0.05);}
+.footer-bottom{padding:20px 0;display:flex;align-items:center;justify-content:center;gap:20px;font-size:12px;color:var(--text-muted);}
+.footer-bottom a{color:var(--text-muted);text-decoration:none;}
+.footer-bottom a:hover{color:var(--teal2);}
+
+/* ══ MOBILE NAV ══ */
+@media(max-width:900px){
+  nav ul{display:none;position:fixed;top:70px;left:0;right:0;background:rgba(6,14,24,0.97);backdrop-filter:blur(20px);flex-direction:column;padding:20px 8%;gap:16px;border-bottom:1px solid rgba(14,165,233,0.1);}
+  nav ul.open{display:flex;}
+  .hamburger{display:flex;}
+  .nav-cta{display:none;}
+  .services-grid-new{grid-template-columns:repeat(2,1fr);}
+  .about-grid{grid-template-columns:1fr;}
+  .enquiry-inner{grid-template-columns:1fr;}
+  .bento-grid{grid-template-columns:1fr;}
+  .bento-card-wide{grid-column:span 1;}
+  .process-grid{grid-template-columns:repeat(2,1fr);}
+  .testimonials-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr;}
+  .footer-links{grid-template-columns:repeat(2,1fr);}
+  .carousel-prev{left:-20px;}.carousel-next{right:-20px;}
+  .stats-row{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:520px){
+  .services-grid-new{grid-template-columns:1fr;}
+  .process-grid{grid-template-columns:1fr;}
+  .footer-links{grid-template-columns:1fr;}
+}
+
+/* ══ REVEAL ══ */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1);}
+.reveal.in{opacity:1;transform:translateY(0);}
 </style>
 </head>
-
 <body>
 
-<canvas id="bg" loading="lazy"></canvas>
+<!-- BG Elements -->
+<canvas id="bg-canvas"></canvas>
+<div class="bg-grid"></div>
+<div class="bg-orb bg-orb-1"></div>
+<div class="bg-orb bg-orb-2"></div>
+<div class="bg-orb bg-orb-3"></div>
 
+<!-- ══ HEADER ══ -->
 <header>
-<nav>
-<h1>HRV Orbit</h1>
-<ul>
-<li><a href="#services">Services</a></li>
-<li><a href="#pricing">Pricing</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
+  <nav>
+    <a href="index.html" class="logo-wrap">
+      <div class="logo-badge">360</div>
+      <span class="logo-text">360 Biz Solution</span>
+    </a>
+    <ul id="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="services.html">All Services</a></li>
+      <li><a href="#enquiry">Enquiry</a></li>
+    </ul>
+    <a href="#enquiry" class="nav-cta">Get Started</a>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </nav>
 </header>
 
+<!-- ══ HERO ══ -->
 <section class="hero">
-<h2>Launch. Build. Scale.</h2>
-<p>Company registration, compliance, websites and digital marketing in one platform.</p>
-<button class="btn">Start Your Business</button>
+  <div class="carousel" id="hero-carousel">
+    <div class="carousel-slide active">
+      <div class="slide-tag"><span class="hero-badge-dot"></span>&nbsp;Digital Presence</div>
+      <h2>Websites that<br><em>convert visitors.</em></h2>
+      <p>Custom-built business websites, landing pages and e-commerce stores — designed for the Indian market.</p>
+      <div class="hero-actions">
+        <a href="services.html#website" class="btn">View Web Services →</a>
+        <a href="#enquiry" class="btn-outline">Get a Quote</a>
+      </div>
+    </div>
+    <div class="carousel-slide">
+      <div class="slide-tag"><span class="hero-badge-dot"></span>&nbsp;Performance Marketing</div>
+      <h2>Ads that deliver<br><em>4.8x ROAS.</em></h2>
+      <p>Meta, Google, LinkedIn & Telegram ad campaigns — ROI-focused strategies built for Indian audiences.</p>
+      <div class="hero-actions">
+        <a href="services.html#meta-google" class="btn">See Marketing Plans →</a>
+        <a href="#enquiry" class="btn-outline">Free Strategy Call</a>
+      </div>
+    </div>
+    <div class="carousel-slide">
+      <div class="slide-tag"><span class="hero-badge-dot"></span>&nbsp;India's Complete Business Partner</div>
+      <h2>Everything your<br><em>business needs.</em></h2>
+      <p>Company registration, GST, websites, CRM, and performance marketing — all under one roof.</p>
+      <div class="hero-actions">
+        <a href="#services" class="btn">Explore Services →</a>
+        <a href="#enquiry" class="btn-outline">Free Consultation</a>
+        <a href="https://wa.me/919109436053" class="btn-wa">💬 WhatsApp</a>
+      </div>
+    </div>
+    <div class="carousel-slide">
+      <div class="slide-tag"><span class="hero-badge-dot"></span>&nbsp;Legal &amp; Compliance</div>
+      <h2>Register your<br><em>company in 7 days.</em></h2>
+      <p>Pvt Ltd, LLP, OPC, Startup India — fully MCA-compliant filing handled end-to-end by our legal experts.</p>
+      <div class="hero-actions">
+        <a href="services.html#company-reg" class="btn">Company Registration →</a>
+        <a href="services.html#gst" class="btn-outline">GST Services</a>
+      </div>
+    </div>
+    <div class="carousel-slide">
+      <div class="slide-tag"><span class="hero-badge-dot"></span>&nbsp;Pan India Coverage</div>
+      <h2>Delhi-based.<br><em>Bharat-focused.</em></h2>
+      <p>Serving 500+ businesses across India — from Maharashtra to Manipur, Gujarat to Goa.</p>
+      <div class="hero-actions">
+        <a href="#enquiry" class="btn">Start Free Consultation →</a>
+        <a href="https://wa.me/919109436053" class="btn-wa">💬 WhatsApp Now</a>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-arrow carousel-prev" id="carousel-prev">&#8592;</button>
+  <button class="carousel-arrow carousel-next" id="carousel-next">&#8594;</button>
+  <div class="carousel-dots" id="carousel-dots">
+    <span class="dot active" data-idx="0"></span>
+    <span class="dot" data-idx="1"></span>
+    <span class="dot" data-idx="2"></span>
+    <span class="dot" data-idx="3"></span>
+    <span class="dot" data-idx="4"></span>
+  </div>
+  <div class="carousel-progress"><div class="carousel-progress-bar" id="carousel-progress-bar"></div></div>
+  <div class="stats-row reveal">
+    <div class="stat-item"><span class="stat-num" data-count="500" data-suffix="+">500+</span><span class="stat-label">Businesses</span></div>
+    <div class="stat-item"><span class="stat-num">8+</span><span class="stat-label">Services</span></div>
+    <div class="stat-item"><span class="stat-num" data-count="4.9" data-suffix="★">4.9★</span><span class="stat-label">Rating</span></div>
+    <div class="stat-item"><span class="stat-num">Pan</span><span class="stat-label">India</span></div>
+  </div>
 </section>
 
-<section class="stats">
+<div class="divider"></div>
 
-<div>
-<h2>25k+</h2>
-<p>Businesses</p>
-</div>
-
-<div>
-<h2>$120M</h2>
-<p>Revenue Generated</p>
-</div>
-
-<div>
-<h2>98%</h2>
-<p>Customer Satisfaction</p>
-</div>
-
-</section>  
-
-<section id="services">
-<h2 class="section-title">Services</h2>
-
-<div class="services">
-
-<div class="card">
-<h3>Company Registration</h3>
-<p>Pvt Ltd, LLP, Startup India and compliance setup.</p>
-</div>
-
-<div class="card">
-<h3>GST Registration</h3>
-<p>Complete GST registration and filing automation.</p>
-</div>
-
-<div class="card">
-<h3>Website Development</h3>
-<p>High-conversion business websites and ecommerce.</p>
-</div>
-
-<div class="card">
-<h3>CRM Development</h3>
-<p>Automate leads and sales with custom CRM.</p>
-</div>
-
-<div class="card">
-<h3>SEO Optimization</h3>
-<p>Rank your business on Google search results.</p>
-</div>
-
-<div class="card">
-<h3>Meta & Google Ads</h3>
-<p>High ROI performance marketing campaigns.</p>
-</div>
-
-</div>
-
-<div style="text-align:center;margin-top:60px">
-<button class="btn">Book Free Consultation</button>
-</div>
+<!-- ══ TRUSTED BY ══ -->
+<section class="trusted-section">
+  <div class="trusted-label reveal">Trusted by 500+ businesses across India</div>
+  <div class="trusted-logos reveal">
+    <div class="trusted-logo-slot"><span>Your Logo</span></div>
+    <div class="trusted-logo-slot"><span>Your Logo</span></div>
+    <div class="trusted-logo-slot"><span>Your Logo</span></div>
+    <div class="trusted-logo-slot"><span>Your Logo</span></div>
+    <div class="trusted-logo-slot"><span>Your Logo</span></div>
+    <div class="trusted-logo-slot"><span>Your Logo</span></div>
+  </div>
 </section>
 
-<section class="trust">
-<p>Trusted by teams worldwide</p>
+<div class="divider"></div>
 
-<div class="logos">
-<img src="google.svg">
-<img src="shopify.svg">
-<img src="notion.svg">
-<img src="slack.svg">
-<img src="vercel.svg">
-</div>
-
-</section>
-  
-<section>
-<h2 class="section-title">Marketing Growth Dashboard</h2>
-
-<div class="dashboard">
-
-<div>Jan Leads</div>
-<div class="bar"><div class="bar-fill" data-width="40%"></div></div>
-
-<div>Feb Leads</div>
-<div class="bar"><div class="bar-fill" data-width="70%"></div></div>
-
-<div>Mar Leads</div>
-<div class="bar"><div class="bar-fill" data-width="85%"></div></div>
-
-<div>Apr Leads</div>
-<div class="bar"><div class="bar-fill" data-width="95%"></div></div>
-
-</div>
-
-</section>
-
-<section id="pricing">
-<h2 class="section-title">Pricing</h2>
-
-<div class="pricing">
-
-<div class="plan">
-<h3>Starter</h3>
-<div class="price">₹9,999</div>
-<ul>
-<li>Company Registration</li>
-<li>GST Setup</li>
-<li>Basic Website</li>
-</ul>
-<button class="btn">Choose</button>
-</div>
-
-<div class="plan">
-<h3>Growth</h3>
-<div class="price">₹29,999</div>
-<ul>
-<li>Website</li>
-<li>SEO</li>
-<li>Meta Ads</li>
-</ul>
-<button class="btn">Choose</button>
-</div>
-
-<div class="plan">
-<h3>Scale</h3>
-<div class="price">₹79,999</div>
-<ul>
-<li>Full Marketing</li>
-<li>CRM</li>
-<li>Google Ads</li>
-</ul>
-<button class="btn">Choose</button>
-</div>
-
-</div>
+<!-- ══ ABOUT US ══ -->
+<section class="section" id="about">
+  <div class="about-grid">
+    <div class="about-img-wrap reveal">
+      <div class="about-img-card">
+        <div class="about-infinity">∞</div>
+        <p style="color:var(--text-muted);font-size:14px;text-align:center;margin-top:12px;font-family:'DM Sans',sans-serif;">Complete 360° Business Support</p>
+        <div class="about-badge-float top">🏆 Since 2020</div>
+        <div class="about-badge-float bottom">📍 New Delhi, India</div>
+      </div>
+    </div>
+    <div class="about-content reveal" style="transition-delay:100ms">
+      <div class="section-header">
+        <span class="eyebrow">Who We Are</span>
+        <h2 class="section-title">Delhi's most trusted<br><em>business growth partner.</em></h2>
+      </div>
+      <p>360 Biz Solution is a full-service business consultancy headquartered in New Delhi. We've helped 500+ entrepreneurs and SMEs across India launch, legalise, and scale their businesses — all from a single, reliable partner.</p>
+      <p>From day-zero company registration to page-one SEO and high-ROAS ad campaigns — we handle every layer of your business growth so you can focus on what matters.</p>
+      <div class="about-points">
+        <div class="about-point">
+          <div class="about-point-icon">⚡</div>
+          <div class="about-point-text"><strong>Fast Execution</strong><span>Company registered in 7–10 days. Websites live in 14 days. Ads live in 48 hours.</span></div>
+        </div>
+        <div class="about-point">
+          <div class="about-point-icon">🎯</div>
+          <div class="about-point-text"><strong>India-First Strategy</strong><span>Deep knowledge of Indian regulatory landscape, consumer behaviour and ad platforms.</span></div>
+        </div>
+        <div class="about-point">
+          <div class="about-point-icon">🔒</div>
+          <div class="about-point-text"><strong>Full Compliance</strong><span>MCA-registered, GST-certified professionals handling every filing with precision.</span></div>
+        </div>
+      </div>
+      <a href="#enquiry" class="btn">Work With Us →</a>
+    </div>
+  </div>
 </section>
 
-<section class="funnel" id="contact">
+<div class="divider"></div>
 
-<h2 class="section-title">Get Free Growth Strategy</h2>
-
-<input placeholder="Business Name">
-<input placeholder="Email">
-<br>
-<button class="btn">Get Strategy</button>
-
+<!-- ══ SERVICES ══ -->
+<section class="section" id="services" style="overflow:visible;">
+  <div class="section-header center reveal">
+    <span class="eyebrow">What We Do</span>
+    <h2 class="section-title">Everything your business needs,<br><em>under one roof.</em></h2>
+    <p style="color:var(--text-muted);font-size:16px;max-width:560px;margin:0 auto;line-height:1.7;font-family:'DM Sans',sans-serif;">From legal compliance to digital dominance — 8 expert services, one trusted partner.</p>
+  </div>
+  <div class="services-grid-new">
+    <a class="svc-box reveal" href="services.html#company-reg">
+      <span class="svc-num">01</span>
+      <div class="svc-icon">🏛️</div>
+      <div class="svc-name">Company Registration</div>
+      <div class="svc-desc">Pvt Ltd, LLP, OPC & more. Full MCA filing in 7–10 days, hassle-free.</div>
+      <div class="svc-arrow">Learn more →</div>
+    </a>
+    <a class="svc-box reveal" href="services.html#gst" style="transition-delay:60ms">
+      <span class="svc-num">02</span>
+      <div class="svc-icon">📋</div>
+      <div class="svc-name">GST Registration & Filing</div>
+      <div class="svc-desc">Monthly returns, ITC reconciliation & ongoing compliance advisory.</div>
+      <div class="svc-arrow">Learn more →</div>
+    </a>
+    <a class="svc-box reveal" href="services.html#website" style="transition-delay:120ms">
+      <span class="svc-num">03</span>
+      <div class="svc-icon">🌐</div>
+      <div class="svc-name">Website Design & Dev</div>
+      <div class="svc-desc">Custom websites & e-commerce platforms built for conversions.</div>
+      <div class="svc-arrow">Learn more →</div>
+    </a>
+    <a class="svc-box reveal" href="services.html#crm" style="transition-delay:180ms">
+      <span class="svc-num">04</span>
+      <div class="svc-icon">⚙️</div>
+      <div class="svc-name">CRM Design</div>
+      <div class="svc-desc">Custom CRM to manage leads, pipelines & customer relationships.</div>
+      <div class="svc-arrow">Learn more →</div>
+    </a>
+    <a class="svc-box reveal" href="services.html#meta-google" style="transition-delay:60ms">
+      <span class="svc-num">05</span>
+      <div class="svc-icon">📣</div>
+      <div class="svc-name">Meta & Google Ads</div>
+      <div class="svc-desc">ROI-focused paid campaigns on Facebook, Instagram & Google Search.</div>
+      <div class="svc-arrow">Learn more →</div>
+    </a>
+    <a class="svc-box reveal" href="services.html#linkedin" style="transition-delay:120ms">
+      <span class="svc-num">06</span>
+      <div class="svc-icon">💼</div>
+      <div class="svc-name">LinkedIn Ads</div>
+      <div class="svc-desc">B2B lead generation targeting decision-makers & professionals.</div>
+      <div class="svc-arrow">Learn more →</div>
+    </a>
+    <a class="svc-box reveal" href="services.html#telegram" style="transition-delay:180ms">
+      <span class="svc-num">07</span>
+      <div class="svc-icon">✈️</div>
+      <div class="svc-name">Telegram Ads</div>
+      <div class="svc-desc">Channel promotions and community growth campaigns on Telegram.</div>
+      <div class="svc-arrow">Learn more →</div>
+    </a>
+    <a class="svc-box reveal" href="services.html#seo" style="transition-delay:240ms">
+      <span class="svc-num">08</span>
+      <div class="svc-icon">🔍</div>
+      <div class="svc-name">SEO Services</div>
+      <div class="svc-desc">Technical SEO, link building & local SEO to dominate Google India.</div>
+      <div class="svc-arrow">Learn more →</div>
+    </a>
+  </div>
+  <div style="text-align:center;margin-top:44px;">
+    <a href="services.html" class="btn-gold">Explore All Services →</a>
+  </div>
 </section>
 
-<footer class="footer">
+<div class="divider"></div>
 
-<div class="footer-container">
+<!-- ══ WHY US ══ -->
+<section class="section">
+  <div class="section-header reveal">
+    <span class="eyebrow">Our Edge</span>
+    <h2 class="section-title">Why businesses <em>choose</em> us.</h2>
+  </div>
+  <div class="bento-grid">
+    <div class="bento-card bento-card-wide reveal">
+      <div class="bento-icon">🚀</div>
+      <div class="bento-title">End-to-End Execution</div>
+      <div class="bento-desc">From company registration to running your first ad campaign — we handle everything. No juggling 5 different agencies. One team. One vision. Complete accountability.</div>
+      <div class="chip-row">
+        <span class="chip">✓ Company Setup</span><span class="chip">✓ GST Compliance</span><span class="chip">✓ Website</span><span class="chip">✓ Ads</span><span class="chip">✓ SEO</span>
+      </div>
+    </div>
+    <div class="bento-card brand reveal" style="transition-delay:100ms">
+      <div class="bento-metric">4.8x</div>
+      <div class="bento-title">Average ROAS</div>
+      <div class="bento-desc">Across Meta, Google & LinkedIn campaigns for our clients in 2024.</div>
+    </div>
+    <div class="bento-card reveal" style="transition-delay:150ms">
+      <div class="bento-icon">🇮🇳</div>
+      <div class="bento-title">India-First</div>
+      <div class="bento-desc">We understand Indian compliance, consumer behaviour & ad platforms better than anyone.</div>
+    </div>
+    <div class="bento-card reveal" style="transition-delay:100ms">
+      <div class="bento-icon">📊</div>
+      <div class="bento-title">Data-Driven</div>
+      <div class="bento-desc">Every decision backed by analytics. Weekly reporting. Zero guesswork.</div>
+    </div>
+    <div class="bento-card reveal" style="transition-delay:150ms">
+      <div class="bento-icon">💬</div>
+      <div class="bento-title">Always Available</div>
+      <div class="bento-desc">Dedicated account manager. WhatsApp support. No ticket queues.</div>
+    </div>
+  </div>
+</section>
 
-<div class="footer-brand">
-<h2>HRV Orbit</h2>
-<p>
-Launch and scale your business with company registration,
-websites, compliance and digital marketing.
-</p>
+<div class="divider"></div>
 
-<div class="social-icons">
-<a href="#">🌐</a>
-<a href="#">🐦</a>
-<a href="#">💼</a>
-<a href="#">📸</a>
-</div>
+<!-- ══ PROCESS ══ -->
+<section class="section">
+  <div class="section-header center reveal">
+    <span class="eyebrow">How It Works</span>
+    <h2 class="section-title">From enquiry to results<br><em>in 4 steps.</em></h2>
+  </div>
+  <div class="process-grid">
+    <div class="process-step step-active reveal">
+      <span class="step-num">01</span>
+      <div class="step-title">Free Consultation</div>
+      <div class="step-desc">Tell us about your business goals. We'll map out exactly what you need.</div>
+    </div>
+    <div class="process-step reveal" style="transition-delay:80ms">
+      <span class="step-num">02</span>
+      <div class="step-title">Custom Proposal</div>
+      <div class="step-desc">Receive a tailored plan with transparent pricing within 24 hours.</div>
+    </div>
+    <div class="process-step reveal" style="transition-delay:160ms">
+      <span class="step-num">03</span>
+      <div class="step-title">Fast Execution</div>
+      <div class="step-desc">Our experts get to work immediately — filings, builds, campaigns launched at speed.</div>
+    </div>
+    <div class="process-step reveal" style="transition-delay:240ms">
+      <span class="step-num">04</span>
+      <div class="step-title">Ongoing Growth</div>
+      <div class="step-desc">Regular reporting, optimisations and support to keep you scaling.</div>
+    </div>
+  </div>
+</section>
 
-</div>
+<div class="divider"></div>
 
-<div class="footer-links">
+<!-- ══ TESTIMONIALS ══ -->
+<section class="section">
+  <div class="section-header center reveal">
+    <span class="eyebrow">Client Stories</span>
+    <h2 class="section-title">What our clients <em>say.</em></h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="t-card reveal">
+      <div class="t-stars">★★★★★</div>
+      <div class="t-text">"360 Biz registered our Pvt Ltd in just 8 days. The team handled every document, DIN, and MCA filing flawlessly. Highly recommended for any founder."</div>
+      <div class="t-author">
+        <div class="t-avatar">R</div>
+        <div><div class="t-name">Rahul Sharma</div><div class="t-role">Founder, TechStartup Delhi</div></div>
+      </div>
+    </div>
+    <div class="t-card reveal" style="transition-delay:80ms">
+      <div class="t-stars">★★★★★</div>
+      <div class="t-text">"Our Meta ads ROAS went from 1.8x to 5.2x in 3 months. 360 Biz's marketing team is genuinely exceptional — data-driven and always available."</div>
+      <div class="t-author">
+        <div class="t-avatar">P</div>
+        <div><div class="t-name">Priya Menon</div><div class="t-role">CEO, Lifestyle Brand</div></div>
+      </div>
+    </div>
+    <div class="t-card reveal" style="transition-delay:160ms">
+      <div class="t-stars">★★★★★</div>
+      <div class="t-text">"GST filing is no longer a headache. They handle everything monthly — returns, ITC reconciliation, notices. Completely stress-free compliance."</div>
+      <div class="t-author">
+        <div class="t-avatar">A</div>
+        <div><div class="t-name">Amit Joshi</div><div class="t-role">Owner, Trading Company</div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div class="footer-col">
-<h4>Services</h4>
-<a href="#">Company Registration</a>
-<a href="#">GST Registration</a>
-<a href="#">Website Development</a>
-<a href="#">SEO & Marketing</a>
-</div>
+<div class="divider"></div>
 
-<div class="footer-col">
-<h4>Platform</h4>
-<a href="#">Startup Launch</a>
-<a href="#">Growth Dashboard</a>
-<a href="#">CRM Automation</a>
-<a href="#">Analytics</a>
-</div>
+<!-- ══ LOCATION ══ -->
+<section class="section">
+  <div class="location-band reveal">
+    <div class="location-flag">🇮🇳</div>
+    <div class="location-content">
+      <span class="eyebrow">Our Reach</span>
+      <h3 class="section-title" style="font-size:28px;margin-bottom:8px;">Delhi HQ. <em>Pan-India</em> coverage.</h3>
+      <p style="color:var(--text-muted);font-size:14px;font-family:'DM Sans',sans-serif;">Serving entrepreneurs and SMEs in every state — from the metros to emerging markets.</p>
+      <div class="location-pills">
+        <span class="pill">📍 New Delhi</span><span class="pill">🏙 Mumbai</span><span class="pill">🌊 Bangalore</span><span class="pill">🌴 Chennai</span><span class="pill">🌸 Hyderabad</span><span class="pill">🏔 Pune</span><span class="pill">+ All India</span>
+      </div>
+    </div>
+    <a href="#enquiry" class="btn">Start Today →</a>
+  </div>
+</section>
 
-<div class="footer-col">
-<h4>Company</h4>
-<a href="#">About</a>
-<a href="#">Careers</a>
-<a href="#">Contact</a>
-<a href="#">Privacy Policy</a>
-</div>
+<div class="divider"></div>
 
-</div>
+<!-- ══ ENQUIRY ══ -->
+<section class="enquiry-section" id="enquiry">
+  <div class="enquiry-inner">
+    <div class="enquiry-left reveal">
+      <div class="section-header">
+        <span class="eyebrow">Get In Touch</span>
+        <h2 class="section-title">Start your <em>free</em><br>consultation today.</h2>
+      </div>
+      <p>Fill out the form and our team will get back to you within 2 hours with a custom plan for your business.</p>
+      <div class="enquiry-perks">
+        <div class="enquiry-perk"><div class="enquiry-perk-icon">⚡</div><div><strong>Response in 2 hours</strong><span>We reply fast. Always.</span></div></div>
+        <div class="enquiry-perk"><div class="enquiry-perk-icon">🎁</div><div><strong>Free 30-min consultation</strong><span>No commitments. Just clarity.</span></div></div>
+        <div class="enquiry-perk"><div class="enquiry-perk-icon">📋</div><div><strong>Custom proposal</strong><span>Tailored to your specific needs.</span></div></div>
+        <div class="enquiry-perk"><div class="enquiry-perk-icon">🔒</div><div><strong>100% confidential</strong><span>Your data is always safe with us.</span></div></div>
+      </div>
+    </div>
+    <div class="reveal" style="transition-delay:120ms">
+      <div class="enquiry-form">
+        <h3>Send us an Enquiry</h3>
+        <p class="form-sub">We'll get back to you within 2 business hours.</p>
+        <div id="form-fields">
+          <div class="form-row">
+            <div class="form-group"><label>First Name</label><input type="text" id="f-fname" placeholder="Rahul"></div>
+            <div class="form-group"><label>Last Name</label><input type="text" id="f-lname" placeholder="Sharma"></div>
+          </div>
+          <div class="form-group"><label>Email Address</label><input type="email" id="f-email" placeholder="rahul@company.com"></div>
+          <div class="form-group"><label>Phone</label><input type="tel" id="f-phone" placeholder="+91 98765 43210"></div>
+          <div class="form-group">
+            <label>Service Required</label>
+            <select id="f-service">
+              <option value="">Select a service...</option>
+              <option>Company Registration</option>
+              <option>GST Registration & Filing</option>
+              <option>Website Design & Development</option>
+              <option>CRM Design</option>
+              <option>Meta & Google Ads</option>
+              <option>LinkedIn Ads</option>
+              <option>Telegram Ads</option>
+              <option>SEO Services</option>
+              <option>Multiple Services</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Message (optional)</label><textarea id="f-msg" rows="3" placeholder="Tell us about your project..."></textarea></div>
+          <button class="form-submit" id="form-submit-btn">Send Enquiry →</button>
+        </div>
+        <div class="form-success" id="form-success">
+          <div class="success-icon">✅</div>
+          <h4>Enquiry Received!</h4>
+          <p>Our team will call you within 2 hours. You can also WhatsApp us at +91 91094 36053.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div class="footer-newsletter">
+<div class="divider"></div>
 
-<h4>Subscribe to our newsletter</h4>
+<!-- ══ CTA ══ -->
+<section class="cta-section">
+  <div class="cta-inner reveal">
+    <div class="cta-title">Ready to grow your business?</div>
+    <div class="cta-sub">Join 500+ businesses who trust 360 Biz Solution for their growth journey.</div>
+    <div class="cta-actions">
+      <a href="#enquiry" class="btn">Start Free Consultation →</a>
+      <a href="https://wa.me/919109436053" class="btn-wa">💬 WhatsApp Now</a>
+      <a href="services.html" class="btn-outline">View All Services</a>
+    </div>
+  </div>
+</section>
 
-<p>Get startup tips, marketing insights and growth strategies.</p>
-
-<div class="newsletter-box">
-<input type="email" placeholder="Enter your email">
-<button>Subscribe</button>
-</div>
-
-</div>
-
-</div>
-
-<div class="footer-divider"></div>
-
-<div class="footer-bottom">
-© 2026 HRV Orbit — All Rights Reserved
-</div>
-
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+        <div class="logo-badge">360</div>
+        <h2>360 Biz Solution</h2>
+      </div>
+      <p>India's complete business growth partner — legal, digital & marketing under one roof.</p>
+      <div class="social-icons">
+        <a href="#">🌐</a><a href="#">𝕏</a><a href="https://wa.me/919109436053">💬</a><a href="mailto:info@360bizsolution.in">✉️</a><a href="#">💼</a>
+      </div>
+      <div class="footer-contact-list">
+        <span>📧 info@360bizsolution.in</span>
+        <span>📞 +91 91094 36053</span>
+        <span>📍 New Delhi, India</span>
+      </div>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="services.html#company-reg">Company Registration</a>
+        <a href="services.html#gst">GST Registration</a>
+        <a href="services.html#gst">GST Filing</a>
+        <a href="services.html#website">Website Dev</a>
+        <a href="services.html#crm">CRM Design</a>
+      </div>
+      <div class="footer-col">
+        <h4>Marketing</h4>
+        <a href="services.html#meta-google">Meta Ads</a>
+        <a href="services.html#meta-google">Google Ads</a>
+        <a href="services.html#linkedin">LinkedIn Ads</a>
+        <a href="services.html#telegram">Telegram Ads</a>
+        <a href="services.html#seo">SEO Services</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#about">About</a>
+        <a href="#enquiry">Contact</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+    <div class="footer-newsletter">
+      <h4>Stay Updated</h4>
+      <p>Get startup tips, marketing insights and growth strategies.</p>
+      <div class="newsletter-box">
+        <input type="email" id="nl-email" placeholder="Your email">
+        <button id="nl-btn">Go</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-bottom">© 2025 360 Biz Solution — All Rights Reserved &nbsp;·&nbsp;<a href="#">Privacy</a> &nbsp;·&nbsp;<a href="#">Terms</a></div>
 </footer>
-  
-<div class="chatbot">
-<div class="chat-header">AI Assistant</div>
-<div class="chat-messages" id="chat"></div>
-<div class="chat-input">
-<input id="msg" placeholder="Ask something...">
-<button onclick="sendMsg()">Send</button>
-</div>
+
+<!-- WA Float -->
+<a href="https://wa.me/919109436053" class="wa-float" target="_blank">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- Chatbot -->
+<button class="chatbot-btn" id="chatbot-btn">
+  <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.821.487 3.53 1.338 5L2.5 21.5l4.5-.838A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm-1 14H9v-2h2v2zm4 0h-2v-2h2v2zm1-5H8V9h8v2z"/></svg>
+</button>
+<div class="chatbot-window" id="chatbot-window">
+  <div class="chat-header">
+    <div class="chat-header-info">
+      <div class="chat-avatar">🤖</div>
+      <div><div class="chat-header-name">360 Biz Assistant</div><div class="chat-header-status">● Online — typically replies instantly</div></div>
+    </div>
+    <button class="chat-close" id="chat-close">×</button>
+  </div>
+  <div class="chat-messages" id="chat-messages">
+    <div class="chat-msg bot">👋 Hi! I'm the 360 Biz Assistant. How can I help you grow your business today?</div>
+  </div>
+  <div class="chat-quick" id="chat-quick">
+    <button class="quick-btn" data-msg="What services do you offer?">Our Services</button>
+    <button class="quick-btn" data-msg="How much does company registration cost?">Pricing</button>
+    <button class="quick-btn" data-msg="How do I get started?">Get Started</button>
+    <button class="quick-btn" data-msg="I want to speak to a human">Talk to Team</button>
+  </div>
+  <div class="chat-input-row">
+    <input type="text" id="chat-input" placeholder="Type a message...">
+    <button id="chat-send"><svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>
+  </div>
 </div>
 
 <script>
-
-/* 3D BACKGROUND */
-
+/* ══ THREE.JS BG ══ */
 const scene=new THREE.Scene();
-const camera=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
+const camera=new THREE.PerspectiveCamera(75,innerWidth/innerHeight,0.1,1000);
+const renderer=new THREE.WebGLRenderer({canvas:document.getElementById('bg-canvas'),alpha:true,antialias:true});
+renderer.setSize(innerWidth,innerHeight);
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
 
-const renderer=new THREE.WebGLRenderer({canvas:document.getElementById("bg"),alpha:true});
-renderer.setSize(window.innerWidth,window.innerHeight);
-
-const geometry=new THREE.BufferGeometry();
-const vertices=[];
-
-for(let i=0;i<2000;i++){
-vertices.push((Math.random()-0.5)*200);
-vertices.push((Math.random()-0.5)*200);
-vertices.push((Math.random()-0.5)*200);
+const geo=new THREE.BufferGeometry();
+const count=2800;
+const verts=[],colors=[];
+for(let i=0;i<count;i++){
+  verts.push((Math.random()-.5)*240,(Math.random()-.5)*240,(Math.random()-.5)*240);
+  const t=Math.random();
+  // teal(14,165,233) to gold(245,158,11)
+  colors.push(.055+t*.9,.647-t*.122,.914-t*.873);
 }
-
-geometry.setAttribute("position",new THREE.Float32BufferAttribute(vertices,3));
-
-const material=new THREE.PointsMaterial({color:0x5eead4,size:0.7});
-const points=new THREE.Points(geometry,material);
+geo.setAttribute('position',new THREE.Float32BufferAttribute(verts,3));
+geo.setAttribute('color',new THREE.Float32BufferAttribute(colors,3));
+const mat=new THREE.PointsMaterial({size:.7,vertexColors:true,transparent:true,opacity:.65});
+const points=new THREE.Points(geo,mat);
 scene.add(points);
 
+const lineGeo=new THREE.BufferGeometry();
+const lv=[];
+for(let i=0;i<50;i++){lv.push((Math.random()-.5)*180,(Math.random()-.5)*180,(Math.random()-.5)*180,(Math.random()-.5)*180,(Math.random()-.5)*180,(Math.random()-.5)*180);}
+lineGeo.setAttribute('position',new THREE.Float32BufferAttribute(lv,3));
+const lm=new THREE.LineBasicMaterial({color:0x0ea5e9,transparent:true,opacity:.07});
+scene.add(new THREE.LineSegments(lineGeo,lm));
+
 camera.position.z=100;
-
-function animate(){
-requestAnimationFrame(animate);
-points.rotation.y+=0.0007;
-renderer.render(scene,camera);
-}
-
+function animate(){requestAnimationFrame(animate);points.rotation.y+=.0004;points.rotation.x+=.0002;renderer.render(scene,camera);}
 animate();
-window.addEventListener("resize",()=>{
-camera.aspect = window.innerWidth / window.innerHeight;
-camera.updateProjectionMatrix();
-renderer.setSize(window.innerWidth, window.innerHeight);
-});
-  
-/* DASHBOARD ANIMATION */
+window.addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);});
 
-window.addEventListener("load",()=>{
-
-document.querySelectorAll(".bar-fill").forEach(el=>{
-
-gsap.to(el,{
-width:el.dataset.width,
-duration:1.5,
-ease:"power2.out",
-scrollTrigger:{
-trigger:el,
-start:"top 90%"
-}
-});
-
-});
-
-});
-  
-/* CHATBOT */
-
-function sendMsg(){
-
-let input=document.getElementById("msg");
-let chat=document.getElementById("chat");
-
-let user=input.value.trim().toLowerCase();
-if(!user) return;
-
-chat.innerHTML+=`<div><b>You:</b> ${user}</div>`;
-
-let reply="";
-
-if(user.includes("price")||user.includes("cost")){
-reply="Our plans start at ₹9,999 for company setup.";
-}
-else if(user.includes("website")){
-reply="We build high converting business websites and ecommerce stores.";
-}
-else if(user.includes("gst")){
-reply="We provide complete GST registration and filing support.";
-}
-else{
-reply="Tell me about your business and we’ll help you grow it.";
-}
-
-chat.innerHTML+=`<div><b>AI:</b> ${reply}</div>`;
-
-input.value="";
-
-chat.scrollTop=chat.scrollHeight;
-
-}
-
-/* NAVBAR SCROLL EFFECT */
-
-window.addEventListener("scroll",()=>{
-const header=document.querySelector("header");
-
-if(window.scrollY>50){
-header.style.background="rgba(0,0,0,0.7)";
-}else{
-header.style.background="rgba(0,0,0,0.4)";
-}
-});
-
-  document.querySelectorAll(".btn").forEach(btn=>{
-btn.addEventListener("click",()=>{
-document.querySelector("#contact").scrollIntoView({
-behavior:"smooth"
-});
-});
-});
-  
-/* SERVICES ANIMATION */
-
+/* ══ GSAP ══ */
 gsap.registerPlugin(ScrollTrigger);
+gsap.from('.hero h2',{opacity:0,y:40,duration:1.2});
+gsap.from('.hero p',{opacity:0,y:30,delay:.3,duration:1});
+gsap.from('.hero .btn',{opacity:0,scale:.85,delay:.6,duration:.9});
+gsap.from('.svc-box',{opacity:0,y:50,duration:.9,stagger:.08,scrollTrigger:{trigger:'#services',start:'top 85%'}});
+gsap.from('.bento-card',{opacity:0,y:50,duration:.9,stagger:.1,scrollTrigger:{trigger:'.bento-grid',start:'top 85%'}});
+gsap.from('.t-card',{opacity:0,y:40,duration:.85,stagger:.12,scrollTrigger:{trigger:'.testimonials-grid',start:'top 85%'}});
 
-gsap.from(".card",{
-opacity:0,
-y:60,
-duration:1,
-stagger:0.2,
-scrollTrigger:{
-trigger:"#services",
-start:"top 85%",
-toggleActions:"play none none none"
-}
+/* ══ SCROLL ══ */
+window.addEventListener('scroll',()=>{
+  document.querySelector('header').style.background=scrollY>50?'rgba(6,14,24,0.95)':'rgba(6,14,24,0.75)';
 });
 
-gsap.from(".hero h2",{
-opacity:0,
-y:40,
-duration:1.2
+/* ══ HAMBURGER ══ */
+document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('nav-links').classList.toggle('open'));
+document.querySelectorAll('#nav-links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nav-links').classList.remove('open')));
+
+/* ══ REVEAL ══ */
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});},{threshold:.07});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+/* ══ COUNTERS ══ */
+document.querySelectorAll('[data-count]').forEach(el=>{
+  const target=parseFloat(el.dataset.count),suf=el.dataset.suffix||'';let done=false;
+  new IntersectionObserver(([e])=>{
+    if(e.isIntersecting&&!done){done=true;let c=0;
+      const t=setInterval(()=>{c=Math.min(c+target/55,target);el.textContent=(Number.isInteger(target)?Math.round(c):c.toFixed(1))+suf;if(c>=target)clearInterval(t);},22);}
+  }).observe(el);
 });
 
-gsap.from(".hero p",{
-opacity:0,
-y:30,
-delay:.3,
-duration:1
+/* ══ CAROUSEL ══ */
+(function(){
+  const slides=document.querySelectorAll('.carousel-slide');
+  const dots=document.querySelectorAll('.dot');
+  const bar=document.getElementById('carousel-progress-bar');
+  const INTERVAL=2800;
+  let current=0,timer;
+  function goTo(idx){
+    const prev=current;current=(idx+slides.length)%slides.length;
+    slides[prev].classList.remove('active');slides[prev].classList.add('exit');
+    setTimeout(()=>slides[prev].classList.remove('exit'),650);
+    slides[current].classList.add('active');
+    dots.forEach((d,i)=>d.classList.toggle('active',i===current));
+    resetProgress();
+  }
+  function resetProgress(){
+    clearTimeout(timer);
+    if(bar){bar.style.transition='none';bar.style.width='0%';}
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{if(bar){bar.style.transition=`width ${INTERVAL}ms linear`;bar.style.width='100%';}}));
+    timer=setTimeout(()=>goTo(current+1),INTERVAL);
+  }
+  document.getElementById('carousel-prev').addEventListener('click',()=>goTo(current-1));
+  document.getElementById('carousel-next').addEventListener('click',()=>goTo(current+1));
+  dots.forEach(d=>d.addEventListener('click',()=>goTo(parseInt(d.dataset.idx))));
+  let tx=0;const car=document.getElementById('hero-carousel');
+  car.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});
+  car.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>40)goTo(current+(dx<0?1:-1));});
+  car.addEventListener('mouseenter',()=>clearTimeout(timer));
+  car.addEventListener('mouseleave',()=>resetProgress());
+  document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')goTo(current+1);if(e.key==='ArrowLeft')goTo(current-1);});
+  resetProgress();
+})();
+
+/* ══ ENQUIRY FORM ══ */
+document.getElementById('form-submit-btn').addEventListener('click',()=>{
+  const fname=document.getElementById('f-fname').value.trim();
+  const email=document.getElementById('f-email').value.trim();
+  const phone=document.getElementById('f-phone').value.trim();
+  const service=document.getElementById('f-service').value;
+  if(!fname||!email||!phone||!service){alert('Please fill in your name, email, phone and select a service.');return;}
+  if(!email.includes('@')){alert('Please enter a valid email.');return;}
+  document.getElementById('form-submit-btn').style.display='none';
+  document.getElementById('form-success').style.display='block';
 });
 
-gsap.from(".hero .btn",{
-opacity:0,
-scale:.8,
-delay:.6,
-duration:1
+/* ══ NEWSLETTER ══ */
+document.getElementById('nl-btn').addEventListener('click',()=>{
+  const email=document.getElementById('nl-email').value;
+  if(email.includes('@')){document.getElementById('nl-btn').textContent='✓';document.getElementById('nl-btn').style.background='#10b981';document.getElementById('nl-email').value='';}
 });
-  
+
+/* ══ CHATBOT ══ */
+(function(){
+  const btn=document.getElementById('chatbot-btn');
+  const win=document.getElementById('chatbot-window');
+  const closeBtn=document.getElementById('chat-close');
+  const messagesEl=document.getElementById('chat-messages');
+  const inputEl=document.getElementById('chat-input');
+  const sendBtn=document.getElementById('chat-send');
+  const quickEl=document.getElementById('chat-quick');
+  const responses={
+    'what services do you offer?':'We offer 8 core services: 🏛️ Company Registration, 📋 GST Filing, 🌐 Website Design, ⚙️ CRM, 📣 Meta & Google Ads, 💼 LinkedIn Ads, ✈️ Telegram Ads, and 🔍 SEO. Which one interests you most?',
+    'how much does company registration cost?':'Company registration starts from ₹4,999 (OPC) to ₹9,999 (Pvt Ltd) all-inclusive. This covers MCA filing, DSC, DIN, and Certificate of Incorporation. Want a detailed quote?',
+    'how do i get started?':'Easy! Just fill out the Enquiry Form on this page, or WhatsApp us at +91 91094 36053. We\'ll schedule a free 30-min consultation within 2 hours. 🚀',
+    'i want to speak to a human':'Absolutely! 📞 +91 91094 36053 or 💬 WhatsApp: https://wa.me/919109436053 — we respond within minutes!',
+    'default':'Thanks for your message! Our team will get back to you soon. For faster response, WhatsApp us at +91 91094 36053. 😊'
+  };
+  function addMsg(text,type){const div=document.createElement('div');div.className=`chat-msg ${type}`;div.textContent=text;messagesEl.appendChild(div);messagesEl.scrollTop=messagesEl.scrollHeight;}
+  function showTyping(){const div=document.createElement('div');div.className='chat-typing';div.id='chat-typing';div.innerHTML='<span></span><span></span><span></span>';messagesEl.appendChild(div);messagesEl.scrollTop=messagesEl.scrollHeight;}
+  function removeTyping(){const t=document.getElementById('chat-typing');if(t)t.remove();}
+  function botReply(userMsg){showTyping();quickEl.style.display='none';setTimeout(()=>{removeTyping();const reply=responses[userMsg.toLowerCase()]||responses['default'];addMsg(reply,'bot');},900+Math.random()*600);}
+  function sendMessage(){const msg=inputEl.value.trim();if(!msg)return;addMsg(msg,'user');inputEl.value='';botReply(msg);}
+  btn.addEventListener('click',()=>{win.classList.toggle('open');if(win.classList.contains('open'))inputEl.focus();});
+  closeBtn.addEventListener('click',()=>win.classList.remove('open'));
+  sendBtn.addEventListener('click',sendMessage);
+  inputEl.addEventListener('keydown',e=>{if(e.key==='Enter')sendMessage();});
+  document.querySelectorAll('.quick-btn').forEach(b=>b.addEventListener('click',()=>{addMsg(b.dataset.msg,'user');botReply(b.dataset.msg);}));
+})();
 </script>
-
 </body>
 </html>
