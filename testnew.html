@@ -846,7 +846,9 @@ const camera=new THREE.PerspectiveCamera(75,innerWidth/innerHeight,0.1,1000);
 const renderer=new THREE.WebGLRenderer({canvas:document.getElementById('bg-canvas'),alpha:true,antialias:true});
 renderer.setSize(innerWidth,innerHeight);
 renderer.setPixelRatio(Math.min(devicePixelRatio,2));
-
+renderer.outputEncoding = THREE.sRGBEncoding;
+renderer.physicallyCorrectLights = true;
+  
 const geo=new THREE.BufferGeometry();
 const count = window.innerWidth < 768 ? 1200 : 2800;
 const verts=[],colors=[];
