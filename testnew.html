@@ -329,6 +329,14 @@ footer{background:var(--navy);border-top:1px solid rgba(14,165,233,0.1);padding:
 /* ══ REVEAL ══ */
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1);}
 .reveal.in{opacity:1;transform:translateY(0);}
+
+.carousel-slide{
+display:none;
+}
+
+.carousel-slide.active{
+display:block;
+}  
 </style>
 </head>
 <body>
@@ -960,6 +968,69 @@ document.getElementById('nl-btn').addEventListener('click',()=>{
   if(email.includes('@')){document.getElementById('nl-btn').textContent='✓';document.getElementById('nl-btn').style.background='#10b981';document.getElementById('nl-email').value='';}
 });
 
+const slides = document.querySelectorAll(".carousel-slide");
+const dots = document.querySelectorAll(".dot");
+const nextBtn = document.getElementById("carousel-next");
+const prevBtn = document.getElementById("carousel-prev");
+const progressBar = document.getElementById("carousel-progress-bar");
+
+let current = 0;
+let timer;
+
+function showSlide(index){
+  slides.forEach((slide,i)=>{
+    slide.classList.remove("active");
+    dots[i].classList.remove("active");
+  });
+
+  slides[index].classList.add("active");
+  dots[index].classList.add("active");
+
+  current = index;
+}
+
+function nextSlide(){
+  current = (current + 1) % slides.length;
+  showSlide(current);
+}
+
+function prevSlide(){
+  current = (current - 1 + slides.length) % slides.length;
+  showSlide(current);
+}
+
+nextBtn.addEventListener("click", nextSlide);
+prevBtn.addEventListener("click", prevSlide);
+
+dots.forEach(dot=>{
+  dot.addEventListener("click", ()=>{
+    showSlide(parseInt(dot.dataset.idx));
+  });
+});
+
+function startCarousel(){
+  timer = setInterval(nextSlide, 5000);
+}
+
+startCarousel();
+
+const reveals = document.querySelectorAll(".reveal");
+
+function revealOnScroll(){
+  const windowHeight = window.innerHeight;
+
+  reveals.forEach(el=>{
+    const elementTop = el.getBoundingClientRect().top;
+
+    if(elementTop < windowHeight - 80){
+      el.classList.add("in");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();  
+
 /* ══ CHATBOT ══ */
 (function(){
   const btn=document.getElementById('chatbot-btn');
@@ -996,5 +1067,6 @@ for(const key in responses){
   document.querySelectorAll('.quick-btn').forEach(b=>b.addEventListener('click',()=>{addMsg(b.dataset.msg,'user');botReply(b.dataset.msg);}));
 });
 </script>
+  
 </body>
 </html>
