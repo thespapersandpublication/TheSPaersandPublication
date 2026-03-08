@@ -848,7 +848,7 @@ renderer.setSize(innerWidth,innerHeight);
 renderer.setPixelRatio(Math.min(devicePixelRatio,2));
 
 const geo=new THREE.BufferGeometry();
-const count=2800;
+const count = window.innerWidth < 768 ? 1200 : 2800;
 const verts=[],colors=[];
 for(let i=0;i<count;i++){
   verts.push((Math.random()-.5)*240,(Math.random()-.5)*240,(Math.random()-.5)*240);
