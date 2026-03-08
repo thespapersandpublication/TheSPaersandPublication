@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — 360 Biz Solution</title>
+<meta name="description" content="Explore all 8 services offered by 360 Biz Solution — Company Registration, GST, Website, CRM, Meta Ads, LinkedIn, Telegram, SEO.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<style>
+:root{
+  --navy:#0d1b2a;
+  --navy2:#112233;
+  --teal:#0ea5e9;
+  --teal2:#38bdf8;
+  --gold:#f59e0b;
+  --gold2:#fcd34d;
+  --emerald:#10b981;
+  --violet:#8b5cf6;
+  --rose:#f43f5e;
+  --bg:#060e18;
+  --text:#e2eaf5;
+  --text-muted:#7b96b2;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Sora',sans-serif;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);overflow-x:hidden;}
+
+/* ══ GRID BG ══ */
+.bg-grid{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none;
+  background-image:linear-gradient(rgba(14,165,233,0.03) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(14,165,233,0.03) 1px,transparent 1px);
+  background-size:72px 72px;}
+
+/* ══ HEADER ══ */
+header{position:fixed;top:0;width:100%;padding:14px 7%;display:flex;justify-content:space-between;align-items:center;background:rgba(6,14,24,0.85);backdrop-filter:blur(24px);border-bottom:1px solid rgba(14,165,233,0.12);z-index:1000;}
+nav{display:flex;justify-content:space-between;align-items:center;width:100%;gap:32px;}
+.logo-wrap{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-text{font-weight:800;font-size:18px;white-space:nowrap;background:linear-gradient(90deg,var(--teal),var(--gold));-webkit-background-clip:text;color:transparent;}
+.logo-badge{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--teal),var(--gold));display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;color:#060e18;}
+nav ul{list-style:none;display:flex;gap:28px;margin:0 auto;}
+nav a{text-decoration:none;color:var(--text-muted);font-size:14px;transition:color .2s;font-weight:500;}
+nav a:hover,nav a.active{color:var(--teal2);}
+.nav-cta{padding:9px 24px;border:none;border-radius:40px;background:linear-gradient(90deg,var(--teal),#0284c7);color:white!important;font-weight:600;font-size:13px;cursor:pointer;text-decoration:none;transition:all .3s;box-shadow:0 4px 18px rgba(14,165,233,0.3);}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(14,165,233,0.5);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+.hamburger span{width:22px;height:1.5px;background:rgba(255,255,255,0.7);display:block;border-radius:2px;}
+
+/* ══ PAGE HERO ══ */
+.page-hero{min-height:55vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:130px 8% 80px;position:relative;overflow:hidden;}
+.page-hero-bg{position:absolute;inset:0;z-index:0;}
+.page-hero-bg svg{width:100%;height:100%;position:absolute;top:0;left:0;opacity:.5;}
+.page-hero-content{position:relative;z-index:1;}
+.page-hero h1{font-size:clamp(36px,5vw,64px);font-weight:800;color:white;margin-bottom:16px;letter-spacing:-0.03em;}
+.page-hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--teal2),var(--gold));-webkit-background-clip:text;color:transparent;}
+.page-hero p{font-size:18px;color:var(--text-muted);max-width:580px;line-height:1.75;font-family:'DM Sans',sans-serif;}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:12px;}
+
+/* ══ SERVICE SIDEBAR NAV ══ */
+.services-page{display:flex;gap:0;min-height:100vh;position:relative;}
+.services-sidebar{position:sticky;top:70px;width:260px;flex-shrink:0;height:calc(100vh - 70px);overflow-y:auto;background:rgba(6,14,24,0.95);border-right:1px solid rgba(14,165,233,0.1);padding:40px 0;}
+.sidebar-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);padding:0 24px;margin-bottom:12px;}
+.sidebar-link{display:flex;align-items:center;gap:12px;padding:12px 24px;text-decoration:none;color:var(--text-muted);font-size:13px;font-weight:500;transition:all .2s;border-right:2px solid transparent;}
+.sidebar-link:hover{color:white;background:rgba(14,165,233,0.06);}
+.sidebar-link.active{color:white;background:rgba(14,165,233,0.08);border-right-color:var(--teal);}
+.sidebar-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+
+/* ══ SERVICE CONTENT ══ */
+.services-content{flex:1;overflow:hidden;}
+
+/* ══ SERVICE SECTION ══ */
+.service-section{min-height:100vh;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;}
+
+/* Per-service themes */
+.svc-company-reg{background:radial-gradient(ellipse 100% 80% at 80% 20%,rgba(14,165,233,0.08),transparent 60%),#060e18;}
+.svc-gst{background:radial-gradient(ellipse 100% 80% at 20% 80%,rgba(16,185,129,0.08),transparent 60%),#060e18;}
+.svc-website{background:radial-gradient(ellipse 100% 80% at 80% 50%,rgba(139,92,246,0.08),transparent 60%),#060e18;}
+.svc-crm{background:radial-gradient(ellipse 100% 80% at 30% 30%,rgba(245,158,11,0.08),transparent 60%),#060e18;}
+.svc-meta-google{background:radial-gradient(ellipse 100% 80% at 70% 70%,rgba(244,63,94,0.08),transparent 60%),#060e18;}
+.svc-linkedin{background:radial-gradient(ellipse 100% 80% at 20% 40%,rgba(14,165,233,0.1),transparent 60%),#060e18;}
+.svc-telegram{background:radial-gradient(ellipse 100% 80% at 80% 20%,rgba(56,189,248,0.1),transparent 60%),#060e18;}
+.svc-seo{background:radial-gradient(ellipse 100% 80% at 50% 80%,rgba(16,185,129,0.08),transparent 60%),#060e18;}
+
+/* BG decorative graphics per section */
+.svc-bg-art{position:absolute;right:0;top:50%;transform:translateY(-50%);width:45%;height:80%;z-index:0;pointer-events:none;opacity:.35;}
+.svc-bg-art svg{width:100%;height:100%;}
+
+.service-inner{padding:80px 8%;position:relative;z-index:1;display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center;}
+.service-tag{display:inline-flex;align-items:center;gap:8px;padding:7px 18px;border-radius:40px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px;border:1px solid;}
+.service-tag.teal{background:rgba(14,165,233,0.1);border-color:rgba(14,165,233,0.3);color:var(--teal2);}
+.service-tag.emerald{background:rgba(16,185,129,0.1);border-color:rgba(16,185,129,0.3);color:#34d399;}
+.service-tag.violet{background:rgba(139,92,246,0.1);border-color:rgba(139,92,246,0.3);color:#a78bfa;}
+.service-tag.gold{background:rgba(245,158,11,0.1);border-color:rgba(245,158,11,0.3);color:#fbbf24;}
+.service-tag.rose{background:rgba(244,63,94,0.1);border-color:rgba(244,63,94,0.3);color:#fb7185;}
+.service-tag.sky{background:rgba(56,189,248,0.1);border-color:rgba(56,189,248,0.3);color:#7dd3fc;}
+
+.service-title{font-size:clamp(32px,3.5vw,52px);font-weight:800;color:white;line-height:1.15;letter-spacing:-0.025em;margin-bottom:18px;}
+.service-title em{font-style:normal;}
+.service-desc{font-size:16px;color:var(--text-muted);line-height:1.8;margin-bottom:28px;font-family:'DM Sans',sans-serif;}
+
+.service-features{display:flex;flex-direction:column;gap:14px;margin-bottom:32px;}
+.svc-feat{display:flex;align-items:flex-start;gap:12px;}
+.svc-feat-icon{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;margin-top:2px;}
+.svc-feat-text strong{display:block;font-size:14px;font-weight:600;color:white;margin-bottom:2px;}
+.svc-feat-text span{font-size:13px;color:var(--text-muted);font-family:'DM Sans',sans-serif;}
+
+.service-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{padding:14px 32px;border:none;border-radius:40px;background:linear-gradient(90deg,var(--teal),#0284c7);color:white;font-weight:600;cursor:pointer;transition:all .3s;display:inline-block;box-shadow:0 6px 22px rgba(14,165,233,0.3);text-decoration:none;font-size:14px;}
+.btn:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(14,165,233,0.5);}
+.btn-emerald{padding:14px 32px;border:none;border-radius:40px;background:linear-gradient(90deg,var(--emerald),#059669);color:white;font-weight:600;cursor:pointer;transition:all .3s;display:inline-block;font-size:14px;text-decoration:none;box-shadow:0 6px 22px rgba(16,185,129,0.3);}
+.btn-emerald:hover{transform:translateY(-3px);}
+.btn-violet{padding:14px 32px;border:none;border-radius:40px;background:linear-gradient(90deg,var(--violet),#7c3aed);color:white;font-weight:600;cursor:pointer;transition:all .3s;display:inline-block;font-size:14px;text-decoration:none;box-shadow:0 6px 22px rgba(139,92,246,0.3);}
+.btn-violet:hover{transform:translateY(-3px);}
+.btn-gold{padding:14px 32px;border:none;border-radius:40px;background:linear-gradient(90deg,var(--gold),#d97706);color:#060e18;font-weight:700;cursor:pointer;transition:all .3s;display:inline-block;font-size:14px;text-decoration:none;box-shadow:0 6px 22px rgba(245,158,11,0.3);}
+.btn-gold:hover{transform:translateY(-3px);}
+.btn-rose{padding:14px 32px;border:none;border-radius:40px;background:linear-gradient(90deg,var(--rose),#e11d48);color:white;font-weight:600;cursor:pointer;transition:all .3s;display:inline-block;font-size:14px;text-decoration:none;box-shadow:0 6px 22px rgba(244,63,94,0.3);}
+.btn-rose:hover{transform:translateY(-3px);}
+.btn-outline{padding:13px 32px;border:1px solid rgba(14,165,233,0.3);border-radius:40px;background:rgba(14,165,233,0.06);color:var(--teal2);font-weight:500;cursor:pointer;transition:all .3s;display:inline-block;font-size:14px;text-decoration:none;}
+.btn-outline:hover{background:rgba(14,165,233,0.14);transform:scale(1.02);}
+
+/* Service Card / Visual ——— */
+.service-visual{position:relative;}
+.svc-card-main{background:rgba(255,255,255,0.04);border-radius:24px;padding:40px;border:1px solid rgba(255,255,255,0.08);position:relative;overflow:hidden;}
+.svc-card-main::before{content:'';position:absolute;inset:0;pointer-events:none;}
+.svc-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px;}
+.svc-stat{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:20px;text-align:center;}
+.svc-stat-num{font-size:32px;font-weight:900;letter-spacing:-0.04em;margin-bottom:4px;}
+.svc-stat-label{font-size:11px;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em;}
+.svc-package{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:22px;margin-bottom:12px;transition:all .3s;}
+.svc-package:hover{background:rgba(255,255,255,0.07);transform:translateX(4px);}
+.svc-pkg-name{font-size:15px;font-weight:700;color:white;margin-bottom:4px;display:flex;justify-content:space-between;align-items:center;}
+.svc-pkg-price{font-size:14px;font-weight:700;}
+.svc-pkg-desc{font-size:13px;color:var(--text-muted);font-family:'DM Sans',sans-serif;}
+
+/* Color tints per service */
+.tint-teal .svc-stat-num{background:linear-gradient(90deg,var(--teal2),var(--gold));-webkit-background-clip:text;color:transparent;}
+.tint-emerald .svc-stat-num{background:linear-gradient(90deg,#34d399,var(--teal2));-webkit-background-clip:text;color:transparent;}
+.tint-violet .svc-stat-num{background:linear-gradient(90deg,#a78bfa,var(--teal2));-webkit-background-clip:text;color:transparent;}
+.tint-gold .svc-stat-num{background:linear-gradient(90deg,var(--gold2),var(--teal2));-webkit-background-clip:text;color:transparent;}
+.tint-rose .svc-stat-num{background:linear-gradient(90deg,#fb7185,var(--gold));-webkit-background-clip:text;color:transparent;}
+.tint-sky .svc-stat-num{background:linear-gradient(90deg,#7dd3fc,var(--gold));-webkit-background-clip:text;color:transparent;}
+.tint-teal .svc-feat-icon{background:rgba(14,165,233,0.15);color:var(--teal2);}
+.tint-emerald .svc-feat-icon{background:rgba(16,185,129,0.15);color:#34d399;}
+.tint-violet .svc-feat-icon{background:rgba(139,92,246,0.15);color:#a78bfa;}
+.tint-gold .svc-feat-icon{background:rgba(245,158,11,0.15);color:var(--gold2);}
+.tint-rose .svc-feat-icon{background:rgba(244,63,94,0.15);color:#fb7185;}
+.tint-sky .svc-feat-icon{background:rgba(56,189,248,0.15);color:#7dd3fc;}
+
+/* Dividers */
+.svc-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(14,165,233,0.15),transparent);margin:0;}
+
+/* ══ PRICING STRIP ══ */
+.pricing-strip{background:rgba(14,165,233,0.05);border-top:1px solid rgba(14,165,233,0.1);border-bottom:1px solid rgba(14,165,233,0.1);padding:32px 8%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;position:relative;z-index:1;}
+.price-item{text-align:center;}
+.price-val{font-size:24px;font-weight:800;background:linear-gradient(90deg,var(--teal2),var(--gold));-webkit-background-clip:text;color:transparent;}
+.price-label{font-size:12px;color:var(--text-muted);margin-top:2px;}
+
+/* ══ ALL SERVICES QUICK NAV ══ */
+.all-services-strip{padding:40px 8%;background:rgba(6,14,24,0.9);}
+.svc-quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.svc-quick-card{background:rgba(255,255,255,0.03);border:1px solid rgba(14,165,233,0.12);border-radius:16px;padding:20px;text-decoration:none;color:white;display:flex;align-items:center;gap:12px;transition:all .3s;}
+.svc-quick-card:hover{background:rgba(14,165,233,0.08);border-color:rgba(14,165,233,0.35);transform:translateY(-4px);}
+.svc-quick-icon{width:40px;height:40px;border-radius:10px;background:rgba(14,165,233,0.1);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.svc-quick-name{font-size:14px;font-weight:600;}
+
+/* ══ FOOTER ══ */
+footer{background:var(--navy);border-top:1px solid rgba(14,165,233,0.1);padding:48px 8%;text-align:center;}
+.footer-bottom{font-size:13px;color:var(--text-muted);}
+.footer-bottom a{color:var(--text-muted);text-decoration:none;margin:0 8px;}
+.footer-bottom a:hover{color:var(--teal2);}
+
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:999;width:56px;height:56px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:transform .2s;}
+.wa-float:hover{transform:scale(1.12);}
+.wa-float svg{width:28px;height:28px;fill:white;}
+
+/* ══ REVEAL ══ */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1);}
+.reveal.in{opacity:1;transform:translateY(0);}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:1024px){
+  .services-sidebar{display:none;}
+  .service-inner{grid-template-columns:1fr;padding:60px 8%;}
+  .svc-card-main{margin-top:40px;}
+}
+@media(max-width:768px){
+  nav ul{display:none;position:fixed;top:70px;left:0;right:0;background:rgba(6,14,24,0.97);backdrop-filter:blur(20px);flex-direction:column;padding:20px 8%;gap:16px;border-bottom:1px solid rgba(14,165,233,0.1);}
+  nav ul.open{display:flex;}
+  .hamburger{display:flex;}
+  .nav-cta{display:none;}
+  .svc-quick-grid{grid-template-columns:repeat(2,1fr);}
+  .svc-stat-grid{grid-template-columns:1fr 1fr;}
+  .pricing-strip{flex-direction:column;text-align:center;}
+}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+
+<!-- HEADER -->
+<header>
+  <nav>
+    <a href="index.html" class="logo-wrap">
+      <div class="logo-badge">360</div>
+      <span class="logo-text">360 Biz Solution</span>
+    </a>
+    <ul id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="index.html#enquiry">Enquiry</a></li>
+    </ul>
+    <a href="index.html#enquiry" class="nav-cta">Get Started</a>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg">
+    <svg viewBox="0 0 1400 600" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <radialGradient id="pg1" cx="20%" cy="50%"><stop offset="0%" stop-color="#0ea5e9" stop-opacity=".18"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+        <radialGradient id="pg2" cx="80%" cy="30%"><stop offset="0%" stop-color="#f59e0b" stop-opacity=".12"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+      </defs>
+      <rect width="1400" height="600" fill="url(#pg1)"/>
+      <rect width="1400" height="600" fill="url(#pg2)"/>
+      <!-- Floating geometric shapes -->
+      <circle cx="200" cy="120" r="80" fill="none" stroke="#0ea5e9" stroke-width=".8" opacity=".25"/>
+      <circle cx="200" cy="120" r="130" fill="none" stroke="#0ea5e9" stroke-width=".4" opacity=".15"/>
+      <circle cx="1200" cy="400" r="100" fill="none" stroke="#f59e0b" stroke-width=".8" opacity=".25"/>
+      <circle cx="1200" cy="400" r="160" fill="none" stroke="#f59e0b" stroke-width=".4" opacity=".12"/>
+      <polygon points="700,80 730,140 670,140" fill="none" stroke="#38bdf8" stroke-width=".8" opacity=".3"/>
+      <polygon points="900,300 940,380 860,380" fill="none" stroke="#10b981" stroke-width=".8" opacity=".2"/>
+      <line x1="0" y1="300" x2="400" y2="200" stroke="#0ea5e9" stroke-width=".5" opacity=".12"/>
+      <line x1="1400" y1="100" x2="1000" y2="400" stroke="#f59e0b" stroke-width=".5" opacity=".12"/>
+    </svg>
+  </div>
+  <div class="page-hero-content">
+    <span class="eyebrow">All Services</span>
+    <h1>8 Services. <em>One Partner.</em></h1>
+    <p style="margin-top:12px;">Everything your Indian business needs — from registration to revenue growth, handled by one trusted team.</p>
+  </div>
+</section>
+
+<!-- QUICK NAV -->
+<section class="all-services-strip">
+  <div class="svc-quick-grid">
+    <a href="#company-reg" class="svc-quick-card"><div class="svc-quick-icon">🏛️</div><span class="svc-quick-name">Company Registration</span></a>
+    <a href="#gst" class="svc-quick-card"><div class="svc-quick-icon">📋</div><span class="svc-quick-name">GST Registration & Filing</span></a>
+    <a href="#website" class="svc-quick-card"><div class="svc-quick-icon">🌐</div><span class="svc-quick-name">Website Design & Dev</span></a>
+    <a href="#crm" class="svc-quick-card"><div class="svc-quick-icon">⚙️</div><span class="svc-quick-name">CRM Design</span></a>
+    <a href="#meta-google" class="svc-quick-card"><div class="svc-quick-icon">📣</div><span class="svc-quick-name">Meta & Google Ads</span></a>
+    <a href="#linkedin" class="svc-quick-card"><div class="svc-quick-icon">💼</div><span class="svc-quick-name">LinkedIn Ads</span></a>
+    <a href="#telegram" class="svc-quick-card"><div class="svc-quick-icon">✈️</div><span class="svc-quick-name">Telegram Ads</span></a>
+    <a href="#seo" class="svc-quick-card"><div class="svc-quick-icon">🔍</div><span class="svc-quick-name">SEO Services</span></a>
+  </div>
+</section>
+
+<div class="svc-divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════
+     SERVICE 1 — COMPANY REGISTRATION
+═══════════════════════════════════════════════════════ -->
+<section class="service-section svc-company-reg" id="company-reg">
+  <!-- Background Art: Legal/Document theme -->
+  <div class="svc-bg-art">
+    <svg viewBox="0 0 600 500" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <linearGradient id="cr1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#0ea5e9" stop-opacity=".3"/>
+          <stop offset="100%" stop-color="#38bdf8" stop-opacity=".1"/>
+        </linearGradient>
+      </defs>
+      <!-- Document shape -->
+      <rect x="150" y="60" width="220" height="290" rx="16" fill="none" stroke="#0ea5e9" stroke-width="1.5" opacity=".35"/>
+      <rect x="170" y="100" width="140" height="8" rx="4" fill="#0ea5e9" opacity=".25"/>
+      <rect x="170" y="120" width="100" height="6" rx="3" fill="#38bdf8" opacity=".2"/>
+      <rect x="170" y="136" width="120" height="6" rx="3" fill="#38bdf8" opacity=".15"/>
+      <rect x="170" y="152" width="80" height="6" rx="3" fill="#38bdf8" opacity=".12"/>
+      <rect x="170" y="180" width="140" height="6" rx="3" fill="#0ea5e9" opacity=".2"/>
+      <rect x="170" y="196" width="110" height="6" rx="3" fill="#38bdf8" opacity=".15"/>
+      <rect x="170" y="212" width="130" height="6" rx="3" fill="#38bdf8" opacity=".12"/>
+      <!-- Stamp -->
+      <circle cx="330" cy="300" r="50" fill="none" stroke="#f59e0b" stroke-width="2" opacity=".4"/>
+      <circle cx="330" cy="300" r="40" fill="none" stroke="#f59e0b" stroke-width="1" opacity=".25"/>
+      <text x="330" y="306" text-anchor="middle" fill="#f59e0b" font-size="14" font-weight="bold" opacity=".5">MCA</text>
+      <!-- Building pillars -->
+      <rect x="60" y="200" width="30" height="130" rx="4" fill="none" stroke="#0ea5e9" stroke-width="1" opacity=".2"/>
+      <rect x="100" y="180" width="30" height="150" rx="4" fill="none" stroke="#0ea5e9" stroke-width="1" opacity=".2"/>
+      <rect x="50" y="330" width="100" height="8" rx="4" fill="#0ea5e9" opacity=".2"/>
+      <!-- Connection lines -->
+      <line x1="370" y1="150" x2="490" y2="80" stroke="#38bdf8" stroke-width=".8" opacity=".2" stroke-dasharray="4,4"/>
+      <line x1="370" y1="250" x2="520" y2="280" stroke="#f59e0b" stroke-width=".8" opacity=".2" stroke-dasharray="4,4"/>
+      <circle cx="490" cy="80" r="6" fill="#38bdf8" opacity=".3"/>
+      <circle cx="520" cy="280" r="6" fill="#f59e0b" opacity=".3"/>
+    </svg>
+  </div>
+  <div class="service-inner tint-teal reveal">
+    <div class="service-left">
+      <div class="service-tag teal">01 · Legal & Compliance</div>
+      <h2 class="service-title">Company Registration<br><em style="background:linear-gradient(90deg,#38bdf8,#f59e0b);-webkit-background-clip:text;color:transparent;">in 7–10 days.</em></h2>
+      <p class="service-desc">We handle end-to-end MCA filing for Pvt Ltd, LLP, OPC, and Startup India registrations. Zero stress, full compliance — you focus on building, we handle the paperwork.</p>
+      <div class="service-features">
+        <div class="svc-feat"><div class="svc-feat-icon">🏛️</div><div class="svc-feat-text"><strong>Pvt Ltd / LLP / OPC</strong><span>All entity types — we choose the best structure for your business.</span></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon">🔐</div><div class="svc-feat-text"><strong>DSC & DIN Included</strong><span>Digital Signature Certificate and Director Identification Number handled seamlessly.</span></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon">📜</div><div class="svc-feat-text"><strong>MOA & AOA Drafting</strong><span>Memorandum and Articles of Association professionally drafted.</span></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon">🚀</div><div class="svc-feat-text"><strong>Startup India Recognition</strong><span>DPIIT recognition and 80-IAC tax exemption support included.</span></div></div>
+      </div>
+      <div class="service-actions">
+        <a href="index.html#enquiry" class="btn">Register Now →</a>
+        <a href="https://wa.me/919109436053" class="btn-outline">WhatsApp Us</a>
+      </div>
+    </div>
+    <div class="service-visual">
+      <div class="svc-card-main" style="border-color:rgba(14,165,233,0.2);">
+        <div style="font-size:13px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px;">Packages & Pricing</div>
+        <div class="svc-package"><div class="svc-pkg-name">One Person Company (OPC)<span class="svc-pkg-price" style="color:#38bdf8">₹4,999</span></div><div class="svc-pkg-desc">Ideal for solo founders. Full MCA filing included.</div></div>
+        <div class="svc-package"><div class="svc-pkg-name">Private Limited<span class="svc-pkg-price" style="color:#f59e0b">₹9,999</span></div><div class="svc-pkg-desc">Most popular. Up to 2 directors. Investment-ready structure.</div></div>
+        <div class="svc-package"><div class="svc-pkg-name">LLP Registration<span class="svc-pkg-price" style="color:#38bdf8">₹7,499</span></div><div class="svc-pkg-desc">For professional firms and partnerships.</div></div>
+        <div class="svc-stat-grid">
+          <div class="svc-stat"><div class="svc-stat-num tint-teal" style="background:linear-gradient(90deg,#38bdf8,#f59e0b);-webkit-background-clip:text;color:transparent;">7–10</div><div class="svc-stat-label">Days avg.</div></div>
+          <div class="svc-stat"><div class="svc-stat-num tint-teal" style="background:linear-gradient(90deg,#38bdf8,#f59e0b);-webkit-background-clip:text;color:transparent;">200+</div><div class="svc-stat-label">Registered</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="svc-divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════
+     SERVICE 2 — GST
+═══════════════════════════════════════════════════════ -->
+<section class="service-section svc-gst" id="gst">
+  <div class="svc-bg-art">
+    <svg viewBox="0 0 600 500" preserveAspectRatio="xMidYMid meet">
+      <!-- Tax / Finance theme: calculator + chart bars -->
+      <rect x="80" y="80" width="180" height="240" rx="16" fill="none" stroke="#10b981" stroke-width="1.5" opacity=".3"/>
+      <rect x="100" y="100" width="140" height="40" rx="8" fill="#10b981" opacity=".1"/>
+      <rect x="106" y="108" width="128" height="24" rx="6" fill="#10b981" opacity=".12"/>
+      <!-- Calculator keys -->
+      <circle cx="120" cy="170" r="12" fill="none" stroke="#34d399" stroke-width="1" opacity=".35"/>
+      <circle cx="160" cy="170" r="12" fill="none" stroke="#34d399" stroke-width="1" opacity=".35"/>
+      <circle cx="200" cy="170" r="12" fill="none" stroke="#10b981" stroke-width="1" opacity=".35"/>
+      <circle cx="120" cy="210" r="12" fill="none" stroke="#34d399" stroke-width="1" opacity=".35"/>
+      <circle cx="160" cy="210" r="12" fill="none" stroke="#34d399" stroke-width="1" opacity=".35"/>
+      <circle cx="200" cy="210" r="12" fill="none" stroke="#10b981" stroke-width="1" opacity=".35"/>
+      <circle cx="120" cy="250" r="12" fill="none" stroke="#34d399" stroke-width="1" opacity=".35"/>
+      <circle cx="160" cy="250" r="12" fill="none" stroke="#34d399" stroke-width="1" opacity=".35"/>
+      <circle cx="200" cy="250" r="24" rx="12" ry="12" fill="#10b981" opacity=".15" rx="12"/>
+      <!-- Bar chart -->
+      <rect x="310" y="280" width="30" height="80" rx="6" fill="#10b981" opacity=".2"/>
+      <rect x="360" y="230" width="30" height="130" rx="6" fill="#34d399" opacity=".25"/>
+      <rect x="410" y="200" width="30" height="160" rx="6" fill="#10b981" opacity=".3"/>
+      <rect x="460" y="150" width="30" height="210" rx="6" fill="#38bdf8" opacity=".2"/>
+      <line x1="295" y1="360" x2="510" y2="360" stroke="#10b981" stroke-width="1" opacity=".25"/>
+      <!-- GST label -->
+      <text x="200" y="420" text-anchor="middle" fill="#10b981" font-size="32" font-weight="900" opacity=".15">GST</text>
+    </svg>
+  </div>
+  <div class="service-inner tint-emerald reveal">
+    <div class="service-left">
+      <div class="service-tag emerald">02 · Tax & Compliance</div>
+      <h2 class="service-title">GST Registration<br><em style="background:linear-gradient(90deg,#34d399,#38bdf8);-webkit-background-clip:text;color:transparent;">& Stress-Free Filing.</em></h2>
+      <p class="service-desc">From GST registration to monthly/quarterly return filing, ITC reconciliation, and reply to notices — we manage your entire GST compliance calendar so you never miss a deadline.</p>
+      <div class="service-features">
+        <div class="svc-feat"><div class="svc-feat-icon">📋</div><div class="svc-feat-text"><strong>GST Registration</strong><span>GSTIN obtained within 7 working days for any business type.</span></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon">📅</div><div class="svc-feat-text"><strong>Monthly GSTR-3B & GSTR-1</strong><span>Timely filing of all returns with zero penalty risk.</span></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon">💰</div><div class="svc-feat-text"><strong>ITC Reconciliation</strong><span>Maximum input tax credit claimed and reconciled accurately.</span></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon">⚖️</div><div class="svc-feat-text"><strong>Notice Response</strong><span>Professional handling of GST department queries and notices.</span></div></div>
+      </div>
+      <div class="service-actions">
+        <a href="index.html#enquiry" class="btn-emerald">Get GST Help →</a>
+        <a href="https://wa.me/919109436053" class="btn-outline">Talk to Expert</a>
+      </div>
+    </div>
+    <div class="service-visual">
+      <div class="svc-card-main" style="border-color:rgba(16,185,129,0.2);">
+        <div style="font-size:13px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px;">What's Included</div>
+        <div class="svc-package"><div class="svc-pkg-name">GST Registration<span class="svc-pkg-price" style="color:#34d399">₹1,999</span></div><div class="svc-pkg-desc">One-time. Get your GSTIN in 7 days.</div></div>
+        <div class="svc-package"><div class="svc-pkg-name">Monthly Filing Plan<span class="svc-pkg-price" style="color:#38bdf8">₹2,999/mo</span></div><div class="svc-pkg-desc">GSTR-1, GSTR-3B, ITC tracking — everything covered monthly.</div></div>
+        <div class="svc-package"><div class="svc-pkg-name">Annual Compliance Pack<span class="svc-pkg-price" style="color:#34d399">₹24,999</span></div><div class="svc-pkg-desc">Full year GST + annual returns + notice handling.</div></div>
+        <div class="svc-stat-grid">
+          <div class="svc-stat"><div class="svc-stat-num" style="background:linear-gradient(90deg,#34d399,#38bdf8);-webkit-background-clip:text;color:transparent;">0</div><div class="svc-stat-label">Penalty Risk</div></div>
+          <div class="svc-stat"><div class="svc-stat-num" style="background:linear-gradient(90deg,#34d399,#38bdf8);-webkit-background-clip:text;color:transparent;">100+</div><div class="svc-stat-label">Active Clients</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="svc-divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════
+     SERVICE 3 — WEBSITE
+═══════════════════════════════════════════════════════ -->
+<section class="service-section svc-website" id="website">
+  <div class="svc-bg-art">
+    <svg viewBox="0 0 600 500" preserveAspectRatio="xMidYMid meet">
+      <!-- Browser / Screen theme -->
+      <rect x="60" y="80" width="360" height="250" rx="16" fill="none" stroke="#8b5cf6" stroke-width="1.5" opacity=".35"/>
+      <rect x="60" y="80" width="360" height="40" rx="16" fill="#8b5cf6" opacity=".1"/>
+      <circle cx="88" cy="100" r="7" fill="#f43f5e" opacity=".4"/>
+      <circle cx="112" cy="100" r="7" fill="#f59e0b" opacity=".4"/>
+      <circle cx="136" cy="100" r="7" fill="#10b981" opacity=".4"/>
+      <rect x="170" y="90" width="180" height="20" rx="10" fill="#8b5cf6" opacity=".1"/>
+      <!-- Nav bar lines inside browser -->
+      <rect x="80" y="140" width="80" height="10" rx="5" fill="#8b5cf6" opacity=".2"/>
+      <rect x="80" y="160" width="320" height="6" rx="3" fill="#a78bfa" opacity=".15"/>
+      <rect x="80" y="175" width="260" height="6" rx="3" fill="#a78bfa" opacity=".1"/>
+      <!-- Hero image block -->
+      <rect x="80" y="200" width="145" height="100" rx="10" fill="#8b5cf6" opacity=".12"/>
+      <rect x="240" y="200" width="140" height="40" rx="8" fill="#a78bfa" opacity=".1"/>
+      <rect x="240" y="250" width="100" height="8" rx="4" fill="#a78bfa" opacity=".1"/>
+      <rect x="240" y="265" width="120" height="8" rx="4" fill="#a78bfa" opacity=".1"/>
+      <!-- Mobile frame -->
+      <rect x="460" y="140" width="100" height="190" rx="16" fill="none" stroke="#8b5cf6" stroke-width="1.2" opacity=".3"/>
+      <rect x="490" y="138" width="40" height="6" rx="3" fill="#a78bfa" opacity=".3"/>
+      <rect x="475" y="160" width="70" height="80" rx="8" fill="#8b5cf6" opacity=".1"/>
+      <rect x="475" y="250" width="70" height="6" rx="3" fill="#a78bfa" opacity=".2"/>
+      <rect x="475" y="264" width="50" height="6" rx="3" fill="#a78bfa" opacity=".15"/>
+    </svg>
+  </div>
+  <div class="service-inner tint-violet reveal">
+    <div class="service-left">
+      <div class="service-tag violet">03 · Digital Presence</div>
+      <h2 class="service-title">Websites that<br><em style="background:linear-gradient(90deg,#a78bfa,#38bdf8);-webkit-background-clip:text;color:transparent;">convert & grow.</em></h2>
+      <p class="service-desc">Custom-designed, mobile-first business websites and e-commerce stores built for Indian audiences. Fast, beautiful, and optimised to turn visitors into customers from day one.</p>
+      <div class="service-features">
+        <div class="svc-feat"><div class="svc-feat-icon">🎨</div><div class="svc-feat-text"><strong>Custom Design</strong><span>No templates — every site is built unique to your brand identity.</span></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon">🛒</div><div class="svc-feat-text"><strong>E-Commerce Ready</strong><span>Razorpay, Paytm, PhonePe integrations for seamless Indian payments.</span></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon">⚡</div><div class="svc-feat-text"><strong>Speed Optimized</strong><span>Google PageSpeed 90+ score. Fast load on Indian 4G networks.</span></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon">📱</div><div class="svc-feat-text"><strong>Mobile-First</strong><span>Fully responsive design. Looks perfect on every device.</span></div></div>
+      </div>
+      <div class="service-actions">
+        <a href="index.html#enquiry" class="btn-violet">Start Your Website →</a>
+        <a href="https://wa.me/919109436053" class="btn-outline">View Portfolio</a>
+      </div>
+    </div>
+    <div class="service-visual">
+      <div class="svc-card-main" style="border-color:rgba(139,92,246,0.2);">
+        <div style="font-size:13px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px;">Website Packages</div>
+        <div class="svc-package"><div class="svc-pkg-name">Starter Business Site<span class="svc-pkg-price" style="color:#a78bfa">₹14,999</span></div><div class="svc-pkg-desc">5-page website. Custom design. Ready in 10 days.</div></div>
+        <div class="svc-package"><div class="svc-pkg-name">Business Pro<span class="svc-pkg-price" style="color:#38bdf8">₹29,999</span></div><div class="svc-pkg-desc">15 pages, blog, contact forms, SEO foundation. 14 days.</div></div>
+        <div class="svc-package"><div class="svc-pkg-name">E-Commerce Store<span class="svc-pkg-price" style="color:#a78bfa">₹49,999+</span></div><div class="svc-pkg-desc">Full store with Indian payment gateways. 21 days.</div></div>
+        <div class="svc-stat-grid">
+          <div class="svc-stat"><div class="svc-stat-num" style="background:linear-gradient(90deg,#a78bfa,#38bdf8);-webkit-background-clip:text;color:transparent;">14</div><div class="svc-stat-label">Days to Live</div></div>
+          <div class="svc-stat"><div class="svc-stat-num" style="background:linear-gradient(90deg,#a78bfa,#38bdf8);-webkit-background-clip:text;color:transparent;">90+</div><div class="svc-stat-label">PageSpeed</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="svc-divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════
+     SERVICE 4 — CRM
+═══════════════════════════════════════════════════════ -->
+<section class="service-section svc-crm" id="crm">
+  <div class="svc-bg-art">
+    <svg viewBox="0 0 600 500" preserveAspectRatio="xMidYMid meet">
+      <!-- Pipeline / CRM theme -->
+      <!-- Kanban columns -->
+      <rect x="60" y="80" width="100" height="280" rx="12" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity=".25"/>
+      <rect x="75" y="95" width="70" height="50" rx="8" fill="#f59e0b" opacity=".12"/>
+      <rect x="75" y="155" width="70" height="50" rx="8" fill="#f59e0b" opacity=".1"/>
+      <rect x="75" y="215" width="70" height="50" rx="8" fill="#f59e0b" opacity=".08"/>
+      <rect x="185" y="80" width="100" height="280" rx="12" fill="none" stroke="#fbbf24" stroke-width="1.2" opacity=".25"/>
+      <rect x="200" y="95" width="70" height="50" rx="8" fill="#fbbf24" opacity=".12"/>
+      <rect x="200" y="155" width="70" height="50" rx="8" fill="#fbbf24" opacity=".1"/>
+      <rect x="310" y="80" width="100" height="280" rx="12" fill="none" stroke="#10b981" stroke-width="1.2" opacity=".25"/>
+      <rect x="325" y="95" width="70" height="50" rx="8" fill="#10b981" opacity=".12"/>
+      <!-- Connection nodes -->
+      <circle cx="480" cy="150" r="40" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity=".3"/>
+      <circle cx="480" cy="150" r="25" fill="#f59e0b" opacity=".07"/>
+      <circle cx="480" cy="280" r="30" fill="none" stroke="#fbbf24" stroke-width="1" opacity=".25"/>
+      <line x1="480" y1="150" x2="480" y2="250" stroke="#f59e0b" stroke-width="1" opacity=".2" stroke-dasharray="4,4"/>
+      <text x="460" y="420" fill="#f59e0b" font-size="24" font-weight="900" opacity=".12">CRM</text>
+    </svg>
+  </div>
+  <div class="service-inner tint-gold reveal">
+    <div class="service-left">
+      <div class="service-tag gold">04 · Business Automation</div>
+      <h2 class="service-title">Custom CRM to<br><em style="background:linear-gradient(90deg,#fbbf24,#34d399);-webkit-background-clip:text;color:transparent;">manage & close deals.</em></h2>
+      <p class="service-desc">A tailor-built CRM system that matches your exact business workflow. Track leads, manage pipelines, automate follow-ups, and never lose a customer opportunity again.</p>
+      <div class="service-features">
+        <div class="svc-feat"><div class="svc-feat-icon">📊</div><div class="svc-feat-text"><strong>Visual Sales Pipeline</strong><span>Drag-and-drop Kanban boards to track deals at every stage.</span></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon">🔔</div><div class="svc-feat-text"><strong>Automated Follow-ups</strong><span>WhatsApp and email reminders so no lead goes cold.</span></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon">📈</div><div class="svc-feat-text"><strong>Reporting Dashboard</strong><span>Real-time insights on team performance and conversion rates.</span></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon">🔗</div><div class="svc-feat-text"><strong>Integrations</strong><span>WhatsApp, email, Google Sheets, Razorpay and more.</span></div></div>
+      </div>
+      <div class="service-actions">
+        <a href="index.html#enquiry" class="btn-gold">Build My CRM →</a>
+        <a href="https://wa.me/919109436053" class="btn-outline">Request Demo</a>
+      </div>
+    </div>
+    <div class="service-visual">
+      <div class="svc-card-main" style="border-color:rgba(245,158,11,0.2);">
+        <div style="font-size:13px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px;">CRM Options</div>
+        <div class="svc-package"><div class="svc-pkg-name">Basic CRM<span class="svc-pkg-price" style="color:#fbbf24">₹24,999</span></div><div class="svc-pkg-desc">Lead tracking, pipeline, basic automation for small teams.</div></div>
+        <div class="svc-package"><div class="svc-pkg-name">Business CRM<span class="svc-pkg-price" style="color:#34d399">₹49,999</span></div><div class="svc-pkg-desc">Advanced automation, WhatsApp integration, full reporting.</div></div>
+        <div class="svc-package"><div class="svc-pkg-name">Enterprise CRM<span class="svc-pkg-price" style="color:#fbbf24">Custom</span></div><div class="svc-pkg-desc">Multi-team, role-based access, API integrations. Quote on request.</div></div>
+        <div class="svc-stat-grid">
+          <div class="svc-stat"><div class="svc-stat-num" style="background:linear-gradient(90deg,#fbbf24,#34d399);-webkit-background-clip:text;color:transparent;">3x</div><div class="svc-stat-label">More Closures</div></div>
+          <div class="svc-stat"><div class="svc-stat-num" style="background:linear-gradient(90deg,#fbbf24,#34d399);-webkit-background-clip:text;color:transparent;">14</div><div class="svc-stat-label">Day Delivery</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="svc-divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════
+     SERVICE 5 — META & GOOGLE ADS
+═══════════════════════════════════════════════════════ -->
+<section class="service-section svc-meta-google" id="meta-google">
+  <div class="svc-bg-art">
+    <svg viewBox="0 0 600 500" preserveAspectRatio="xMidYMid meet">
+      <!-- Ad / growth chart theme -->
+      <polyline points="60,380 130,320 200,290 280,200 360,150 440,80 520,50" fill="none" stroke="#f43f5e" stroke-width="2" opacity=".3"/>
+      <circle cx="130" cy="320" r="8" fill="#f43f5e" opacity=".35"/>
+      <circle cx="280" cy="200" r="8" fill="#f59e0b" opacity=".35"/>
+      <circle cx="440" cy="80" r="8" fill="#f43f5e" opacity=".35"/>
+      <!-- Area under line -->
+      <polygon points="60,380 130,320 200,290 280,200 360,150 440,80 520,50 520,400 60,400" fill="#f43f5e" opacity=".04"/>
+      <!-- Grid lines -->
+      <line x1="60" y1="400" x2="520" y2="400" stroke="#f43f5e" stroke-width=".8" opacity=".15"/>
+      <line x1="60" y1="300" x2="520" y2="300" stroke="#f43f5e" stroke-width=".5" opacity=".1"/>
+      <line x1="60" y1="200" x2="520" y2="200" stroke="#f43f5e" stroke-width=".5" opacity=".1"/>
+      <!-- ROAS badge -->
+      <rect x="380" y="60" width="140" height="70" rx="12" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity=".3"/>
+      <text x="450" y="98" text-anchor="middle" fill="#f59e0b" font-size="22" font-weight="900" opacity=".45">4.8x</text>
+      <text x="450" y="116" text-anchor="middle" fill="#f59e0b" font-size="11" opacity=".3">ROAS</text>
+      <!-- Facebook/Google icons (abstract) -->
+      <circle cx="100" cy="100" r="45" fill="none" stroke="#3b82f6" stroke-width="1.2" opacity=".2"/>
+      <text x="100" y="107" text-anchor="middle" fill="#3b82f6" font-size="18" font-weight="900" opacity=".3">f</text>
+      <circle cx="200" cy="80" r="35" fill="none" stroke="#ea4335" stroke-width="1.2" opacity=".2"/>
+      <text x="200" y="87" text-anchor="middle" fill="#ea4335" font-size="14" font-weight="900" opacity=".3">G</text>
+    </svg>
+  </div>
+  <div class="service-inner tint-rose reveal">
+    <div class="service-left">
+      <div class="service-tag rose">05 · Performance Marketing</div>
+      <h2 class="service-title">Meta & Google Ads<br><em style="background:linear-gradient(90deg,#fb7185,#f59e0b);-webkit-background-clip:text;color:transparent;">with 4.8x ROAS.</em></h2>
+      <p class="service-desc">ROI-focused paid campaigns on Facebook, Instagram, and Google Search. We manage budgets, creatives, targeting, and A/B testing — so every rupee works harder for your business.</p>
+      <div class="service-features">
+        <div class="svc-feat"><div class="svc-feat-icon">🎯</div><div class="svc-feat-text"><strong>Laser-Targeted Audiences</strong><span>Custom and lookalike audiences built from your customer data.</span></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon">🖼️</div><div class="svc-feat-text"><strong>Creative Strategy</strong><span>Ad copy, creatives and video scripts optimised for Indian audiences.</span></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon">🔄</div><div class="svc-feat-text"><strong>Continuous Optimization</strong><span>Weekly A/B tests and budget reallocation to top-performing ads.</span></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon">📊</div><div class="svc-feat-text"><strong>Weekly Performance Reports</strong><span>Full transparency on spend, ROAS, CPL, and conversions.</span></div></div>
+      </div>
+      <div class="service-actions">
+        <a href="index.html#enquiry" class="btn-rose">Launch Ads →</a>
+        <a href="https://wa.me/919109436053" class="btn-outline">Free Strategy Call</a>
+      </div>
+    </div>
+    <div class="service-visual">
+      <div class="svc-card-main" style="border-color:rgba(244,63,94,0.2);">
+        <div style="font-size:13px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px;">Ad Management Plans</div>
+        <div class="svc-package"><div class="svc-pkg-name">Starter<span class="svc-pkg-price" style="color:#fb7185">₹9,999/mo</span></div><div class="svc-pkg-desc">1 platform. Up to ₹50K ad spend managed. Monthly report.</div></div>
+        <div class="svc-package"><div class="svc-pkg-name">Growth<span class="svc-pkg-price" style="color:#f59e0b">₹19,999/mo</span></div><div class="svc-pkg-desc">Meta + Google. Up to ₹2L ad spend. Weekly optimisations.</div></div>
+        <div class="svc-package"><div class="svc-pkg-name">Scale<span class="svc-pkg-price" style="color:#fb7185">₹34,999/mo</span></div><div class="svc-pkg-desc">All platforms. Unlimited spend. Dedicated campaign manager.</div></div>
+        <div class="svc-stat-grid">
+          <div class="svc-stat"><div class="svc-stat-num" style="background:linear-gradient(90deg,#fb7185,#f59e0b);-webkit-background-clip:text;color:transparent;">4.8x</div><div class="svc-stat-label">Avg ROAS</div></div>
+          <div class="svc-stat"><div class="svc-stat-num" style="background:linear-gradient(90deg,#fb7185,#f59e0b);-webkit-background-clip:text;color:transparent;">48h</div><div class="svc-stat-label">Launch Time</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="svc-divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════
+     SERVICE 6 — LINKEDIN ADS
+═══════════════════════════════════════════════════════ -->
+<section class="service-section svc-linkedin" id="linkedin">
+  <div class="svc-bg-art">
+    <svg viewBox="0 0 600 500" preserveAspectRatio="xMidYMid meet">
+      <!-- Network / B2B theme -->
+      <circle cx="300" cy="250" r="80" fill="none" stroke="#0ea5e9" stroke-width="1.5" opacity=".25"/>
+      <circle cx="300" cy="250" r="12" fill="#0ea5e9" opacity=".25"/>
+      <!-- Connected nodes -->
+      <circle cx="150" cy="150" r="30" fill="none" stroke="#38bdf8" stroke-width="1" opacity=".3"/>
+      <line x1="175" y1="170" x2="265" y2="215" stroke="#0ea5e9" stroke-width="1" opacity=".2" stroke-dasharray="3,3"/>
+      <circle cx="150" cy="150" r="8" fill="#0ea5e9" opacity=".2"/>
+      <circle cx="460" cy="150" r="30" fill="none" stroke="#38bdf8" stroke-width="1" opacity=".3"/>
+      <line x1="435" y1="170" x2="345" y2="215" stroke="#0ea5e9" stroke-width="1" opacity=".2" stroke-dasharray="3,3"/>
+      <circle cx="460" cy="150" r="8" fill="#0ea5e9" opacity=".2"/>
+      <circle cx="150" cy="370" r="30" fill="none" stroke="#38bdf8" stroke-width="1" opacity=".3"/>
+      <line x1="175" y1="355" x2="265" y2="295" stroke="#0ea5e9" stroke-width="1" opacity=".2" stroke-dasharray="3,3"/>
+      <circle cx="460" cy="370" r="30" fill="none" stroke="#38bdf8" stroke-width="1" opacity=".3"/>
+      <line x1="435" y1="355" x2="345" y2="295" stroke="#0ea5e9" stroke-width="1" opacity=".2" stroke-dasharray="3,3"/>
+      <!-- LinkedIn "in" text -->
+      <rect x="255" y="220" width="90" height="60" rx="10" fill="none" stroke="#0a66c2" stroke-width="1.5" opacity=".3"/>
+      <text x="300" y="260" text-anchor="middle" fill="#0a66c2" font-size="20" font-weight="900" opacity=".45">in</text>
+    </svg>
+  </div>
+  <div class="service-inner tint-teal reveal">
+    <div class="service-left">
+      <div class="service-tag teal">06 · B2B Marketing</div>
+      <h2 class="service-title">LinkedIn Ads for<br><em style="background:linear-gradient(90deg,#38bdf8,#10b981);-webkit-background-clip:text;color:transparent;">B2B lead generation.</em></h2>
+      <p class="service-desc">Reach decision-makers, CFOs, CTOs and procurement heads directly. LinkedIn's unmatched B2B targeting gets your brand in front of the right professionals — every rupee well spent.</p>
+      <div class="service-features">
+        <div class="svc-feat"><div class="svc-feat-icon">👔</div><div class="svc-feat-text"><strong>Decision-Maker Targeting</strong><span>C-suite, directors, and VP-level targeting by industry and company size.</span></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon">🏢</div><div class="svc-feat-text"><strong>Account-Based Marketing</strong><span>Target specific companies you want as clients — with precision.</span></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon">📋</div><div class="svc-feat-text"><strong>Lead Gen Forms</strong><span>LinkedIn native lead forms for frictionless B2B lead capture.</span></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon">🎯</div><div class="svc-feat-text"><strong>InMail Campaigns</strong><span>Personalised sponsored InMail to warm up high-value prospects.</span></div></div>
+      </div>
+      <div class="service-actions">
+        <a href="index.html#enquiry" class="btn">Start LinkedIn Ads →</a>
+        <a href="https://wa.me/919109436053" class="btn-outline">Free Audit</a>
+      </div>
+    </div>
+    <div class="service-visual">
+      <div class="svc-card-main" style="border-color:rgba(14,165,233,0.2);">
+        <div style="font-size:13px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px;">LinkedIn Ad Plans</div>
+        <div class="svc-package"><div class="svc-pkg-name">Starter B2B<span class="svc-pkg-price" style="color:#38bdf8">₹14,999/mo</span></div><div class="svc-pkg-desc">Sponsored content + lead gen forms. Target 2 job titles.</div></div>
+        <div class="svc-package"><div class="svc-pkg-name">Professional<span class="svc-pkg-price" style="color:#10b981">₹24,999/mo</span></div><div class="svc-pkg-desc">InMail + ABM + retargeting. Full funnel B2B strategy.</div></div>
+        <div class="svc-stat-grid">
+          <div class="svc-stat"><div class="svc-stat-num" style="background:linear-gradient(90deg,#38bdf8,#10b981);-webkit-background-clip:text;color:transparent;">5x</div><div class="svc-stat-label">Better B2B CPL</div></div>
+          <div class="svc-stat"><div class="svc-stat-num" style="background:linear-gradient(90deg,#38bdf8,#10b981);-webkit-background-clip:text;color:transparent;">900M+</div><div class="svc-stat-label">Global Reach</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="svc-divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════
+     SERVICE 7 — TELEGRAM ADS
+═══════════════════════════════════════════════════════ -->
+<section class="service-section svc-telegram" id="telegram">
+  <div class="svc-bg-art">
+    <svg viewBox="0 0 600 500" preserveAspectRatio="xMidYMid meet">
+      <!-- Chat bubbles / channel theme -->
+      <rect x="60" y="120" width="240" height="70" rx="20" fill="none" stroke="#38bdf8" stroke-width="1.2" opacity=".3"/>
+      <rect x="80" y="135" width="160" height="10" rx="5" fill="#38bdf8" opacity=".2"/>
+      <rect x="80" y="155" width="120" height="10" rx="5" fill="#7dd3fc" opacity=".15"/>
+      <polygon points="60,170 40,190 80,180" fill="#38bdf8" opacity=".15"/>
+      <rect x="240" y="220" width="260" height="70" rx="20" fill="none" stroke="#0ea5e9" stroke-width="1.2" opacity=".3"/>
+      <rect x="260" y="235" width="200" height="10" rx="5" fill="#0ea5e9" opacity=".2"/>
+      <rect x="260" y="255" width="150" height="10" rx="5" fill="#38bdf8" opacity=".15"/>
+      <polygon points="500,270 520,280 498,288" fill="#0ea5e9" opacity=".15"/>
+      <rect x="60" y="330" width="220" height="70" rx="20" fill="none" stroke="#7dd3fc" stroke-width="1.2" opacity=".3"/>
+      <rect x="80" y="345" width="140" height="10" rx="5" fill="#7dd3fc" opacity=".2"/>
+      <rect x="80" y="365" width="100" height="10" rx="5" fill="#38bdf8" opacity=".15"/>
+      <!-- Telegram paper plane -->
+      <polygon points="480,100 540,130 480,150 490,135" fill="none" stroke="#38bdf8" stroke-width="1.5" opacity=".35"/>
+      <line x1="490" y1="135" x2="510" y2="150" stroke="#38bdf8" stroke-width="1" opacity=".25"/>
+    </svg>
+  </div>
+  <div class="service-inner tint-sky reveal">
+    <div class="service-left">
+      <div class="service-tag sky">07 · Community Growth</div>
+      <h2 class="service-title">Telegram Ads &<br><em style="background:linear-gradient(90deg,#7dd3fc,#10b981);-webkit-background-clip:text;color:transparent;">channel growth.</em></h2>
+      <p class="service-desc">Tap into India's fastest-growing messaging platform. From Telegram Ad Network promotions to organic channel growth strategies — we help you build an engaged community at scale.</p>
+      <div class="service-features">
+        <div class="svc-feat"><div class="svc-feat-icon">✈️</div><div class="svc-feat-text"><strong>Telegram Ad Network</strong><span>Promoted posts and channel ads to India's 200M+ Telegram users.</span></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon">👥</div><div class="svc-feat-text"><strong>Channel Growth</strong><span>Organic and paid strategies to grow your Telegram subscriber base.</span></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon">🤖</div><div class="svc-feat-text"><strong>Bot Automation</strong><span>Custom Telegram bots for lead capture, FAQs, and notifications.</span></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon">📢</div><div class="svc-feat-text"><strong>Cross-Channel Promotions</strong><span>Collaborate with relevant Telegram channels in your niche.</span></div></div>
+      </div>
+      <div class="service-actions">
+        <a href="index.html#enquiry" class="btn">Grow on Telegram →</a>
+        <a href="https://wa.me/919109436053" class="btn-outline">Get Strategy</a>
+      </div>
+    </div>
+    <div class="service-visual">
+      <div class="svc-card-main" style="border-color:rgba(56,189,248,0.2);">
+        <div style="font-size:13px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px;">Telegram Packages</div>
+        <div class="svc-package"><div class="svc-pkg-name">Channel Boost<span class="svc-pkg-price" style="color:#7dd3fc">₹7,999/mo</span></div><div class="svc-pkg-desc">Promoted posts + cross-channel shoutouts. 1K+ real subscribers/mo.</div></div>
+        <div class="svc-package"><div class="svc-pkg-name">Ads + Growth<span class="svc-pkg-price" style="color:#10b981">₹14,999/mo</span></div><div class="svc-pkg-desc">Telegram Ad Network + organic strategy + bot setup.</div></div>
+        <div class="svc-stat-grid">
+          <div class="svc-stat"><div class="svc-stat-num" style="background:linear-gradient(90deg,#7dd3fc,#10b981);-webkit-background-clip:text;color:transparent;">200M+</div><div class="svc-stat-label">India Users</div></div>
+          <div class="svc-stat"><div class="svc-stat-num" style="background:linear-gradient(90deg,#7dd3fc,#10b981);-webkit-background-clip:text;color:transparent;">Low</div><div class="svc-stat-label">Cost Per Sub</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="svc-divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════
+     SERVICE 8 — SEO
+═══════════════════════════════════════════════════════ -->
+<section class="service-section svc-seo" id="seo">
+  <div class="svc-bg-art">
+    <svg viewBox="0 0 600 500" preserveAspectRatio="xMidYMid meet">
+      <!-- Search / rankings theme -->
+      <!-- Google SERP mockup -->
+      <rect x="60" y="60" width="380" height="40" rx="20" fill="none" stroke="#10b981" stroke-width="1.5" opacity=".3"/>
+      <circle cx="420" cy="80" r="18" fill="none" stroke="#10b981" stroke-width="1.5" opacity=".3"/>
+      <line x1="410" y1="88" x2="424" y2="102" stroke="#10b981" stroke-width="2" opacity=".3"/>
+      <circle cx="405" cy="84" r="8" fill="none" stroke="#10b981" stroke-width="1.5" opacity=".3"/>
+      <!-- Result rows -->
+      <rect x="60" y="130" width="380" height="70" rx="12" fill="none" stroke="#34d399" stroke-width="1" opacity=".25"/>
+      <rect x="80" y="145" width="40" height="12" rx="6" fill="#10b981" opacity=".3"/>
+      <rect x="130" y="145" width="200" height="12" rx="6" fill="#34d399" opacity=".2"/>
+      <rect x="80" y="165" width="300" height="8" rx="4" fill="#34d399" opacity=".12"/>
+      <rect x="80" y="180" width="250" height="8" rx="4" fill="#34d399" opacity=".1"/>
+      <!-- #1 badge -->
+      <rect x="420" y="140" width="50" height="50" rx="10" fill="#10b981" opacity=".12"/>
+      <text x="445" y="170" text-anchor="middle" fill="#34d399" font-size="20" font-weight="900" opacity=".5">#1</text>
+      <rect x="60" y="215" width="380" height="60" rx="12" fill="none" stroke="#10b981" stroke-width="1" opacity=".15"/>
+      <rect x="60" y="290" width="380" height="60" rx="12" fill="none" stroke="#10b981" stroke-width="1" opacity=".1"/>
+      <!-- Arrow up trend -->
+      <polyline points="80,420 150,380 230,360 320,310 420,260" fill="none" stroke="#10b981" stroke-width="2" opacity=".3"/>
+      <polygon points="420,250 430,270 410,268" fill="#10b981" opacity=".4"/>
+    </svg>
+  </div>
+  <div class="service-inner tint-emerald reveal">
+    <div class="service-left">
+      <div class="service-tag emerald">08 · Search Visibility</div>
+      <h2 class="service-title">SEO to rank<br><em style="background:linear-gradient(90deg,#34d399,#38bdf8);-webkit-background-clip:text;color:transparent;">#1 on Google India.</em></h2>
+      <p class="service-desc">Technical SEO, content strategy, link building, and local SEO — built specifically for the Indian search landscape. Get organic traffic that converts, without paying per click.</p>
+      <div class="service-features">
+        <div class="svc-feat"><div class="svc-feat-icon">🔧</div><div class="svc-feat-text"><strong>Technical SEO Audit</strong><span>Full site audit — speed, crawlability, indexing, Core Web Vitals.</span></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon">✍️</div><div class="svc-feat-text"><strong>Content Strategy</strong><span>Keyword-optimised blogs and landing pages targeting Indian search intent.</span></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon">🔗</div><div class="svc-feat-text"><strong>Link Building</strong><span>White-hat backlinks from authoritative Indian and global domains.</span></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon">📍</div><div class="svc-feat-text"><strong>Local SEO</strong><span>Google My Business optimisation to dominate local search results.</span></div></div>
+      </div>
+      <div class="service-actions">
+        <a href="index.html#enquiry" class="btn-emerald">Start SEO →</a>
+        <a href="https://wa.me/919109436053" class="btn-outline">Free SEO Audit</a>
+      </div>
+    </div>
+    <div class="service-visual">
+      <div class="svc-card-main" style="border-color:rgba(16,185,129,0.2);">
+        <div style="font-size:13px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px;">SEO Plans</div>
+        <div class="svc-package"><div class="svc-pkg-name">SEO Starter<span class="svc-pkg-price" style="color:#34d399">₹12,999/mo</span></div><div class="svc-pkg-desc">10 keywords, monthly audit, 4 blog posts. 3-month minimum.</div></div>
+        <div class="svc-package"><div class="svc-pkg-name">SEO Growth<span class="svc-pkg-price" style="color:#38bdf8">₹24,999/mo</span></div><div class="svc-pkg-desc">30 keywords, link building, 8 blogs, monthly report + calls.</div></div>
+        <div class="svc-package"><div class="svc-pkg-name">SEO Domination<span class="svc-pkg-price" style="color:#34d399">₹44,999/mo</span></div><div class="svc-pkg-desc">Unlimited keywords, 20 blogs, aggressive link building, local SEO.</div></div>
+        <div class="svc-stat-grid">
+          <div class="svc-stat"><div class="svc-stat-num" style="background:linear-gradient(90deg,#34d399,#38bdf8);-webkit-background-clip:text;color:transparent;">3mo</div><div class="svc-stat-label">First Results</div></div>
+          <div class="svc-stat"><div class="svc-stat-num" style="background:linear-gradient(90deg,#34d399,#38bdf8);-webkit-background-clip:text;color:transparent;">0</div><div class="svc-stat-label">Cost Per Click</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-bottom">
+    <p style="margin-bottom:12px;font-size:15px;font-weight:600;color:var(--text);">Ready to get started? <a href="index.html#enquiry" style="color:var(--teal2);">Get a free consultation →</a></p>
+    © 2025 360 Biz Solution — All Rights Reserved &nbsp;·&nbsp;
+    <a href="index.html">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#enquiry">Contact</a>
+    <a href="#">Privacy</a>
+  </div>
+</footer>
+
+<!-- WA Float -->
+<a href="https://wa.me/919109436053" class="wa-float" target="_blank">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+/* ══ GSAP REVEAL ══ */
+gsap.registerPlugin(ScrollTrigger);
+
+/* ══ HAMBURGER ══ */
+document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('nav-links').classList.toggle('open'));
+
+/* ══ SCROLL REVEAL ══ */
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});},{threshold:.07});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+/* ══ HEADER SCROLL ══ */
+window.addEventListener('scroll',()=>{
+  document.querySelector('header').style.background=scrollY>50?'rgba(6,14,24,0.98)':'rgba(6,14,24,0.85)';
+});
+
+/* ══ SIDEBAR ACTIVE ══ */
+const sections=['company-reg','gst','website','crm','meta-google','linkedin','telegram','seo'];
+const sideLinks=document.querySelectorAll('.sidebar-link');
+window.addEventListener('scroll',()=>{
+  let current='';
+  sections.forEach(id=>{
+    const el=document.getElementById(id);
+    if(el&&scrollY>=el.offsetTop-200)current=id;
+  });
+  sideLinks.forEach(l=>{
+    l.classList.toggle('active',l.getAttribute('href')==='#'+current);
+  });
+});
+
+/* ══ GSAP SECTION ANIMATIONS ══ */
+document.querySelectorAll('.service-inner').forEach(el=>{
+  gsap.from(el.querySelector('.service-left'),{opacity:0,x:-40,duration:.9,scrollTrigger:{trigger:el,start:'top 80%'}});
+  if(el.querySelector('.service-visual'))gsap.from(el.querySelector('.service-visual'),{opacity:0,x:40,duration:.9,delay:.15,scrollTrigger:{trigger:el,start:'top 80%'}});
+});
+</script>
+</body>
+</html>
