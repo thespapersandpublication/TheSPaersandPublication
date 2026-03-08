@@ -875,7 +875,9 @@ animate();
 window.addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);});
 
 /* ══ GSAP ══ */
-gsap.registerPlugin(ScrollTrigger);
+if (typeof ScrollTrigger !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 gsap.from('.hero h2',{opacity:0,y:40,duration:1.2});
 gsap.from('.hero p',{opacity:0,y:30,delay:.3,duration:1});
 gsap.from('.hero .btn',{opacity:0,scale:.85,delay:.6,duration:.9});
