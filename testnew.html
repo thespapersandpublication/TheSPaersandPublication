@@ -75,9 +75,9 @@ nav a:hover,nav a.active{color:var(--teal2);}
 
 /* Carousel */
 .carousel{position:relative;width:100%;max-width:840px;margin-bottom:52px;}
-.carousel-slide{position:absolute;top:0;left:0;width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1);pointer-events:none;}
-.carousel-slide.active{opacity:1;transform:translateY(0);pointer-events:auto;position:relative;display:flex!important;flex-direction:column;align-items:center;}
-.carousel-slide.exit{opacity:0;transform:translateY(-18px);position:absolute;}
+.carousel-slide{position:absolute;top:0;left:0;width:100%;display:none;flex-direction:column;align-items:center;text-align:center;opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1);pointer-events:none;}
+.carousel-slide.active{opacity:1!important;transform:translateY(0)!important;pointer-events:auto;position:relative;display:flex!important;flex-direction:column!important;align-items:center!important;}
+.carousel-slide.exit{opacity:0;transform:translateY(-18px);position:absolute;display:none!important;}
 .slide-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(14,165,233,0.1);border:1px solid rgba(14,165,233,0.25);border-radius:40px;padding:8px 20px;font-size:12px;font-weight:600;color:var(--teal2);margin-bottom:28px;backdrop-filter:blur(12px);letter-spacing:.04em;text-transform:uppercase;}
 .carousel-slide h2{font-size:clamp(36px,5.5vw,64px);font-weight:800;color:white;margin-bottom:18px;line-height:1.1;letter-spacing:-0.03em;text-align:center;width:100%;}
 .carousel-slide h2 em{font-style:normal;background:linear-gradient(90deg,var(--teal2),var(--gold));-webkit-background-clip:text;color:transparent;}
@@ -302,9 +302,9 @@ footer{background:var(--navy);border-top:1px solid rgba(14,165,233,0.1);padding:
 .footer-bottom a{color:var(--text-muted);text-decoration:none;}
 .footer-bottom a:hover{color:var(--teal2);}
 
-/* ══ MOBILE NAV ══ */
+/* ══ TABLET (≤900px) ══ */
 @media(max-width:900px){
-  nav ul{display:none;position:fixed;top:70px;left:0;right:0;background:rgba(6,14,24,0.97);backdrop-filter:blur(20px);flex-direction:column;padding:20px 8%;gap:16px;border-bottom:1px solid rgba(14,165,233,0.1);}
+  nav ul{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(6,14,24,0.97);backdrop-filter:blur(20px);flex-direction:column;padding:20px 6%;gap:16px;border-bottom:1px solid rgba(14,165,233,0.1);z-index:999;}
   nav ul.open{display:flex;}
   .hamburger{display:flex;}
   .nav-cta{display:none;}
@@ -317,13 +317,128 @@ footer{background:var(--navy);border-top:1px solid rgba(14,165,233,0.1);padding:
   .testimonials-grid{grid-template-columns:1fr;}
   .footer-grid{grid-template-columns:1fr;}
   .footer-links{grid-template-columns:repeat(2,1fr);}
-  .carousel-prev{left:-20px;}.carousel-next{right:-20px;}
+  .carousel-prev{left:-16px;}.carousel-next{right:-16px;}
   .stats-row{grid-template-columns:repeat(2,1fr);}
+  .section{padding:70px 5%;}
+  .enquiry-section{padding:70px 5%;}
+  .cta-section{padding:70px 5%;}
+  .trusted-section{padding:50px 5%;}
+  .cta-inner{padding:50px 32px;}
+  .location-band{padding:36px 28px;gap:28px;}
+  .enquiry-form{padding:32px 24px;}
 }
-@media(max-width:520px){
-  .services-grid-new{grid-template-columns:1fr;}
-  .process-grid{grid-template-columns:1fr;}
+
+/* ══ MOBILE (≤600px) ══ */
+@media(max-width:600px){
+  /* Base layout */
+  html{overflow-x:hidden;}
+  body{overflow-x:hidden;width:100%;max-width:100vw;}
+
+  /* Header */
+  header{padding:12px 5%;}
+  .logo-wrap img{height:36px !important;}
+
+  /* Hero */
+  .hero{padding:100px 5% 60px;min-height:auto;}
+  .carousel{max-width:100%;margin-bottom:36px;}
+  .carousel-prev{left:-8px;width:36px;height:36px;font-size:14px;}
+  .carousel-next{right:-8px;width:36px;height:36px;font-size:14px;}
+  .carousel-slide h2{font-size:clamp(26px,7vw,38px);}
+  .carousel-slide p{font-size:15px;max-width:100%;}
+  .hero-actions{flex-direction:column;align-items:center;gap:10px;}
+  .hero-actions .btn,
+  .hero-actions .btn-outline,
+  .hero-actions .btn-wa,
+  .hero-actions .btn-gold{width:100%;max-width:300px;text-align:center;padding:14px 20px;}
+  .slide-tag{font-size:10px;padding:6px 14px;}
+  .stats-row{grid-template-columns:repeat(2,1fr);max-width:100%;}
+  .stat-num{font-size:22px;}
+  .carousel-progress{width:140px;}
+
+  /* Sections */
+  .section{padding:60px 5%;}
+  .section-title{font-size:clamp(22px,6vw,32px);}
+  .eyebrow{font-size:10px;}
+  .enquiry-section{padding:60px 5%;}
+  .cta-section{padding:60px 5%;}
+  .trusted-section{padding:40px 5%;}
+
+  /* Services */
+  .services-grid-new{grid-template-columns:1fr;gap:14px;}
+  .svc-box{padding:24px 18px;}
+
+  /* About */
+  .about-grid{grid-template-columns:1fr;gap:36px;}
+  .about-img-card{padding:32px;aspect-ratio:auto;}
+  .about-infinity{font-size:72px;}
+
+  /* Trusted logos */
+  .trusted-logos{gap:14px;}
+  .trusted-logo-slot{width:110px;height:52px;}
+
+  /* Why us bento */
+  .bento-grid{grid-template-columns:1fr;gap:14px;}
+  .bento-card-wide{grid-column:span 1;}
+  .bento-card{padding:24px 20px;}
+  .bento-metric{font-size:34px;}
+  .bento-title{font-size:17px;}
+
+  /* Process */
+  .process-grid{grid-template-columns:1fr;gap:14px;}
+  .process-step{padding:24px 20px;}
+  .step-num{font-size:38px;margin-bottom:12px;}
+
+  /* Testimonials */
+  .testimonials-grid{grid-template-columns:1fr;gap:14px;}
+  .t-card{padding:24px 18px;}
+
+  /* Location */
+  .location-band{padding:28px 20px;gap:20px;flex-direction:column;align-items:flex-start;}
+  .location-flag{width:60px;height:60px;font-size:28px;}
+  .location-content{min-width:unset;width:100%;}
+  .location-pills{gap:6px;}
+  .pill{font-size:11px;padding:5px 10px;}
+  .location-band .btn{width:100%;text-align:center;}
+
+  /* Enquiry form */
+  .enquiry-inner{grid-template-columns:1fr;gap:36px;}
+  .enquiry-form{padding:24px 18px;border-radius:18px;}
+  .form-row{grid-template-columns:1fr;}
+  .enquiry-perks{gap:12px;}
+
+  /* CTA */
+  .cta-inner{padding:40px 20px;border-radius:20px;}
+  .cta-title{font-size:clamp(20px,6vw,32px);}
+  .cta-sub{font-size:14px;}
+  .cta-actions{flex-direction:column;align-items:center;}
+  .cta-actions .btn,
+  .cta-actions .btn-wa,
+  .cta-actions .btn-outline{width:100%;max-width:300px;text-align:center;}
+
+  /* Footer */
+  .footer-grid{grid-template-columns:1fr;gap:36px;}
+  footer{padding:56px 5% 0;}
+  .footer-links{grid-template-columns:repeat(2,1fr);gap:20px;}
+  .footer-brand p{font-size:13px;}
+  .footer-bottom{flex-direction:column;text-align:center;gap:8px;padding:16px 0;}
+  .social-icons{flex-wrap:wrap;gap:10px;}
+
+  /* WA float + chatbot spacing */
+  .wa-float{bottom:88px;right:16px;width:48px;height:48px;}
+  .chatbot-btn{bottom:28px;right:16px;width:48px;height:48px;}
+  .chatbot-window{right:10px;left:10px;width:auto;bottom:84px;}
+  .chat-header-name{font-size:13px;}
+}
+
+/* ══ VERY SMALL (≤380px) ══ */
+@media(max-width:380px){
+  .hero{padding:90px 4% 50px;}
+  .section{padding:50px 4%;}
   .footer-links{grid-template-columns:1fr;}
+  .stats-row{grid-template-columns:1fr 1fr;}
+  .stat-item{padding:16px 10px;}
+  .stat-num{font-size:20px;}
+  .carousel-slide h2{font-size:24px;}
 }
 
 /* ══ REVEAL ══ */
@@ -334,12 +449,9 @@ transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.
 }
 .reveal.in{opacity:1;transform:translateY(0);}
 
-.carousel-slide{
-display:none;
-}
-
+/* carousel visibility controlled by opacity/position, NOT display */
 .carousel-slide.active{
-display:flex;
+display:flex !important;
 flex-direction:column;
 align-items:center;
 text-align:center;
@@ -381,7 +493,7 @@ text-align:center;
 <!-- ══ HERO ══ -->
 <section class="hero">
   <div class="carousel" id="hero-carousel">
-    <div class="carousel-slide active">
+    <div class="carousel-slide active" style="display:flex!important;">
       <div class="slide-tag"><span class="hero-badge-dot"></span>&nbsp;Digital Presence</div>
       <h2>Websites that<br><em>convert visitors.</em></h2>
       <p>Custom-built business websites, landing pages and e-commerce stores — designed for the Indian market.</p>
@@ -815,7 +927,7 @@ text-align:center;
           <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.738-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         </a>
         <!-- Email -->
-        <a href="mailto:info@360bizsolution.com" title="Email" style="background:#ea4335;border-color:#ea4335;">
+        <a href="/cdn-cgi/l/email-protection#2940474f46691a1f194b40535a46455c5d404647074a4644" title="Email" style="background:#ea4335;border-color:#ea4335;">
           <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         </a>
       </div>
@@ -895,7 +1007,7 @@ text-align:center;
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* ══ THREE.JS BG ══ */
 const scene=new THREE.Scene();
 const camera=new THREE.PerspectiveCamera(75,innerWidth/innerHeight,0.1,1000);
@@ -989,8 +1101,10 @@ document.querySelectorAll('[data-count]').forEach(el=>{
   function goTo(idx){
     const prev=current;current=(idx+slides.length)%slides.length;
     slides[prev].classList.remove('active');slides[prev].classList.add('exit');
-    setTimeout(()=>slides[prev].classList.remove('exit'),650);
+    slides[prev].style.display='none';
+    setTimeout(()=>{slides[prev].classList.remove('exit');},650);
     slides[current].classList.add('active');
+    slides[current].style.display='flex';
     dots.forEach((d,i)=>d.classList.toggle('active',i===current));
     resetProgress();
   }
@@ -1137,10 +1251,4 @@ function showSlide(i){
   slides.forEach(s=>s.classList.remove("active"));
   dots.forEach(d=>d.classList.remove("active"));
 
-  slides[i].classList.add("active");
-  if(dots[i]) dots[i].classList.add("active");
-}
-
-function nextSlide(){
-  index++;
-  if(index >= slides.length) index = 0
+  sl
